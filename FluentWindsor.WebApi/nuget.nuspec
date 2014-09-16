@@ -1,33 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <package>
-  <metadata>
-    <id>FluentWindsor.WebApi</id>
-    <version>1.0.0.26</version>
-    <authors>fir3pho3nixx@gmail.com</authors>
-    <description>A library for making windsor super easy</description>
-    <tags>Castle Windsor Fluent WebApi</tags>
-    <language>en-GB</language>
-    <projectUrl>https://github.com/fir3pho3nixx/FluentWindsor</projectUrl>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net45" />
-      <frameworkAssembly assemblyName="System.Web" targetFramework="net45" />
-      <frameworkAssembly assemblyName="System.Net.Http" targetFramework="net45" />
-    </frameworkAssemblies>
-    <references>
-      <reference file="FluentWindsor.WebApi.dll" />
-    </references>
-    <dependencies>
-      <dependency id="Castle.Core" version="3.3.1" />
-      <dependency id="Castle.Windsor" version="3.3.0" />
-      <dependency id="FluentWindsor" version="1.0.0" />
-      <dependency id="Microsoft.AspNet.WebApi" version="5.2.2" />
-      <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.2" />
-      <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.2" />
-      <dependency id="Microsoft.AspNet.WebApi.WebHost" version="5.2.2" />
-      <dependency id="Newtonsoft.Json" version="6.0.5" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="bin\**\FluentWindsor.WebApi.dll" target="lib\4.5" />
-  </files>
+	<metadata>
+		<id>FluentWindsor.WebApi</id>
+		<version>1.0.0.26</version>
+		<authors>fir3pho3nixx@gmail.com</authors>
+		<description>A library for making windsor super easy</description>
+		<tags>Castle Windsor Fluent WebApi</tags>
+		<language>en-GB</language>
+		<projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
+		<iconUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png</iconUrl>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="net45" />
+			<frameworkAssembly assemblyName="System.Web" targetFramework="net45" />
+			<frameworkAssembly assemblyName="System.Net.Http" targetFramework="net45" />
+		</frameworkAssemblies>
+		<references>
+			<reference file="FluentWindsor.WebApi.dll" />
+		</references>
+		<dependencies>
+			<dependency id="Castle.Core" version="3.3.1" />
+			<dependency id="Castle.Windsor" version="3.3.0" />
+			<dependency id="FluentWindsor" version="1.0.0" />
+			<dependency id="Microsoft.AspNet.WebApi" version="5.2.2" />
+			<dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.2" />
+			<dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.2" />
+			<dependency id="Microsoft.AspNet.WebApi.WebHost" version="5.2.2" />
+			<dependency id="Newtonsoft.Json" version="6.0.5" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\**\FluentWindsor.WebApi.dll" target="lib\4.5" />
+	</files>
 </package>
