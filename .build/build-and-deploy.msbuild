@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<ThisFile>$(MSBuildThisFileDirectory)$(MSBuildThisFile)</ThisFile>
+		<ThisDirectory>$(MSBuildThisFileDirectory)</ThisDirectory>
+	</PropertyGroup>
+
+	<Import Project="$(Properties)" />
+
+	<UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
+
+	<Target Name="tasks\Clean">
+		<Exec Command="del /s /f /q *.nupkg" />
+		<Exec Command="del /s /f /q ..\FluentWindsor\bin" />
+		<Exec Command="del /s /f /q ..\FluentWindsor\obj" />
+		<Exec Command="del /s /f /q ..\FluentWindsor.Mvc\bin" />
+		<Exec Command="del /s /f /q ..\FluentWindsor.Mvc\obj" />
+		<Exec Command="del /s /f /q ..\FluentWindsor.WebApi\bin" />
+		<Exec Command="del /s /f /q ..\FluentWindsor.WebApi\obj" />
+	</Target>
+
+	<Target Name="tasks\Build">
+		<MSBuild Projects="$(ThisDirectory)..\fluent-windsor.sln" Properties="Configuration=$(Configuration);TargetFrameworkVersion=$(TargetFramework);Platform=$(Platform)"/>
+	</Target>
+
+	<Target Name="tasks\Pack">
+		<BumpVersion FilePath="../FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<Exec Command="nuget pack ../FluentWindsor/nuget.nuspec" />
+		<BumpVersion FilePath="../FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<Exec Command="nuget pack ../FluentWindsor.Mvc/nuget.nuspec" />
+		<BumpVersion FilePath="../FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<Exec Command="nuget pack ../FluentWindsor.WebApi/nuget.nuspec" />
+	</Target>
+
+	<Target Name="tasks\Push">
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.1.0.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.Mvc.1.0.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.WebApi.1.0.0.*.nupkg" />
+	</Target>
+
+	<Target Name="Deploy">
+		<CallTarget Targets="tasks\Clean" />
+		<CallTarget Targets="tasks\Build" />
+		<CallTarget Targets="tasks\Pack" />
+		<CallTarget Targets="tasks\Push" />
+		<CallTarget Targets="tasks\Clean" />
+	</Target>
+  
+</Project>
