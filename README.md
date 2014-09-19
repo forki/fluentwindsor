@@ -1,7 +1,7 @@
 FluentWindsor
 =============
 
-This is a windsor castle IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all 
+This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all 
 implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations 
 in the wild as result of this :)
 
