@@ -108,8 +108,8 @@ For any problems please sign into github and raise issues.
 
 This project uses the latest distro of WebApi + MVC. Please see the examples of this source for how to setup your web.config's.
 
- - https://github.com/fir3pho3nixx/FluentWindsor/blob/master/Example.MVC/Web.config
- - https://github.com/fir3pho3nixx/FluentWindsor/blob/master/Example.MVC/Views/Web.config
+ - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Web.config
+ - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Views/Web.config
 
  You will have to rebuild your web.config's to re-point to the right versions. It looks painful but I can assure you it is not too 
  bad :)
