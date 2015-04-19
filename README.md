@@ -111,10 +111,8 @@ This project uses the latest distro of WebApi + MVC. Please see the examples of 
  - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Web.config
  - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Views/Web.config
 
- You will have to rebuild your web.config's to re-point to the right versions. It looks painful but I can assure you it is not too 
- bad :)
+You will have to rebuild your web.config's to re-point to the right versions. It looks painful but I can assure you it is not too bad :)
 
- Still not happy? Have a moan at ol' Rick here ... 
+Still not happy? Have a moan at ol' Rick here ... 
 
-  - http://www.asp.net/mvc/tutorials/mvc-5/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
-
+ - http://www.asp.net/mvc/tutorials/mvc-5/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
