@@ -118,15 +118,3 @@ This project uses the latest distro of WebApi + MVC. Please see the examples of 
 
   - http://www.asp.net/mvc/tutorials/mvc-5/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 
-##New to C#?
-
-This project in one way or another supports the following principles:
-
- - http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
- - http://en.wikipedia.org/wiki/Single_responsibility_principle
- - http://en.wikipedia.org/wiki/Open/closed_principle
- - http://en.wikipedia.org/wiki/Liskov_substitution_principle
- - http://en.wikipedia.org/wiki/Interface_segregation_principle
- - http://en.wikipedia.org/wiki/Dependency_inversion_principle
-
-A standard practice to most seasoned C# developers in the wild. We are doing the dependency inversion piece here.
