@@ -176,6 +176,8 @@ Now we have all the component parts to see scriptcs vs Windsor. Lastly run the f
     scriptcs -install
 	scriptcs main.csx
 
+If you see 'IAnyService::Do() - Called' as the final output you know it works.
+
 ##Problems?
 
 For any problems please sign into github and raise issues. 
