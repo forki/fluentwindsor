@@ -20,8 +20,6 @@ namespace FluentlyWindsor
 
         public virtual List<Assembly> FindAssemblies(Predicate<Assembly> isTrueOf)
         {
-            //Debugger.Launch();
-
             var results = new List<Assembly>();
             var applicationDomain = new ApplicationDomain(AppDomain.CurrentDomain);
 

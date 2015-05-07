@@ -10,12 +10,16 @@ namespace FluentlyWindsor.Extensions
     {
         public static bool HasAnyTypeThatImplementsInterface<T>(this Assembly assembly, IAssemblyScanningPolicy[] policies)
         {
-            foreach (var type in assembly.GetTypes().Where(x => policies.All(y => y.IsTypeAllowed(x))))
+            try
             {
-                var interfaces = type.GetInterfaces();
-                if (interfaces.Any(x => x.FullName == typeof(T).FullName))
-                    return true;
+                foreach (var type in assembly.GetTypes().Where(x => policies.All(y => y.IsTypeAllowed(x))))
+                {
+                    var interfaces = type.GetInterfaces();
+                    if (interfaces.Any(x => x.FullName == typeof (T).FullName))
+                        return true;
+                }
             }
+            catch {}
             return false;
         }
 
