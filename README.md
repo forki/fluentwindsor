@@ -94,25 +94,88 @@ No problem, simply do this (you would have to have bootstrapped your application
 
 	var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
 
-##Further Reading
+##Works with scriptcs!
 
-Here is where I think we get to the sales pitch about Castle Windsor. These guys have this nailed.
+You can even use Castle Windsor with scriptcs. For more information on how to install scriptcs please navigate to the link below:
 
- - http://docs.castleproject.org/Windsor.Interceptors.ashx
+ - https://github.com/scriptcs/scriptcs
+
+###Scriptcs example
+
+First dump the following into a temp directory somewhere in a file called 'scriptcs_packages.config'.
+
+	<?xml version="1.0" encoding="utf-8"?>
+
+	<packages>
+		<package id="Castle.Core" version="3.3.1" targetFramework="net45" />
+		<package id="Castle.Windsor" version="3.3.0" targetFramework="net45" />
+		<package id="FluentWindsor" version="1.0.0.34" targetFramework="net45" />
+	</packages>
+
+
+Then dump the following windsor installer into a file called 'windsor-installer.csx'.
+
+	#r "System.dll"
+	#r "System.Core.dll"
+	#r "Microsoft.CSharp.dll"
+
+	#r "Castle.Core.dll"
+	#r "Castle.Windsor.dll"
+	#r "FluentWindsor.dll"
+
+	using System;
+	using System.Diagnostics;
+	using Castle.MicroKernel.Registration;
+	using Castle.MicroKernel.SubSystems.Configuration;
+	using Castle.Windsor;
+
+	public interface IAnyService
+	{
+		void Do();
+	}
+
+	public class AnyService : IAnyService
+	{
+		public void Do()
+		{
+			Console.WriteLine("IAnyService::Do() - Called");
+		}
+	}
+
+	public class AnyInstaller : IWindsorInstaller
+	{
+		public void Install(IWindsorContainer container, IConfigurationStore store)
+		{
+			container.Register(Component.For<IAnyService>().ImplementedBy<AnyService>().LifeStyle.Transient);
+		}
+	}
+
+
+Finally we take this and paste it into a file called 'main.csx'.
+
+    #load "windsor-installer.csx"
+
+    #r "System.dll"
+    #r "System.Core.dll"
+    #r "Microsoft.CSharp.dll"
+
+    #r "Castle.Core.dll"
+    #r "Castle.Windsor.dll"
+    #r "FluentWindsor.dll"
+
+    using System;
+    using System.Diagnostics;
+    using System.Reflection;
+    using FluentlyWindsor;
+
+    var container = FluentWindsor.NewContainer(Assembly.GetExecutingAssembly()).WithArrayResolver().WithInstallers().Create();
+    container.Resolve<IAnyService>().Do();
+
+Now we have all the component parts to see scriptcs vs Windsor. Lastly run the following commands in a scriptcs installed console.
+
+    scriptcs -install
+	scriptcs main.csx
 
 ##Problems?
 
 For any problems please sign into github and raise issues. 
-
-##If you are upgrading MVC + WebAPI
-
-This project uses the latest distro of WebApi + MVC. Please see the examples of this source for how to setup your web.config's.
-
- - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Web.config
- - https://github.com/cryosharp/FluentWindsor/blob/master/Example.MVC/Views/Web.config
-
-You will have to rebuild your web.config's to re-point to the right versions. It looks painful but I can assure you it is not too bad :)
-
-Still not happy? Have a moan at ol' Rick here ... 
-
- - http://www.asp.net/mvc/tutorials/mvc-5/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
