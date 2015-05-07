@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -33,16 +34,16 @@ namespace FluentlyWindsor
             get { return waitUntilComplete; }
         }
 
-        private FluentWindsor()
-        {
-        }
-
-        public static FluentWindsor NewContainer(Assembly executingAssembly)
+        public FluentWindsor(Assembly executingAssembly)
         {
             container = new WindsorContainer();
             waitUntilComplete = new ManualResetEvent(false);
             FluentWindsor.executingAssembly = executingAssembly;
-            return new FluentWindsor();
+        }
+
+        public static FluentWindsor NewContainer(Assembly executingAssembly)
+        {
+            return new FluentWindsor(executingAssembly);
         }
 
         public FluentWindsor WithArrayResolver()

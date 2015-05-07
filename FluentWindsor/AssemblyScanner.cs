@@ -20,7 +20,6 @@ namespace FluentlyWindsor
         public virtual List<Assembly> FindAssemblies(Predicate<Assembly> isTrueOf)
         {
             var results = new List<Assembly>();
-            var assembliesWithInstallers = new List<FileInfo>();
             var applicationDomain = new ApplicationDomain(AppDomain.CurrentDomain);
 
             foreach (var fileInfo in applicationDomain.GetAssemblyFiles())
@@ -30,8 +29,6 @@ namespace FluentlyWindsor
             {
                 if (isTrueOf(assembly))
                 {
-                    var localPath = new Uri(assembly.CodeBase).LocalPath;
-                    assembliesWithInstallers.Add(new FileInfo(localPath));
                     results.Add(assembly);
                 }
             }
