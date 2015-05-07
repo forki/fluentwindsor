@@ -28,6 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A4725C57-6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{0809B93C-BAF7-4E14-A1DF-FAF6A34C62B5}"
 	ProjectSection(SolutionItems) = preProject
+		deploy.bat = deploy.bat
 		package-and-push.bat = package-and-push.bat
 	EndProjectSection
 EndProject

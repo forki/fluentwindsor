@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,6 +20,8 @@ namespace FluentlyWindsor
 
         public virtual List<Assembly> FindAssemblies(Predicate<Assembly> isTrueOf)
         {
+            //Debugger.Launch();
+
             var results = new List<Assembly>();
             var applicationDomain = new ApplicationDomain(AppDomain.CurrentDomain);
 

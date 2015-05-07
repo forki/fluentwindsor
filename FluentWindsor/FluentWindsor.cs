@@ -62,7 +62,14 @@ namespace FluentlyWindsor
 
             foreach (var assembly in assemblies)
             {
-                container.Install(FromAssembly.Instance(assembly));
+                foreach (var type in assembly.GetTypes())
+                {
+                    if (typeof (IWindsorInstaller).IsAssignableFrom(type))
+                    {
+                        var typeInstance = (IWindsorInstaller) Activator.CreateInstance(type);
+                        container.Install(typeInstance);
+                    }
+                }
             }
 
             return this;
