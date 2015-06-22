@@ -36,6 +36,7 @@ namespace FluentlyWindsor.Mvc
 
         private static Type FindControllerType(string controllerName)
         {
+
             foreach (var ns in FluentWindsorExtensionsConstants.ControllerNamespaces)
             {
                 var controllerFullName = ns + "." + controllerName + "Controller";

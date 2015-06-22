@@ -82,7 +82,7 @@ namespace FluentlyWindsor.Extensions
             var results = new List<Type>();
             foreach (var type in assembly.GetTypes().Where(x => policies.All(y => y.IsTypeAllowed(x))))
             {
-                if (type.FullName == fullName)
+                if (type.FullName.ToLower() == fullName.ToLower())
                     results.Add(type);
             }
             return results.ToArray();
