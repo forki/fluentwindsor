@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FluentWindsor.Mvc</id>
-    <version>1.0.0.34</version>
+    <version>1.0.0.35</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent Mvc</tags>
