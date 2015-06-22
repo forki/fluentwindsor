@@ -1,4 +1,6 @@
-<img src="https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png" align="right" />
+<div style="float:right">
+	<img src="https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png" />
+</div>
 
 FluentWindsor
 =============
