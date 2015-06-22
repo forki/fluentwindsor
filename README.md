@@ -1,7 +1,7 @@
 FluentWindsor
 =============
 
-<img src="https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png" />
+<img src="https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png" align="right" />
 
 
 This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all 
