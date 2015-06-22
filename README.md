@@ -9,7 +9,7 @@ in the wild as result of this :)
 
 A bit about Castle Windsor.
 
- - http://docs.castleproject.org/Windsor.MainPage.ashx
+ - https://github.com/castleproject/Windsor/blob/master/docs/README.md
 
 ##How it works
 
@@ -17,7 +17,7 @@ An assembly scanner will trawl through your project trying to find every impleme
 registered automatically for you. It is recommended that you have at least one instance of IWindsorInstaller per assembly. For more please visit 
 the link below:
 
- - http://docs.castleproject.org/Windsor.Installers.ashx
+ - https://github.com/castleproject/Windsor/blob/master/docs/installers.md
 
 You can also use the MVC and WebApi controller extensions. Examples to follow.
 
@@ -41,7 +41,7 @@ And for the same assembly we had the accompanying windsor installation:
 Then by simply adding the reference to our console, mvc, webapi or nunit project we can then proceed on to the fluent registration. Which
 auto wires stuff. You can read more about how you register objects using the link below.
 
- - http://docs.castleproject.org/Windsor.Fluent-Registration-API.ashx
+ - https://github.com/castleproject/Windsor/blob/master/docs/fluent-registration-api.md
 
 ##Fluent General Purpose Registration(NUnit & Console App)
 
