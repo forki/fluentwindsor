@@ -197,6 +197,12 @@ Now we have all the component parts to see scriptcs vs Windsor. Lastly run the f
 
 If you see 'IAnyService::Do() - Called' as the final output you know it works.
 
+##Credit to authors  
+
+Credit to the guys behind Castle Windsor.
+
+[Castle Windsor Contributors](https://github.com/castleproject/Windsor/graphs/contributors)
+
 ##Problems?
 
 For any problems please sign into github and raise issues. 
