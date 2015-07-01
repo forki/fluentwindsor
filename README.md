@@ -30,10 +30,12 @@ You can also use the MVC and WebApi controller extensions. Examples to follow.
 
 Imagine you have sample service that would like to expose to console, mvc, webapi and nunit applications. Let's say we have ServiceA
 for example: 
-
+	
+	``` csharp
     public class ServiceA {
 		public void Execute(){ /* ... does something ... */ }
 	}
+	``` 
 
 And for the same assembly we had the accompanying windsor installation:
 
