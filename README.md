@@ -39,11 +39,13 @@ public class ServiceA {
 
 And for the same assembly we had the accompanying windsor installation:
 
-    public class Installer : IWindsorInstaller {
-		public void Install(IWindsorContainer container, IConfigurationStore store) {
-            container.Register(Component.For<ServiceA>().LifeStyle.Transient);
-        }
-	}
+``` csharp
+public class Installer : IWindsorInstaller {
+	public void Install(IWindsorContainer container, IConfigurationStore store) {
+        container.Register(Component.For<ServiceA>().LifeStyle.Transient);
+    }
+}
+```
 
 Then by simply adding the reference to our console, mvc, webapi or nunit project we can then proceed on to the fluent registration. Which
 auto wires stuff. You can read more about how you register objects using the link below.
@@ -52,54 +54,60 @@ auto wires stuff. You can read more about how you register objects using the lin
 
 ##Fluent General Purpose Registration(NUnit & Console App)
 
-    var container = FluentWindsor
-        .NewContainer(Assembly.GetExecutingAssembly())
-        .WithArrayResolver()
-        .WithInstallers()
-        .Create();
+``` csharp
+var container = FluentWindsor
+    .NewContainer(Assembly.GetExecutingAssembly())
+    .WithArrayResolver()
+    .WithInstallers()
+    .Create();
 
-    var serviceA = container.Resolve<ServiceA>();
+var serviceA = container.Resolve<ServiceA>();
 
-    serviceA.Execute();
+serviceA.Execute();
+```
 
 ##Fluent Mvc & WebApi Registration Including Controllers 
 
-	using System.Reflection;
-	using System.Web;
-	using System.Web.Http;
-	using System.Web.Mvc;
-	using System.Web.Routing;
-	using FluentlyWindsor;
-	using FluentlyWindsor.Mvc;
-	using FluentlyWindsor.WebApi;
+``` csharp
+using System.Reflection;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
+using System.Web.Routing;
+using FluentlyWindsor;
+using FluentlyWindsor.Mvc;
+using FluentlyWindsor.WebApi;
 
-	namespace Example.MVC
+namespace Example.MVC
+{
+	public class MvcApplication : HttpApplication
 	{
-		public class MvcApplication : HttpApplication
+		protected void Application_Start()
 		{
-			protected void Application_Start()
-			{
-				AreaRegistration.RegisterAllAreas();
-				FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-				GlobalConfiguration.Configure(WebApiConfig.Register);
-				RouteConfig.RegisterRoutes(RouteTable.Routes);
+			AreaRegistration.RegisterAllAreas();
+			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+			GlobalConfiguration.Configure(WebApiConfig.Register);
+			RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-				FluentWindsor
-					.NewContainer(Assembly.GetExecutingAssembly())
-					.WithArrayResolver()
-					.WithInstallers()
-					.RegisterApiControllers(GlobalConfiguration.Configuration)
-					.RegisterMvcControllers(ControllerBuilder.Current, "Example.MVC.Controllers", "Another.Namespace.For.Controllers")
-					.Create();
-			}
+			FluentWindsor
+				.NewContainer(Assembly.GetExecutingAssembly())
+				.WithArrayResolver()
+				.WithInstallers()
+				.RegisterApiControllers(GlobalConfiguration.Configuration)
+				.RegisterMvcControllers(ControllerBuilder.Current, "Example.MVC.Controllers", "Another.Namespace.For.Controllers")
+				.Create();
 		}
 	}
+}
+```
 
 ##Need a service locator?
 
 No problem, simply do this (you would have to have bootstrapped your application somewhere previously using the examples above). 
 
-	var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
+``` csharp
+var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
+```
 
 ##Works with scriptcs!
 
@@ -111,14 +119,15 @@ You can even use Castle Windsor with scriptcs. For more information on how to in
 
 First dump the following into a temp directory somewhere in a file called 'scriptcs_packages.config'.
 
-	<?xml version="1.0" encoding="utf-8"?>
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
 
-	<packages>
-		<package id="Castle.Core" version="3.3.1" targetFramework="net45" />
-		<package id="Castle.Windsor" version="3.3.0" targetFramework="net45" />
-		<package id="FluentWindsor" version="1.0.0.34" targetFramework="net45" />
-	</packages>
-
+<packages>
+	<package id="Castle.Core" version="3.3.1" targetFramework="net45" />
+	<package id="Castle.Windsor" version="3.3.0" targetFramework="net45" />
+	<package id="FluentWindsor" version="1.0.0.34" targetFramework="net45" />
+</packages>
+```
 
 Then dump the following windsor installer into a file called 'windsor-installer.csx'.
 
