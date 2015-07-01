@@ -131,61 +131,64 @@ First dump the following into a temp directory somewhere in a file called 'scrip
 
 Then dump the following windsor installer into a file called 'windsor-installer.csx'.
 
-	#r "System.dll"
-	#r "System.Core.dll"
-	#r "Microsoft.CSharp.dll"
+``` csharp
+#r "System.dll"
+#r "System.Core.dll"
+#r "Microsoft.CSharp.dll"
 
-	#r "Castle.Core.dll"
-	#r "Castle.Windsor.dll"
-	#r "FluentWindsor.dll"
+#r "Castle.Core.dll"
+#r "Castle.Windsor.dll"
+#r "FluentWindsor.dll"
 
-	using System;
-	using System.Diagnostics;
-	using Castle.MicroKernel.Registration;
-	using Castle.MicroKernel.SubSystems.Configuration;
-	using Castle.Windsor;
+using System;
+using System.Diagnostics;
+using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.SubSystems.Configuration;
+using Castle.Windsor;
 
-	public interface IAnyService
+public interface IAnyService
+{
+	void Do();
+}
+
+public class AnyService : IAnyService
+{
+	public void Do()
 	{
-		void Do();
+		Console.WriteLine("IAnyService::Do() - Called");
 	}
+}
 
-	public class AnyService : IAnyService
+public class AnyInstaller : IWindsorInstaller
+{
+	public void Install(IWindsorContainer container, IConfigurationStore store)
 	{
-		public void Do()
-		{
-			Console.WriteLine("IAnyService::Do() - Called");
-		}
+		container.Register(Component.For<IAnyService>().ImplementedBy<AnyService>().LifeStyle.Transient);
 	}
-
-	public class AnyInstaller : IWindsorInstaller
-	{
-		public void Install(IWindsorContainer container, IConfigurationStore store)
-		{
-			container.Register(Component.For<IAnyService>().ImplementedBy<AnyService>().LifeStyle.Transient);
-		}
-	}
-
+}
+```
 
 Finally we take this and paste it into a file called 'main.csx'.
 
-    #load "windsor-installer.csx"
+``` csharp
+#load "windsor-installer.csx"
 
-    #r "System.dll"
-    #r "System.Core.dll"
-    #r "Microsoft.CSharp.dll"
+#r "System.dll"
+#r "System.Core.dll"
+#r "Microsoft.CSharp.dll"
 
-    #r "Castle.Core.dll"
-    #r "Castle.Windsor.dll"
-    #r "FluentWindsor.dll"
+#r "Castle.Core.dll"
+#r "Castle.Windsor.dll"
+#r "FluentWindsor.dll"
 
-    using System;
-    using System.Diagnostics;
-    using System.Reflection;
-    using FluentlyWindsor;
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using FluentlyWindsor;
 
-    var container = FluentWindsor.NewContainer(Assembly.GetExecutingAssembly()).WithArrayResolver().WithInstallers().Create();
-    container.Resolve<IAnyService>().Do();
+var container = FluentWindsor.NewContainer(Assembly.GetExecutingAssembly()).WithArrayResolver().WithInstallers().Create();
+container.Resolve<IAnyService>().Do();
+```
 
 Now we have all the component parts to see scriptcs vs Windsor. Lastly run the following commands in a scriptcs installed console.
 
