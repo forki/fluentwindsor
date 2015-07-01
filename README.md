@@ -1,8 +1,6 @@
 FluentWindsor
 =============
 
-<img src="https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png" align="right" />
-
 | Downloads | Version |
 |-----------|---------|
 | ![NuGet Total](https://img.shields.io/nuget/dt/FluentWindsor.svg) | ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |
