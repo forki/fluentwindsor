@@ -1,4 +1,4 @@
-<img align="left" width="80" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
+<img align="left" width="50" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
 
 &nbsp;FluentWindsor<br />
 =============
