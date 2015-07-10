@@ -205,6 +205,23 @@ Credit to the guys behind Castle Windsor.
 
 [Castle Windsor Contributors](https://github.com/castleproject/Windsor/graphs/contributors)
 
+Credit to the guys behind the components.
+
+<p>
+There are many people involved in this. First of all thanks to the guys at <a href="https://github.com/castleproject/Windsor/graphs/contributors" target="_new">Castle Windsor</a>. Secondly I would like to 
+thank individuals who played a code contributory role. 
+<a href="https://www.linkedin.com/in/fir3pho3nixx">Gavin van der Merwe</a>, 
+<a href="https://www.linkedin.com/pub/richard-glew/4/159/981">Richard Glew</a>, 
+<a href="https://www.linkedin.com/in/jsm85">Joe Mendonca</a>, 
+<a href="https://www.linkedin.com/pub/albert-france-brotherton/2/a54/499">Albert France-Brotherton</a>, 
+<a href="https://www.linkedin.com/pub/oliver-donald/10/83a/7b6">Oliver Donald</a>, 
+<a href="http://samshiles.co.uk/">Sam Shiles</a>, 
+<a href="http://www.alexjamesbrown.com/">Alex James Brown</a>, 
+<a href="https://www.linkedin.com/pub/george-stylli/8/354/b89">George Stylli</a>
+and finally 
+<a href="http://gradientsmotherfucker.com/">Tony Das</a>.
+</p>
+
 ##Problems?
 
 For any problems please sign into github and raise issues. 
