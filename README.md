@@ -208,8 +208,7 @@ Credit to the guys behind Castle Windsor.
 Credit to the guys behind the components.
 
 <p>
-There are many people involved in this. First of all thanks to the guys at <a href="https://github.com/castleproject/Windsor/graphs/contributors" target="_new">Castle Windsor</a>. Secondly I would like to 
-thank individuals who played a code contributory role. 
+Individuals who played a direct code contributory role, but are not listed in the commits.
 <a href="https://www.linkedin.com/in/fir3pho3nixx">Gavin van der Merwe</a>, 
 <a href="https://www.linkedin.com/pub/richard-glew/4/159/981">Richard Glew</a>, 
 <a href="https://www.linkedin.com/in/jsm85">Joe Mendonca</a>, 
