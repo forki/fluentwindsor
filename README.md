@@ -1,6 +1,6 @@
 <img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
 
-&nbsp;FluentWindsor<br /><br /><br />
+&nbsp;FluentWindsor<br /><br />
 =============
 
 | Downloads | Version |
