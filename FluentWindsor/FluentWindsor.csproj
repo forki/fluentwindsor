@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="ApplicationDomain.cs" />
     <Compile Include="AssemblyScanner.cs" />
-    <None Include="nuget.nuspec" />
+    <None Include="nuget.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <Compile Include="Extensions\WindsorExtensions.cs" />
     <Compile Include="FluentWindsor.cs" />
     <Compile Include="Extensions\AssemblyExtensions.cs" />
