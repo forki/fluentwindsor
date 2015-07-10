@@ -2,13 +2,13 @@
 <package>
   <metadata>
     <id>FluentWindsor.WebApi</id>
-    <version>1.0.0.36</version>
+    <version>1.0.0.37</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent WebApi</tags>
     <language>en-GB</language>
     <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/logo.png</iconUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="net45" />
       <frameworkAssembly assemblyName="System.Web" targetFramework="net45" />
