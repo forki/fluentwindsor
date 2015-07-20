@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FluentWindsor.Mvc</id>
-    <version>1.0.0.37</version>
+    <version>1.0.0.38</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent Mvc</tags>
@@ -17,12 +17,12 @@
       <reference file="FluentWindsor.Mvc.dll" />
     </references>
     <dependencies>
-      <dependency id="Castle.Core" version="3.3.1" />
+      <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.3.0" />
       <dependency id="FluentWindsor" version="1.0.0" />
-      <dependency id="Microsoft.AspNet.Mvc" version="5.2.2" />
-      <dependency id="Microsoft.AspNet.Razor" version="3.2.2" />
-      <dependency id="Microsoft.AspNet.WebPages" version="3.2.2" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.Razor" version="3.2.3" />
+      <dependency id="Microsoft.AspNet.WebPages" version="3.2.3" />
       <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
     </dependencies>
   </metadata>
