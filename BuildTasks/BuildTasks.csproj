@@ -46,6 +46,7 @@
     <Compile Include="BumpVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MigratePackageDependenciesToNuSpec.cs" />
+    <Compile Include="SetExplicitVersionsForDependencies.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

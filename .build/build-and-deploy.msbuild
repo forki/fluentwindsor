@@ -9,6 +9,7 @@
 	<Import Project="$(Properties)" />
 
   <UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
+  <UsingTask TaskName="SetExplicitVersionsForDependencies" AssemblyFile="BuildTasks.dll" />
   <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
 	<Target Name="tasks\Clean">
@@ -27,17 +28,18 @@
 
 	<Target Name="tasks\Pack">
 		<BumpVersion FilePath="../FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
-		<Exec Command="nuget pack ../FluentWindsor/nuget.nuspec" />
 		<BumpVersion FilePath="../FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+    <BumpVersion FilePath="../FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+    <SetExplicitVersionsForDependencies RelativePath="..\" />
+    <Exec Command="nuget pack ../FluentWindsor/nuget.nuspec" />
 		<Exec Command="nuget pack ../FluentWindsor.Mvc/nuget.nuspec" />
-		<BumpVersion FilePath="../FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
 		<Exec Command="nuget pack ../FluentWindsor.WebApi/nuget.nuspec" />
 	</Target>
 
 	<Target Name="tasks\Push">
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.1.0.0.*.nupkg" />
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.Mvc.1.0.0.*.nupkg" />
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.WebApi.1.0.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.1.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.Mvc.1.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.WebApi.1.0.*.nupkg" />
 	</Target>
 
 	<Target Name="Deploy">
