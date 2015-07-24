@@ -8,7 +8,8 @@
 
 	<Import Project="$(Properties)" />
 
-	<UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
+  <UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
+  <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
 	<Target Name="tasks\Clean">
 		<Exec Command="del /s /f /q *.nupkg" />
@@ -40,7 +41,8 @@
 	</Target>
 
 	<Target Name="Deploy">
-		<CallTarget Targets="tasks\Clean" />
+    <MigratePackageDependenciesToNuSpec RelativePath="..\" />
+    <CallTarget Targets="tasks\Clean" />
 		<CallTarget Targets="tasks\Build" />
 		<CallTarget Targets="tasks\Pack" />
 		<CallTarget Targets="tasks\Push" />
