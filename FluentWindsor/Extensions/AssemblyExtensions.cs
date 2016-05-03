@@ -22,7 +22,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return false;
         }
@@ -42,7 +42,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return results.ToArray();
         }
@@ -60,7 +60,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return false;
         }
@@ -79,7 +79,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return results.ToArray();
         }
@@ -97,7 +97,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return false;
         }
@@ -116,7 +116,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return results.ToArray();
         }
@@ -135,7 +135,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception(loaderErrors, err);
+                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
             }
             return results.ToArray();
         }
