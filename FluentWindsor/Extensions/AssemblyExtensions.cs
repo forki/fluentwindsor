@@ -8,6 +8,8 @@ namespace FluentlyWindsor.Extensions
 {
     public static class AssemblyExtensions
     {
+        static readonly string genericTypeLoadMessage = "FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions or try installing the missing assmeblies below, otherwise delete your bin/obj folders outside visual studio and then recompile and fix the missing assembly reference errors in your project) -> \r\n\r\n";
+
         public static bool HasAnyTypeThatImplementsInterface<T>(this Assembly assembly, IAssemblyScanningPolicy[] policies)
         {
             try
@@ -22,7 +24,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return false;
         }
@@ -42,7 +44,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return results.ToArray();
         }
@@ -60,7 +62,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return false;
         }
@@ -79,7 +81,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return results.ToArray();
         }
@@ -97,7 +99,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return false;
         }
@@ -116,7 +118,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return results.ToArray();
         }
@@ -135,7 +137,7 @@ namespace FluentlyWindsor.Extensions
             catch (ReflectionTypeLoadException err)
             {
                 var loaderErrors = string.Join(",", err.LoaderExceptions.Select(x => x.ToString()));
-                throw new Exception("FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions) -> " + loaderErrors);
+                throw new Exception(genericTypeLoadMessage + loaderErrors);
             }
             return results.ToArray();
         }
