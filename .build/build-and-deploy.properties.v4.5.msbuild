@@ -3,7 +3,7 @@
 
 	<PropertyGroup>
 		<Platform>Any CPU</Platform>
-		<TargetFramework>net461</TargetFramework>
+		<TargetFramework>v4.5</TargetFramework>
 		<Configuration>Release</Configuration>
 	</PropertyGroup>
 

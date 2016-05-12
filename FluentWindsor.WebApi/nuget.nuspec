@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FluentWindsor.WebApi</id>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent WebApi</tags>
@@ -10,9 +10,9 @@
     <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
     <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net461" />
-      <frameworkAssembly assemblyName="System.Web" targetFramework="net461" />
-      <frameworkAssembly assemblyName="System.Net.Http" targetFramework="net461" />
+      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net46" />
+      <frameworkAssembly assemblyName="System.Net.Http" targetFramework="net46" />
     </frameworkAssemblies>
     <references>
       <reference file="FluentWindsor.WebApi.dll" />
