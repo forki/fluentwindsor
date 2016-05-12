@@ -37,9 +37,9 @@
 	</Target>
 
 	<Target Name="tasks\Push">
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.1.0.*.nupkg" />
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.Mvc.1.0.*.nupkg" />
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.WebApi.1.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.2.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.Mvc.2.0.*.nupkg" />
+		<Exec Command="nuget push $(ThisDirectory)FluentWindsor.WebApi.2.0.*.nupkg" />
 	</Target>
 
 	<Target Name="Deploy">

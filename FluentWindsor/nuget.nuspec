@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
     <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net45" />
+      <frameworkAssembly assemblyName="System" targetFramework="net461" />
     </frameworkAssemblies>
     <references>
       <reference file="FluentWindsor.dll" />
@@ -21,6 +21,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.dll" target="lib\4.5" />
+    <file src="bin\**\FluentWindsor.dll" target="lib\4.6.1" />
   </files>
 </package>
