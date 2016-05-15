@@ -2,13 +2,14 @@
 <package>
   <metadata>
     <id>FluentWindsor.WebApi</id>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent WebApi</tags>
     <language>en-GB</language>
     <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
     <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System" targetFramework="net46" />
       <frameworkAssembly assemblyName="System.Web" targetFramework="net46" />
@@ -20,7 +21,7 @@
     <dependencies>
       <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.3.0" />
-      <dependency id="FluentWindsor" version="2.0.2" />
+      <dependency id="FluentWindsor" version="2.0.3" />
       <dependency id="Microsoft.AspNet.WebApi" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
