@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
@@ -17,30 +16,18 @@ namespace FluentlyWindsor.Extensions
             }
         }
 
-        [DebuggerStepThrough]
         public static object FaultTolerantResolve(this IWindsorContainer container, Type type)
         {
-            try
-            {
+            if (FluentWindsor.ServiceLocator != null && FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
                 return FluentWindsor.ServiceLocator.Resolve(type);
-            }
-            catch
-            {
-                return null;
-            }
+            return null;
         }
 
-        [DebuggerStepThrough]
         public static IEnumerable<object> FaultTolerantResolveAll(this IWindsorContainer container, Type type)
         {
-            try
-            {
+            if (FluentWindsor.ServiceLocator != null && FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
                 return FluentWindsor.ServiceLocator.ResolveAll(type).Cast<object>().ToList();
-            }
-            catch
-            {
-                return null;
-            }
+            return null;
         }
     }
 }
