@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyA", "Example.Test.AssemblyA\Example.Test.AssemblyA.csproj", "{3661926F-18D6-454A-8240-BCF07DD5BF4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyB", "Example.Test.AssemblyB\Example.Test.AssemblyB.csproj", "{FC239C37-E7A4-43B5-A610-3C4B93E935ED}"
@@ -35,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{627AA02E
 	ProjectSection(SolutionItems) = preProject
 		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
 		.build\build-and-deploy.properties.v4.5.msbuild = .build\build-and-deploy.properties.v4.5.msbuild
+		clean.bat = clean.bat
+		deploy.bat = deploy.bat
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTasks", "BuildTasks\BuildTasks.csproj", "{6C9072FE-B0ED-4A93-8083-C692FA250CEE}"
@@ -96,10 +100,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{3661926F-18D6-454A-8240-BCF07DD5BF4E} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{FC239C37-E7A4-43B5-A610-3C4B93E935ED} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{CC1677B6-3166-485C-8C19-56EC70F2A873} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{CE2FF12D-E373-4375-9C11-67F83773B6D1} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
-		{3661926F-18D6-454A-8240-BCF07DD5BF4E} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 	EndGlobalSection
 EndGlobal
