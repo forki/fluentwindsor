@@ -18,16 +18,26 @@ namespace FluentlyWindsor.Extensions
 
         public static object FaultTolerantResolve(this IWindsorContainer container, Type type)
         {
-            if (FluentWindsor.ServiceLocator != null && FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
+            try
+            {
                 return FluentWindsor.ServiceLocator.Resolve(type);
-            return null;
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public static IEnumerable<object> FaultTolerantResolveAll(this IWindsorContainer container, Type type)
         {
-            if (FluentWindsor.ServiceLocator != null && FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
+            try
+            {
                 return FluentWindsor.ServiceLocator.ResolveAll(type).Cast<object>().ToList();
-            return null;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
