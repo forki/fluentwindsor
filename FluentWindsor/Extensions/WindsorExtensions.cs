@@ -20,24 +20,28 @@ namespace FluentlyWindsor.Extensions
         {
             try
             {
-                return FluentWindsor.ServiceLocator.Resolve(type);
+                if (FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
+                    return FluentWindsor.ServiceLocator.Resolve(type);
             }
             catch
             {
                 return null;
             }
+            return null;
         }
 
         public static IEnumerable<object> FaultTolerantResolveAll(this IWindsorContainer container, Type type)
         {
             try
             {
-                return FluentWindsor.ServiceLocator.ResolveAll(type).Cast<object>().ToList();
+                if (FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
+                    return FluentWindsor.ServiceLocator.ResolveAll(type).Cast<object>().ToList();
             }
             catch
             {
                 return null;
             }
+            return null;
         }
     }
 }
