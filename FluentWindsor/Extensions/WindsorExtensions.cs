@@ -18,6 +18,7 @@ namespace FluentlyWindsor.Extensions
 
         public static object FaultTolerantResolve(this IWindsorContainer container, Type type)
         {
+            FluentWindsor.WaitUntilComplete.WaitOne();
             try
             {
                 if (FluentWindsor.ServiceLocator.Kernel.HasComponent(type))
@@ -32,6 +33,7 @@ namespace FluentlyWindsor.Extensions
 
         public static IEnumerable<object> FaultTolerantResolveAll(this IWindsorContainer container, Type type)
         {
+            FluentWindsor.WaitUntilComplete.WaitOne();
             try
             {
                 if (FluentWindsor.ServiceLocator.Kernel.HasComponent(type))

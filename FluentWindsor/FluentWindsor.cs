@@ -83,8 +83,7 @@ namespace FluentlyWindsor
                 .Concat(executingAssembly.GetAnyTypeThatIsSubClassOf<T>(AssemblyScanningPolicies.All));
 
             foreach(var type in types)
-                if (registrationAction != null)
-                    registrationAction(container, type);
+                registrationAction?.Invoke(container, type);
 
             return this;
         }
