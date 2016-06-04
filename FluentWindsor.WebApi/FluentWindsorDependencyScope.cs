@@ -12,18 +12,18 @@ namespace FluentlyWindsor.WebApi
 
         public FluentWindsorDependencyScope()
         {
-            FluentlyWindsor.FluentWindsor.WaitUntilComplete.WaitOne();
+            FluentWindsor.WaitUntilComplete.WaitOne();
         }
 
         public object GetService(Type serviceType)
         {
-            service = FluentlyWindsor.FluentWindsor.ServiceLocator.FaultTolerantResolve(serviceType);
+            service = FluentWindsor.ServiceLocator.FaultTolerantResolve(serviceType);
             return service;
         }
 
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            services = FluentlyWindsor.FluentWindsor.ServiceLocator.FaultTolerantResolveAll(serviceType);
+            services = FluentWindsor.ServiceLocator.FaultTolerantResolveAll(serviceType);
             return services;
         }
 

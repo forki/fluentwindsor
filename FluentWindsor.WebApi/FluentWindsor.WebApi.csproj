@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FluentWindsorControllerActivator.cs" />
     <Compile Include="FluentWindsorDependencyResolver.cs" />
     <Compile Include="FluentWindsorDependencyScope.cs" />
     <Compile Include="FluentWindsorExtensions.cs" />
