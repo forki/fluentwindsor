@@ -22,7 +22,7 @@
 
 	<Target Name="tasks\Pack">
     <ItemGroup>
-      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" />
+      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" Exclude="$(ThisDirectory)..\packages" />
     </ItemGroup>
     <BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
     <SetExplicitVersionsForDependencies RelativePath="..\" />

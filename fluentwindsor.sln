@@ -18,7 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}"
 	ProjectSection(SolutionItems) = preProject
 		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
-		.build\build-and-deploy.properties.v4.5.msbuild = .build\build-and-deploy.properties.v4.5.msbuild
+		.build\build-and-deploy.properties.msbuild = .build\build-and-deploy.properties.msbuild
 		clean.bat = clean.bat
 		deploy.bat = deploy.bat
 	EndProjectSection
