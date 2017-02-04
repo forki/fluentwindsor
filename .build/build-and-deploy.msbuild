@@ -21,12 +21,13 @@
 	</Target>
 
 	<Target Name="tasks\Pack">
-    <ItemGroup>
-      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" />
-    </ItemGroup>
-    <BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
+		<BumpVersion FilePath="../FluentWindsor/FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<BumpVersion FilePath="../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+    <BumpVersion FilePath="../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
     <SetExplicitVersionsForDependencies RelativePath="..\" />
-    <Exec Command="nuget pack %(NuSpecFiles.Identity)" />
+    <Exec Command="nuget pack ../FluentWindsor/FluentWindsor/nuget.nuspec" />
+		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" />
+		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" />
 	</Target>
 
 	<Target Name="tasks\Push">
@@ -34,6 +35,9 @@
 	</Target>
 
   <Target Name="Test">
+    <ItemGroup>
+      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" />
+    </ItemGroup>
     <Message Text="%(NuSpecFiles.Identity)" />
   </Target>
   
