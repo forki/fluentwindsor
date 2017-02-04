@@ -20,13 +20,13 @@
     </references>
     <dependencies>
       <dependency id="Castle.Core" version="3.3.3" />
-      <dependency id="Castle.Windsor" version="3.3.0" />
+      <dependency id="Castle.Windsor" version="3.4.0" />
       <dependency id="FluentWindsor" version="2.0.9" />
       <dependency id="Microsoft.AspNet.WebApi" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.WebHost" version="5.2.3" />
-      <dependency id="Newtonsoft.Json" version="8.0.3" />
+      <dependency id="Newtonsoft.Json" version="9.0.1" />
     </dependencies>
   </metadata>
   <files>

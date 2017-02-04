@@ -16,6 +16,7 @@ namespace BuildTasks
         public bool Execute()
         {
             var xmlDocument = new XmlDocument();
+
             xmlDocument.Load(FilePath);
 
             var node = xmlDocument.SelectNodes(XPathToVersionNumber).Cast<XmlNode>().FirstOrDefault();
@@ -24,9 +25,13 @@ namespace BuildTasks
                 throw new Exception("Think your xpath is wrong ... ");
 
             var nodeContent = node.InnerText;
+
             var versionNumbers = nodeContent.Split('.');
+
             var bumpVersion = int.Parse(versionNumbers.Last()) + 1;
+
             versionNumbers[versionNumbers.Length - 1] = bumpVersion.ToString();
+
             node.InnerText = string.Join(".", versionNumbers);
 
             xmlDocument.Save(FilePath);
@@ -35,6 +40,7 @@ namespace BuildTasks
         }
 
         public IBuildEngine BuildEngine { get; set; }
+
         public ITaskHost HostObject { get; set; }
     }
 }

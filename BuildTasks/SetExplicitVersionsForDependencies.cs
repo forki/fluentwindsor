@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -31,9 +29,11 @@ namespace BuildTasks
             foreach (var nuspecFile in files)
             {
                 var nuspecDocument = new XmlDocument();
+
                 nuspecDocument.Load(nuspecFile);
 
                 var idNode = nuspecDocument.SelectNodes("/package/metadata/id").Cast<XmlNode>().First();
+
                 var versionNode = nuspecDocument.SelectNodes("/package/metadata/version").Cast<XmlNode>().First();
 
                 packages.Add(new NuspecPackage()
@@ -46,16 +46,19 @@ namespace BuildTasks
             foreach (var nuspecFile in files)
             {
                 var nuspecDocument = new XmlDocument();
+
                 nuspecDocument.Load(nuspecFile);
 
                 foreach (var package in packages)
                 {
                     var dependencyXPath = string.Format("/package/metadata/dependencies/dependency[@id='{0}']", package.Id);
+
                     var nuspecDependencies = nuspecDocument.SelectNodes(dependencyXPath).Cast<XmlNode>().ToList();
 
                     if (nuspecDependencies.Any())
                     {
                         XmlNode dependency = nuspecDependencies.First();
+
                         dependency.Attributes["version"].Value = package.Version;
                     }
                 }
@@ -67,6 +70,7 @@ namespace BuildTasks
         }
 
         public IBuildEngine BuildEngine { get; set; }
+
         public ITaskHost HostObject { get; set; }
     }
 }

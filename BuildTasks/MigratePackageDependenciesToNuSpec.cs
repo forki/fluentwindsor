@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml;
@@ -16,44 +15,62 @@ namespace BuildTasks
         {
             var currentDirectory = Path.Combine(Environment.CurrentDirectory, RelativePath);
 
-            var files = Directory.GetFiles(currentDirectory, "packages.config", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(currentDirectory, "nuget.nuspec", SearchOption.AllDirectories);
 
-            foreach (var packageConfigFile in files)
+            foreach (var nuspecFile in files)
             {
-                var potentialNuSpecFile = packageConfigFile.ToLower().Replace("packages.config", "nuget.nuspec");
-                if (File.Exists(potentialNuSpecFile))
+                Console.WriteLine($"Inspecting: {nuspecFile}");
+
+                var nuspecXmlFile = new XmlDocument();
+
+                nuspecXmlFile.Load(nuspecFile);
+
+                var dependencyNodes = nuspecXmlFile.SelectNodes("/package/metadata/dependencies/dependency").Cast<XmlNode>().ToList();
+
+                foreach (var dependencyNode in dependencyNodes)
                 {
-                    var packageDocument = new XmlDocument();
-                    packageDocument.Load(packageConfigFile);
+                    var packageId = dependencyNode.Attributes["id"].Value;
 
-                    var packageNodes = packageDocument.SelectNodes("/packages/package");
-                    foreach (XmlNode packageNode in packageNodes)
+                    var expectedPackageVersion = dependencyNode.Attributes["version"].Value;
+
+                    Console.WriteLine($"Found dependency: {packageId}, {expectedPackageVersion}");
+
+                    var packageDirectory = Path.Combine(currentDirectory, "packages");
+
+                    Console.WriteLine($"Searching packages: {packageDirectory}");
+
+                    foreach (var packageFolder in Directory.EnumerateDirectories(packageDirectory))
                     {
-                        var packageIdentity = packageNode.Attributes["id"].Value;
-                        var packageVersion = packageNode.Attributes["version"].Value;
-
-                        var nuspecDocument = new XmlDocument();
-                        nuspecDocument.Load(potentialNuSpecFile);
-
-                        var dependencyXPath = string.Format("/package/metadata/dependencies/dependency[@id='{0}']", packageIdentity);
-                        var nuspecDependencies = nuspecDocument.SelectNodes(dependencyXPath).Cast<XmlNode>().ToList();
-
-                        if (!nuspecDependencies.Any())
+                        if (packageFolder.ToLower().EndsWith(packageId.ToLower()))
                         {
-                            var dependencies = nuspecDocument.SelectNodes("/package/metadata/dependencies").Cast<XmlNode>().First();
-                            var newDependency = nuspecDocument.CreateElement("dependency");
-                            newDependency.SetAttribute("id", packageIdentity);
-                            newDependency.SetAttribute("version", packageVersion);
-                            dependencies.AppendChild(newDependency);
+                            Console.WriteLine($"Found package: {packageFolder}");
 
-                        }
-                        else
-                        {
-                            var existingDependency = nuspecDependencies.First();
-                            existingDependency.Attributes["version"].Value = packageVersion;
-                        }
+                            var nuspecPackageFiles = Directory.GetFiles(packageFolder, "*.nuspec", SearchOption.TopDirectoryOnly);
 
-                        nuspecDocument.Save(potentialNuSpecFile);
+                            var targetNuspecFound = false;
+
+                            foreach (var targetNuspecPackageFile in nuspecPackageFiles)
+                            {
+                                var targetNuspecXmlFile = new XmlDocument();
+
+                                targetNuspecXmlFile.Load(targetNuspecPackageFile);
+
+                                var targetNuspecVersionNode = targetNuspecXmlFile.SelectSingleNode("/*[local-name()='package']/*[local-name()='metadata']/*[local-name()='version']");
+
+                                var actualPackageVersion = targetNuspecVersionNode.InnerText;
+
+                                Console.WriteLine($"Found version: Expected {expectedPackageVersion} -> Actual {actualPackageVersion}");
+
+                                if (expectedPackageVersion != actualPackageVersion)
+                                {
+                                    Console.WriteLine($"Upgrading version: {actualPackageVersion}");
+
+                                    dependencyNode.Attributes["version"].Value = actualPackageVersion;
+
+                                    nuspecXmlFile.Save(nuspecFile);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -62,6 +79,7 @@ namespace BuildTasks
         }
 
         public IBuildEngine BuildEngine { get; set; }
+
         public ITaskHost HostObject { get; set; }
     }
 }
