@@ -47,8 +47,6 @@ namespace BuildTasks
 
                             var nuspecPackageFiles = Directory.GetFiles(packageFolder, "*.nuspec", SearchOption.TopDirectoryOnly);
 
-                            var targetNuspecFound = false;
-
                             foreach (var targetNuspecPackageFile in nuspecPackageFiles)
                             {
                                 var targetNuspecXmlFile = new XmlDocument();
