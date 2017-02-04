@@ -1,4 +1,6 @@
 using Example.Test.AssemblyA;
+using Example.Test.AssemblyB;
+using Example.Test.AssemblyC;
 using NUnit.Framework;
 
 namespace FluentWindsor.Tests
@@ -15,13 +17,13 @@ namespace FluentWindsor.Tests
         [Test]
         public void Then_We_Should_Be_Able_To_Resolve_ServiceB()
         {
-            Assert.That(Container.Resolve<ServiceA>(), Is.Not.Null);
+            Assert.That(Container.Resolve<ServiceB>(), Is.Not.Null);
         }
 
         [Test]
         public void Then_We_Should_Be_Able_To_Resolve_ServiceC()
         {
-            Assert.That(Container.Resolve<ServiceA>(), Is.Not.Null);
+            Assert.That(Container.Resolve<ServiceC>(), Is.Not.Null);
         }
     }
 }
