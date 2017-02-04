@@ -13,7 +13,7 @@
   <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
 	<Target Name="tasks\Clean">
-		<Exec Command="..\clean.bat" />
+		<Exec Command="$(ThisDirectory)..\clean.bat" />
 	</Target>
 
 	<Target Name="tasks\Build">
@@ -37,10 +37,10 @@
 	<Target Name="Deploy">
     <MigratePackageDependenciesToNuSpec RelativePath="..\" />
     <CallTarget Targets="tasks\Clean" />
-		<CallTarget Targets="tasks\Build" />
+		<!--<CallTarget Targets="tasks\Build" />
 		<CallTarget Targets="tasks\Pack" />
 		<CallTarget Targets="tasks\Push" />
-		<CallTarget Targets="tasks\Clean" />
+		<CallTarget Targets="tasks\Clean" />-->
 	</Target>
   
 </Project>
