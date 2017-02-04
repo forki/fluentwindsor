@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System.Security;
 
-[assembly: SecurityTransparent()]
 [assembly: AssemblyTitle("FluentWindsor.Mvc")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
