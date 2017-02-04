@@ -14,12 +14,7 @@
 
 	<Target Name="tasks\Clean">
 		<Exec Command="del /s /f /q *.nupkg" />
-		<Exec Command="del /s /f /q ..\FluentWindsor\bin" />
-		<Exec Command="del /s /f /q ..\FluentWindsor\obj" />
-		<Exec Command="del /s /f /q ..\FluentWindsor.Mvc\bin" />
-		<Exec Command="del /s /f /q ..\FluentWindsor.Mvc\obj" />
-		<Exec Command="del /s /f /q ..\FluentWindsor.WebApi\bin" />
-		<Exec Command="del /s /f /q ..\FluentWindsor.WebApi\obj" />
+		<Exec Command="..\clean.bat" />
 	</Target>
 
 	<Target Name="tasks\Build">
