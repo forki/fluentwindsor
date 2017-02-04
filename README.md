@@ -113,98 +113,13 @@ var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
 
 ##Works with scriptcs!
 
-You can even use Castle Windsor with scriptcs. For more information on how to install scriptcs please navigate to the link below:
+[For more click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
 
- - https://github.com/scriptcs/scriptcs
-
-###Scriptcs example
-
-First dump the following into a temp directory somewhere in a file called 'scriptcs_packages.config'.
-
-``` xml
-<?xml version="1.0" encoding="utf-8"?>
-
-<packages>
-	<package id="Castle.Core" version="3.3.1" targetFramework="net45" />
-	<package id="Castle.Windsor" version="3.3.0" targetFramework="net45" />
-	<package id="FluentWindsor" version="1.0.0.34" targetFramework="net45" />
-</packages>
-```
-
-Then dump the following windsor installer into a file called 'windsor-installer.csx'.
-
-``` csharp
-#r "System.dll"
-#r "System.Core.dll"
-#r "Microsoft.CSharp.dll"
-
-#r "Castle.Core.dll"
-#r "Castle.Windsor.dll"
-#r "FluentWindsor.dll"
-
-using System;
-using System.Diagnostics;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-
-public interface IAnyService
-{
-	void Do();
-}
-
-public class AnyService : IAnyService
-{
-	public void Do()
-	{
-		Console.WriteLine("IAnyService::Do() - Called");
-	}
-}
-
-public class AnyInstaller : IWindsorInstaller
-{
-	public void Install(IWindsorContainer container, IConfigurationStore store)
-	{
-		container.Register(Component.For<IAnyService>().ImplementedBy<AnyService>().LifeStyle.Transient);
-	}
-}
-```
-
-Finally we take this and paste it into a file called 'main.csx'.
-
-``` csharp
-#load "windsor-installer.csx"
-
-#r "System.dll"
-#r "System.Core.dll"
-#r "Microsoft.CSharp.dll"
-
-#r "Castle.Core.dll"
-#r "Castle.Windsor.dll"
-#r "FluentWindsor.dll"
-
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using FluentlyWindsor;
-
-var container = FluentWindsor.NewContainer(Assembly.GetExecutingAssembly()).WithArrayResolver().WithInstallers().Create();
-container.Resolve<IAnyService>().Do();
-```
-
-Now we have all the component parts to see scriptcs vs Windsor. Lastly run the following commands in a scriptcs installed console.
-
-    scriptcs -install
-	scriptcs main.csx
-
-If you see 'IAnyService::Do() - Called' as the final output you know it works.
-
-##Credit to authors  
+##Credit to windsor authors  
 
 Credit to the guys behind Castle Windsor.
 
 [Castle Windsor Contributors](https://github.com/castleproject/Windsor/graphs/contributors)
-
 
 ##Problems?
 
