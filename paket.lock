@@ -4,6 +4,7 @@ NUGET
     Castle.Core (3.3.3) - framework: >= net45
     Castle.Windsor (3.4) - framework: >= net45
       Castle.Core (>= 3.3 < 4.0)
+    log4net (2.0.5) - framework: >= net461
     Microsoft.AspNet.Mvc (5.2.3) - framework: >= net45
       Microsoft.AspNet.Razor (>= 3.2.3 < 3.3)
       Microsoft.AspNet.WebPages (>= 3.2.3 < 3.3)

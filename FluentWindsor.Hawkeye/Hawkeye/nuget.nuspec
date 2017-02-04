@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Hawkeye</id>
+    <version>2.0.5</version>
+    <authors>fir3pho3nixx@gmail.com</authors>
+    <description>A library for making logging super easy</description>
+    <tags>FluentWindsor Log Logging log4net</tags>
+    <language>en-GB</language>
+    <projectUrl>https://github.com/cryosharp/hawkeye</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/cryosharp/hawkeye/master/LICENSE.txt</licenseUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="Hawkeye.dll" />
+    </references>
+    <dependencies>
+      <dependency id="log4net" version="2.0.5" />
+      <dependency id="FluentWindsor" version="2.0.7" />
+      <dependency id="Castle.Core" version="3.3.3" />
+      <dependency id="Castle.Windsor" version="3.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\**\Hawkeye.dll" target="lib\4.6.1" />
+  </files>
+</package>

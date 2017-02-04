@@ -19,3 +19,4 @@ nuget Moq 4.5.30 framework: >= net461
 nuget MSBuild.Microsoft.VisualStudio.Web.targets 14.0.0.3 framework: >= net461
 nuget Newtonsoft.Json 9.0.1 framework: >= net461
 nuget NUnit 3.6.0 framework: >= net461
+nuget log4net 2.0.5 framework: >= net461

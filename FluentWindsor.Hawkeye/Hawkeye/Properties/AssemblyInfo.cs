@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("FluentWindsor.Mvc")]
+[assembly: AssemblyTitle("FluentWindsor.Hawkeye")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FluentWindsor.Mvc")]
+[assembly: AssemblyProduct("FluentWindsor")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
-[assembly: Guid("d9076b49-4ff6-4ab0-8f53-7ec1ae545c56")]
+[assembly: Guid("3186015b-c425-48ac-92b7-5d47040dc8fc")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
