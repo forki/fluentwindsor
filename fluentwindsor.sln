@@ -17,8 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{A4725C57
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}"
 	ProjectSection(SolutionItems) = preProject
-		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
-		.build\build-and-deploy.properties.msbuild = .build\build-and-deploy.properties.msbuild
+		build.bat = build.bat
 		clean.bat = clean.bat
 		deploy.bat = deploy.bat
 	EndProjectSection
@@ -82,6 +81,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{1DC00D00-81AA-4DFC-B9A6-01A69F1213C9}"
 	ProjectSection(SolutionItems) = preProject
 		FluentWindsor.EndersJson\README.md = FluentWindsor.EndersJson\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msbuild", "msbuild", "{FE7A501C-AF36-40EE-BC9B-54D837CFE303}"
+	ProjectSection(SolutionItems) = preProject
+		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
+		.build\build-and-deploy.properties.msbuild = .build\build-and-deploy.properties.msbuild
 	EndProjectSection
 EndProject
 Global
@@ -190,5 +195,6 @@ Global
 		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 		{1DC00D00-81AA-4DFC-B9A6-01A69F1213C9} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
+		{FE7A501C-AF36-40EE-BC9B-54D837CFE303} = {627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}
 	EndGlobalSection
 EndGlobal
