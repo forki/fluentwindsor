@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentWindsor">
-      <HintPath>..\..\FluentWindsor\FluentWindsor\bin\Debug\FluentWindsor.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,6 +47,10 @@
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FluentWindsor\FluentWindsor\FluentWindsor.csproj">
+      <Project>{c7df8728-86e4-400d-a1aa-1449b1b5f807}</Project>
+      <Name>FluentWindsor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EndersJson.Windsor\FluentWindsor.EndersJson.Windsor.csproj">
       <Project>{9a5d37c9-eb0a-41d9-9cd9-af871ef16bdc}</Project>
       <Name>FluentWindsor.EndersJson.Windsor</Name>
