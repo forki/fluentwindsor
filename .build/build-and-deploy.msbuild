@@ -13,12 +13,11 @@
   <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
 	<Target Name="tasks\Clean">
-		<Exec Command="del /s /f /q *.nupkg" />
 		<Exec Command="..\clean.bat" />
 	</Target>
 
 	<Target Name="tasks\Build">
-		<MSBuild Projects="$(ThisDirectory)..\fluent-windsor.sln" Properties="Configuration=$(Configuration);TargetFrameworkVersion=$(TargetFramework);Platform=$(Platform)"/>
+		<MSBuild Projects="$(ThisDirectory)..\fluentwindsor.sln" Properties="Configuration=$(Configuration);TargetFrameworkVersion=$(TargetFramework);Platform=$(Platform)"/>
 	</Target>
 
 	<Target Name="tasks\Pack">
