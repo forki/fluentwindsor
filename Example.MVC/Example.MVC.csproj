@@ -135,22 +135,6 @@
     </When>
   </Choose>
   <Import Project="..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\$(__paket__MSBuild_Microsoft_VisualStudio_Web_targets_props).props" Condition="Exists('..\packages\MSBuild.Microsoft.VisualStudio.Web.targets\build\$(__paket__MSBuild_Microsoft_VisualStudio_Web_targets_props).props')" Label="Paket" />
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
-      <PropertyGroup>
-        <__paket__Microsoft_Net_Compilers_props>Microsoft.Net.Compilers</__paket__Microsoft_Net_Compilers_props>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <Import Project="..\packages\Microsoft.Net.Compilers\build\$(__paket__Microsoft_Net_Compilers_props).props" Condition="Exists('..\packages\Microsoft.Net.Compilers\build\$(__paket__Microsoft_Net_Compilers_props).props')" Label="Paket" />
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
-      <PropertyGroup>
-        <__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props>
-      </PropertyGroup>
-    </When>
-  </Choose>
-  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\build\$(__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props).props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\build\$(__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props).props')" Label="Paket" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -362,17 +346,6 @@
         </Reference>
         <Reference Include="System.Web.WebPages.Razor">
           <HintPath>..\packages\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-          <Private>True</Private>
-          <Paket>True</Paket>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
-      <ItemGroup>
-        <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-          <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
