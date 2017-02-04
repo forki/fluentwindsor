@@ -125,6 +125,11 @@ screenshot of the log2console output is included below.
 
 ![Log2Console](https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/Images/log2console.png "Log2Console")
 
+##A Castle Windsor version
+
+There is also a castle windsor version of this cache which can be auto loaded using FluentWindsor. For more about how you can use
+this please see https://github.com/cryosharp/fluentwindsor.
+
 ##Problems
 
 For any problems please sign into github and raise issues.
