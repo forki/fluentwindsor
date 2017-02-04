@@ -111,21 +111,29 @@ No problem, simply do this (you would have to have bootstrapped your application
 var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
 ```
 
-##Works with scriptcs!
-
-[Click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
-
 ##FluentWindsor.Cachely
+
+A naive caching component
 
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Cachely/README.md)
 
 ##FluentWindsor.EndersJson
 
+A easy to use Json client
+
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.EndersJson/README.md)
 
 ##FluentWindsor.Hawkeye
 
+A logging component based on log4net
+
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Hawkeye/README.md)
+
+##Want ScriptCs!
+
+A bit of fun, but might be something useful if you are thinking of using `Azure Functions`. 
+
+[Click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
 
 ##Credit to castle windsor authors  
 
