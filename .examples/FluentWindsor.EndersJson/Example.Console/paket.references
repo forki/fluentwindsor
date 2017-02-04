@@ -1,4 +1,5 @@
 Castle.Core
+Castle.Windsor
 Microsoft.AspNet.WebApi.Client
 Microsoft.AspNet.WebApi.Core
 Microsoft.AspNet.WebApi.Owin
