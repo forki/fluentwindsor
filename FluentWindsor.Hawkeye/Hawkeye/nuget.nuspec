@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Hawkeye</id>
-    <version>2.0.5</version>
+    <version>3.0.10</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making logging super easy</description>
     <tags>FluentWindsor Log Logging log4net</tags>
@@ -18,12 +18,12 @@
     </references>
     <dependencies>
       <dependency id="log4net" version="2.0.5" />
-      <dependency id="FluentWindsor" version="2.0.7" />
+      <dependency id="FluentWindsor" version="3.0.10" />
       <dependency id="Castle.Core" version="3.3.3" />
-      <dependency id="Castle.Windsor" version="3.3.0" />
+      <dependency id="Castle.Windsor" version="3.4.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\Hawkeye.dll" target="lib\4.6.1" />
+    <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\4.6.1" />
   </files>
 </package>
