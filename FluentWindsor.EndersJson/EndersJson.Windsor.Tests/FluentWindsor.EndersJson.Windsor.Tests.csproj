@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE537FBB-6476-4E34-A867-1C793F112A2E}</ProjectGuid>
+    <ProjectGuid>{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FluentlyWindsor.Tests</RootNamespace>
-    <AssemblyName>FluentWindsor.Tests</AssemblyName>
+    <RootNamespace>FluentlyWindsor.EndersJson.Tests.Windsor</RootNamespace>
+    <AssemblyName>FluentWindsor.EndersJson.Tests.Windsor</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentWindsor">
+      <HintPath>..\..\FluentWindsor\FluentWindsor\bin\Debug\FluentWindsor.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,34 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Given_We_Are_Fluently_Registering.cs" />
-    <Compile Include="Extensions\When_We_Register_Types_Using_The_Windsor_RegisterIfNotAlready.cs" />
-    <Compile Include="Extensions\Given_We_Are_Extending_Windsor.cs" />
+    <Compile Include="JsonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="When_Resolving_Services.cs" />
-    <Compile Include="When_We_Scan_For_Interfaces_Or_Classes_Using_Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\.examples\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj">
-      <Project>{3661926f-18d6-454a-8240-bcf07dd5bf4e}</Project>
-      <Name>Example.Test.AssemblyA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\.examples\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj">
-      <Project>{fc239c37-e7a4-43b5-a610-3c4b93e935ed}</Project>
-      <Name>Example.Test.AssemblyB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\.examples\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj">
-      <Project>{d39aa55c-dc18-4b75-b00c-b5c3f73a29c0}</Project>
-      <Name>Example.Test.AssemblyC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FluentWindsor\FluentWindsor.csproj">
-      <Project>{c7df8728-86e4-400d-a1aa-1449b1b5f807}</Project>
-      <Name>FluentWindsor</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
     <None Include="paket.references" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EndersJson.Windsor\FluentWindsor.EndersJson.Windsor.csproj">
+      <Project>{9a5d37c9-eb0a-41d9-9cd9-af871ef16bdc}</Project>
+      <Name>FluentWindsor.EndersJson.Windsor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EndersJson\FluentWindsor.EndersJson.csproj">
+      <Project>{36c995ae-6649-43ef-a7aa-8b2aca91d667}</Project>
+      <Name>FluentWindsor.EndersJson</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

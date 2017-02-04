@@ -1,10 +1,17 @@
 redirects: on
 source https://www.nuget.org/api/v2/
 
+nuget Microsoft.AspNet.WebApi.Owin 5.2.3 framework: >= net45
+nuget Microsoft.AspNet.WebApi.OwinSelfHost 5.2.3 framework: >= net45
+nuget Microsoft.Owin.Host.HttpListener 3.0.1 framework: >= net45
+nuget Microsoft.Owin.Hosting 3.0.1 framework: >= net45
+nuget Microsoft.Owin.Testing 3.0.1 framework: >= net45
+nuget Nancy 1.4.3 framework: >= net461
+nuget Nancy.Owin 1.4.1 framework: >= net461
 nuget NuGet.CommandLine
-nuget Castle.Core 3.3.3 framework: >= net45
+nuget Castle.Core 3.3.3
 nuget Castle.Windsor 3.4.0 framework: >= net45
-nuget Microsoft.Owin framework: >= net45
+nuget Microsoft.Owin 3.0.1 framework: >= net45
 nuget Microsoft.AspNet.Mvc 5.2.3 framework: >= net45
 nuget Microsoft.AspNet.Razor 3.2.3 framework: >= net45
 nuget Microsoft.AspNet.WebApi 5.2.3 framework: >= net45
@@ -20,3 +27,5 @@ nuget MSBuild.Microsoft.VisualStudio.Web.targets 14.0.0.3 framework: >= net461
 nuget Newtonsoft.Json 9.0.1 framework: >= net461
 nuget NUnit 3.6.0 framework: >= net461
 nuget log4net 2.0.5 framework: >= net461
+nuget Owin 1.0 framework: >= net45
+nuget Nito.AsyncEx 4.0.1 framework: >= net461

@@ -1,0 +1,15 @@
+Castle.Core
+Microsoft.AspNet.WebApi.Client
+Microsoft.AspNet.WebApi.Core
+Microsoft.AspNet.WebApi.Owin
+Microsoft.AspNet.WebApi.OwinSelfHost
+Microsoft.Owin
+Microsoft.Owin.Host.HttpListener
+Microsoft.Owin.Hosting
+Microsoft.Owin.Testing
+Moq
+Nancy
+Nancy.Owin
+Newtonsoft.Json
+NUnit
+Owin

@@ -69,6 +69,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{C1BA4CCF
 		FluentWindsor.Hawkeye\README.md = FluentWindsor.Hawkeye\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.EndersJson", "FluentWindsor.EndersJson", "{A58BA0F6-787B-4A30-88C3-01454BDEE1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.EndersJson", "FluentWindsor.EndersJson\EndersJson\FluentWindsor.EndersJson.csproj", "{36C995AE-6649-43EF-A7AA-8B2ACA91D667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.EndersJson.Tests", "FluentWindsor.EndersJson\EndersJson.Tests\FluentWindsor.EndersJson.Tests.csproj", "{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.EndersJson.Windsor", "FluentWindsor.EndersJson\EndersJson.Windsor\FluentWindsor.EndersJson.Windsor.csproj", "{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.EndersJson.Windsor.Tests", "FluentWindsor.EndersJson\EndersJson.Windsor.Tests\FluentWindsor.EndersJson.Windsor.Tests.csproj", "{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{1DC00D00-81AA-4DFC-B9A6-01A69F1213C9}"
+	ProjectSection(SolutionItems) = preProject
+		FluentWindsor.EndersJson\README.md = FluentWindsor.EndersJson\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +146,22 @@ Global
 		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,5 +185,10 @@ Global
 		{9ABCE904-ABB4-4959-8DCD-70778D288404} = {630E20F0-4420-4234-903F-3BBF26072226}
 		{3768375B-02D2-415C-B4B1-42DA20899F4E} = {630E20F0-4420-4234-903F-3BBF26072226}
 		{C1BA4CCF-04E0-4D7E-B217-2EA984A110C2} = {C63780A2-AA3C-46E2-BCE0-2FEA8AAB4234}
+		{36C995AE-6649-43EF-A7AA-8B2ACA91D667} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
+		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
+		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
+		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
+		{1DC00D00-81AA-4DFC-B9A6-01A69F1213C9} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 	EndGlobalSection
 EndGlobal
