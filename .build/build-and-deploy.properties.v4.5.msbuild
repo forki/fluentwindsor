@@ -5,6 +5,7 @@
 		<Platform>Any CPU</Platform>
 		<TargetFramework>v4.6.1</TargetFramework>
 		<Configuration>Release</Configuration>
+    <NugetSource>https://www.nuget.org/api/v2/</NugetSource>
 	</PropertyGroup>
 
 </Project>
