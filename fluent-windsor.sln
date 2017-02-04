@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{534A9E3C-C326-4D08-AFC5-9D9957CC9AD4}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyA", "Example.Test.AssemblyA\Example.Test.AssemblyA.csproj", "{3661926F-18D6-454A-8240-BCF07DD5BF4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyB", "Example.Test.AssemblyB\Example.Test.AssemblyB.csproj", "{FC239C37-E7A4-43B5-A610-3C4B93E935ED}"

@@ -1,0 +1,6 @@
+Castle.Core
+Castle.Windsor
+Microsoft.AspNet.Mvc
+Microsoft.AspNet.Razor
+Microsoft.AspNet.WebPages
+Microsoft.Web.Infrastructure
