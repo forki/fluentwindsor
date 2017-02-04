@@ -1,6 +1,7 @@
 ﻿using System;
+using log4net;
 
-namespace FluentWindsor.Hawkeye.Interfaces
+namespace FluentlyWindsor.Hawkeye.Interfaces
 {
     public interface ILogFactory
     {

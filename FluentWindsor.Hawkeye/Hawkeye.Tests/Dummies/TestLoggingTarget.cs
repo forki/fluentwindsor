@@ -1,10 +1,9 @@
 using System;
 using Castle.Core;
-using FluentWindsor.Hawkeye;
 
-namespace Hawkeye.Tests.Dummies
+namespace FluentlyWindsor.Hawkeye.Tests.Dummies
 {
-	[Interceptor(typeof(FluentWindsor.Hawkeye.Hawkeye))]
+	[Interceptor(typeof(Hawkeye))]
 	public class TestLoggingTarget
 	{
 		[Log(LogLevel.Debug)]

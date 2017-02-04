@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace FluentWindsor.Hawkeye.Extensions
+namespace FluentlyWindsor.Hawkeye.Extensions
 {
 	public static class EnumerableExtensions
     {

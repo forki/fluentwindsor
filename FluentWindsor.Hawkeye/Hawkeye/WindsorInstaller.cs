@@ -1,6 +1,9 @@
-using FluentWindsor.Hawkeye.Interfaces;
+using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.SubSystems.Configuration;
+using Castle.Windsor;
+using FluentlyWindsor.Hawkeye.Interfaces;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class WindsorInstaller : IWindsorInstaller
     {

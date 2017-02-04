@@ -1,0 +1,16 @@
+log4net
+Castle.Core
+Castle.Windsor
+Microsoft.Owin
+Microsoft.AspNet.Mvc
+Microsoft.AspNet.Razor
+Microsoft.AspNet.WebApi
+Microsoft.AspNet.WebApi.Client
+Microsoft.AspNet.WebApi.Core
+Microsoft.AspNet.WebApi.WebHost
+Microsoft.AspNet.WebPages
+Microsoft.Web.Infrastructure
+MSBuild.Microsoft.VisualStudio.Web.targets
+Newtonsoft.Json
+Microsoft.CodeDom.Providers.DotNetCompilerPlatform
+Microsoft.Net.Compilers

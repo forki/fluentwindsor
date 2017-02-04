@@ -1,4 +1,4 @@
-﻿namespace FluentWindsor.Hawkeye
+﻿namespace FluentlyWindsor.Hawkeye
 {
     public enum LogLevel
     {

@@ -1,7 +1,7 @@
 using System;
-using FluentWindsor.Hawkeye.Interfaces;
+using FluentlyWindsor.Hawkeye.Interfaces;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class LogAttribute : Attribute
     {

@@ -1,47 +1,27 @@
-﻿using System;
-using System.Web.Http;
-using Castle.Core;
-using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.SubSystems.Configuration;
-using Castle.Windsor;
-using Hawkeye;
+﻿using System.Web.Http;
+using Example.Test.AssemblyA;
+using Example.Test.AssemblyB;
+using Example.Test.AssemblyC;
 
 namespace Example.MVC.Api
 {
-    [Interceptor(typeof (Hawkeye.Hawkeye))]
-    public class DateTimeService
-    {
-        [Log(LogLevel.Info)]
-        public virtual string GetDateTimeStamp()
-        {
-            var dateTime = DateTime.Now;
-            return dateTime.ToLongDateString() + " " + dateTime.ToLongTimeString();
-        }
-    }
-
-    public class DateTimeServiceInstaller : IWindsorInstaller
-    {
-        public void Install(IWindsorContainer container, IConfigurationStore store)
-        {
-            container.Register(Component.For<DateTimeService>());
-        }
-    }
-
-    [Interceptor(typeof(Hawkeye.Hawkeye))]
     public class DefaultController : ApiController
     {
-        private readonly DateTimeService dateTimeService;
+        private readonly ServiceA serviceA;
+        private readonly ServiceB serviceB;
+        private readonly ServiceC serviceC;
 
-        public DefaultController(DateTimeService dateTimeService)
+        public DefaultController(ServiceA serviceA, ServiceB serviceB, ServiceC serviceC)
         {
-            this.dateTimeService = dateTimeService;
+            this.serviceA = serviceA;
+            this.serviceB = serviceB;
+            this.serviceC = serviceC;
         }
 
         [HttpGet]
-        [Log(LogLevel.Info)]
-        public virtual string Get()
+        public string Get()
         {
-            return dateTimeService.GetDateTimeStamp();
+            return "Hello!";
         }
     }
 }

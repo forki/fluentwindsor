@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using System.Text;
-using FluentWindsor.Hawkeye.Interfaces;
+using FluentlyWindsor.Hawkeye.Interfaces;
 
-namespace FluentWindsor.Hawkeye.Formatters
+namespace FluentlyWindsor.Hawkeye.Formatters
 {
     public class StackTraceFormatter : IFormatter
     {

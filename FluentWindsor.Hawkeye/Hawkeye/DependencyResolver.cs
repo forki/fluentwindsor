@@ -1,6 +1,6 @@
 using System;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class DependencyResolverException : Exception
     {

@@ -4,8 +4,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Castle.DynamicProxy;
+using log4net;
+using log4net.Config;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class Hawkeye : IInterceptor
     {

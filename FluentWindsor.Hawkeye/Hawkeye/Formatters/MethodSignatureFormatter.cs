@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using FluentWindsor.Hawkeye.Extensions;
+using FluentlyWindsor.Hawkeye.Extensions;
 
-namespace FluentWindsor.Hawkeye.Formatters
+namespace FluentlyWindsor.Hawkeye.Formatters
 {
     public class MethodSignatureFormatter
     {

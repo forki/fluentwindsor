@@ -3,8 +3,11 @@ using System.Globalization;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using log4net.Appender;
+using log4net.Core;
+using log4net.Util;
 
-namespace FluentWindsor.Hawkeye.Appenders
+namespace FluentlyWindsor.Hawkeye.Appenders
 {
     public class UdpAppender : AppenderSkeleton
     {

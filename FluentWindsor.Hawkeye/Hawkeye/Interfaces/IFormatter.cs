@@ -1,4 +1,4 @@
-namespace FluentWindsor.Hawkeye.Interfaces
+namespace FluentlyWindsor.Hawkeye.Interfaces
 {
     public interface IFormatter
     {

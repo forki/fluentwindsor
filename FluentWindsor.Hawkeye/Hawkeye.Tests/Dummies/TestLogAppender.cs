@@ -3,7 +3,7 @@ using System.Threading;
 using log4net.Appender;
 using log4net.Core;
 
-namespace Hawkeye.Tests.Dummies
+namespace FluentlyWindsor.Hawkeye.Tests.Dummies
 {
     public class TestLogAppender : AppenderSkeleton
     {

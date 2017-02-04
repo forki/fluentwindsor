@@ -1,8 +1,8 @@
 ﻿using System.Text;
-using FluentWindsor.Hawkeye.Extensions;
-using FluentWindsor.Hawkeye.Interfaces;
+using FluentlyWindsor.Hawkeye.Extensions;
+using FluentlyWindsor.Hawkeye.Interfaces;
 
-namespace FluentWindsor.Hawkeye.Formatters
+namespace FluentlyWindsor.Hawkeye.Formatters
 {
     public class MethodCallFormatter : IFormatter
     {

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace FluentWindsor.Hawkeye.Extensions
+namespace FluentlyWindsor.Hawkeye.Extensions
 {
 	public static class FormatterExtensions
 	{

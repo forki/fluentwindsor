@@ -7,7 +7,7 @@
     <ProjectGuid>{C9A993FB-87A5-4CBE-94F1-8D1C00FA5F0B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FluentWindsor.Hawkeye.Tests</RootNamespace>
+    <RootNamespace>FluentlyWindsor.Hawkeye.Tests</RootNamespace>
     <AssemblyName>FluentWindsor.Hawkeye.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

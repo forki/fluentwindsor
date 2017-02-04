@@ -1,6 +1,7 @@
 ﻿using System;
+using Castle.DynamicProxy;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class LoggingFormatterParams
     {

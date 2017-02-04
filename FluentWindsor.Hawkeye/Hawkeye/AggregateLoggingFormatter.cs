@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using System.Text;
-using FluentWindsor.Hawkeye.Formatters;
-using FluentWindsor.Hawkeye.Interfaces;
+using FluentlyWindsor.Hawkeye.Formatters;
+using FluentlyWindsor.Hawkeye.Interfaces;
 
-namespace FluentWindsor.Hawkeye
+namespace FluentlyWindsor.Hawkeye
 {
     public class AggregateLoggingFormatter : ILoggingFormatter
     {

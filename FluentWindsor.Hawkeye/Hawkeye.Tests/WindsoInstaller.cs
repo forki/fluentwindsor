@@ -1,8 +1,7 @@
 ﻿using Castle.Windsor;
-using FluentWindsor.Hawkeye;
 using NUnit.Framework;
 
-namespace Hawkeye.Tests
+namespace FluentlyWindsor.Hawkeye.Tests
 {
     [TestFixture]
     public class When_resolving_an_interceptor
@@ -18,7 +17,7 @@ namespace Hawkeye.Tests
         [Test]
         public void Then_instance_should_be_not_be_null()
         {
-            Assert.That(testContainer.Resolve<FluentWindsor.Hawkeye.Hawkeye>(), Is.Not.Null);
+            Assert.That(testContainer.Resolve<Hawkeye>(), Is.Not.Null);
         }
     }
 }

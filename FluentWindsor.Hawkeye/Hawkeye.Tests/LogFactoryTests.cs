@@ -1,12 +1,11 @@
 ﻿using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
-using FluentWindsor.Hawkeye;
-using FluentWindsor.Hawkeye.Interfaces;
-using Hawkeye.Tests.Dummies;
+using FluentlyWindsor.Hawkeye.Interfaces;
+using FluentlyWindsor.Hawkeye.Tests.Dummies;
 using log4net.Core;
 using NUnit.Framework;
 
-namespace Hawkeye.Tests
+namespace FluentlyWindsor.Hawkeye.Tests
 {
     [TestFixture]
     public class LogFactoryTests

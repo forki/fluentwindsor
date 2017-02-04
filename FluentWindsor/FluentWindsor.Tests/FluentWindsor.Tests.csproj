@@ -7,7 +7,7 @@
     <ProjectGuid>{CE537FBB-6476-4E34-A867-1C793F112A2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FluentWindsor.Tests</RootNamespace>
+    <RootNamespace>FluentlyWindsor.Tests</RootNamespace>
     <AssemblyName>FluentWindsor.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
