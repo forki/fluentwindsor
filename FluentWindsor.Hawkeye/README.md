@@ -3,9 +3,9 @@
 &nbsp;Hawkeye<br /><br />
 =============
 
-| Downloads | Version |
-|-----------|---------|
-| ![NuGet Total](https://img.shields.io/nuget/dt/Hawkeye.svg) | ![NuGet Version](https://img.shields.io/nuget/v/Hawkeye.svg) |
+| Version |
+|---------|
+| ![NuGet Version](https://img.shields.io/nuget/v/Hawkeye.svg) |
 
 Need a quick and dirty logging solution that services both development and production scenarios then you have come to the right place! 
 This project uses deep Castle Windsor integration with log4net via FluentWindsor.
@@ -37,28 +37,27 @@ Next we will implement the configuration for log4net, which should look somethin
 
 ``` xml
 <log4net>
-	<appender name="udp" type="Hawkeye.Appenders.UdpAppender, Hawkeye">
-		<remoteAddress value="localhost" />
-		<remotePort value="7071" />
-		<layout type="log4net.Layout.XmlLayoutSchemaLog4j" />
-	</appender>
-	<appender name="eventLog" type="log4net.Appender.EventLogAppender">
-		<applicationName value="Hawkeye.Tests" />
-		<layout type="log4net.Layout.PatternLayout">
-		<conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
-		</layout>
-		<filter type="log4net.Filter.LevelRangeFilter">
-		<levelMin value="ERROR" />
-		<levelMax value="FATAL" />
-		</filter>
-	</appender>
-	<root>
-		<level value="ALL" />
-		<appender-ref ref="udp" />
-		<appender-ref ref="eventLog" />
-		<appender-ref ref="TestLogAppender" />
-	</root>
-</log4net>  
+  <appender name="udp" type="FluentlyWindsor.Hawkeye.Appenders.UdpAppender, FluentWindsor.Hawkeye">
+    <remoteAddress value="localhost" />
+    <remotePort value="7071" />
+    <layout type="log4net.Layout.XmlLayoutSchemaLog4j" />
+  </appender>
+  <appender name="eventLog" type="log4net.Appender.EventLogAppender">
+    <applicationName value="FluentWindsor.Hawkeye.Examples" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" />
+    </layout>
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="ERROR" />
+      <levelMax value="FATAL" />
+    </filter>
+  </appender>
+  <root>
+    <level value="ALL" />
+    <appender-ref ref="udp" />
+    <appender-ref ref="eventLog" />
+  </root>
+</log4net>
 ```
 
 It is important to note that there are 2 appenders which are configured with different log levels. The first is the UDP appender
@@ -119,12 +118,12 @@ it will escalate the log level to error and also be logged into the windows even
 Once you fire up log2console for the first time it will ask you to setup an appender. Simply choose a UDP appender and be sure that 
 you have the IPv6 flag set to true and you should be good to go! Please screen shot below for how to configure the appender. 
 
-![Receiver Config](https://raw.githubusercontent.com/cryosharp/hawkeye/master/Images/log2console-receiver.png "Receiver Config")
+![Receiver Config](https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/Images/log2console-receiver.png "Receiver Config")
 
 If you open the solution I have also included an example where a console app makes some requests to a WebApi implementation. Another
 screenshot of the log2console output is included below. 
 
-![Log2Console](https://raw.githubusercontent.com/cryosharp/hawkeye/master/Images/log2console.png "Log2Console")
+![Log2Console](https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/Images/log2console.png "Log2Console")
 
 ##Problems
 

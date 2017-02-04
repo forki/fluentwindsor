@@ -3,9 +3,9 @@
 &nbsp;FluentWindsor<br /><br />
 =============
 
-| Downloads | Version |
-|-----------|---------|
-| ![NuGet Total](https://img.shields.io/nuget/dt/FluentWindsor.svg) | ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |
+| Version |
+|---------|
+| ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |
 
 
 This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all 
