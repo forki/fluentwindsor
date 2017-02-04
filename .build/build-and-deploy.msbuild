@@ -34,7 +34,7 @@
 		<Exec Command="nuget push $(ThisDirectory)FluentWindsor*.nupkg -source $(NugetSource)" />
 	</Target>
 
-  <Target Name="Test">
+  <Target Name="Test" Inputs="%(NuSpecFiles.Identity)">
     <Message Text="@(NuSpecFiles.Identity)" />
   </Target>
   
