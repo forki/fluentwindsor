@@ -173,29 +173,5 @@ namespace FluentlyWindsor.Cachely.Tests.Performance
 
             Console.WriteLine("Reads: {0}, Creates: {1}, Deletes: {2} in {3} second(s).".FormatWith(readCounter, createCounter, deleteCounter, TimeoutInMilliseconds / 1000));
         }
-
-
-    }
-
-    public static class StringExtensions
-    {
-        public static bool EqualsIgnoreCase(this string value, string compareTo)
-        {
-            if (value == null && compareTo != null)
-                return false;
-
-            if (value != null && compareTo == null)
-                return false;
-
-            if (value == null && compareTo == null)
-                return true;
-
-            return value.ToLower() == compareTo.ToLower();
-        }
-
-        public static string FormatWith(this string format, params object[] args)
-        {
-            return string.Format(format, args);
-        }
     }
 }

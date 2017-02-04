@@ -13,5 +13,6 @@ namespace FluentlyWindsor.Cachely.Interfaces
         void Clear();
         void SetExpiry(TimeSpan cacheItemLifeSpan);
         IEnumerable<string> AllKeys { get; }
+        int Count { get; }
     }
 }
