@@ -112,6 +112,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.Cachely", "Fl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Console", ".examples\FluentWindsor.Cachely\Example.Console\Example.Console.csproj", "{7D8C63C6-DCBD-411B-8B1D-52BA32612500}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".version", ".version", "{9ED02B50-75B5-416A-85D3-75519B187C02}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionInfo.cs = SolutionInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
