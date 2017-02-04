@@ -35,6 +35,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="AggregateLoggingFormatter.cs" />
     <Compile Include="Appenders\UdpAppender.cs" />
     <Compile Include="DependencyResolver.cs" />
