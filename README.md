@@ -113,11 +113,19 @@ var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
 
 ##Works with scriptcs!
 
-[For more click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
+[Click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
 
 ##FluentWindsor.Cachely
 
-[For more click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Cachely/README.md)
+[Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Cachely/README.md)
+
+##FluentWindsor.EndersJson
+
+[Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.EndersJson/README.md)
+
+##FluentWindsor.Hawkeye
+
+[Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Hawkeye/README.md)
 
 ##Credit to castle windsor authors  
 
