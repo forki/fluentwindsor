@@ -30,7 +30,7 @@
 	</Target>
 
 	<Target Name="tasks\Push">
-		<Exec Command="nuget push $(ThisDirectory)FluentWindsor*.nupkg -source $(NugetSource)" />
+		<Exec Command="nuget push $(ThisDirectory)*.nupkg -source $(NugetSource)" />
 	</Target>
 
 	<Target Name="Deploy">
