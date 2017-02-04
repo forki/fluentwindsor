@@ -8,8 +8,4 @@
     <NugetSource>https://api.nuget.org/v3/index.json</NugetSource>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <NuSpecFiles Include="**\*.nuspec" />
-  </ItemGroup>
-
 </Project>

@@ -21,20 +21,19 @@
 	</Target>
 
 	<Target Name="tasks\Pack">
-		<BumpVersion FilePath="../FluentWindsor/FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
-		<BumpVersion FilePath="../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
-    <BumpVersion FilePath="../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+    <ItemGroup>
+      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" />
+    </ItemGroup>
+    <BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
     <SetExplicitVersionsForDependencies RelativePath="..\" />
-    <Exec Command="nuget pack ../FluentWindsor/FluentWindsor/nuget.nuspec" />
-		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" />
-		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" />
+    <Exec Command="nuget pack %(NuSpecFiles.Identity)" />
 	</Target>
 
 	<Target Name="tasks\Push">
 		<Exec Command="nuget push $(ThisDirectory)FluentWindsor*.nupkg -source $(NugetSource)" />
 	</Target>
 
-  <Target Name="Test" Inputs="%(NuSpecFiles.Identity)" Outputs="%(NuSpecFiles.Identity)">
+  <Target Name="Test">
     <Message Text="%(NuSpecFiles.Identity)" />
   </Target>
   
