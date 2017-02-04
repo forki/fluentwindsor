@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Cachely</id>
+    <version>2.0.6</version>
+    <authors>fir3pho3nixx@gmail.com</authors>
+    <description>A library for making caching super easy</description>
+    <tags>FluentWindsor Cache Cachely</tags>
+    <language>en-GB</language>
+    <projectUrl>https://github.com/cryosharp/cachely</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/cryosharp/cachely/master/LICENSE.txt</licenseUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="Cachely.dll" />
+    </references>
+  </metadata>
+  <files>
+    <file src="bin\**\Cachely.dll" target="lib\4.6.1" />
+  </files>
+</package>

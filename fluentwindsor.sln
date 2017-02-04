@@ -93,6 +93,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.EndersJson", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Console", ".examples\FluentWindsor.EndersJson\Example.Console\Example.Console.csproj", "{B7B8607F-545F-4541-A108-1C628CBA1A7C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.Cachely", "FluentWindsor.Cachely", "{467C5565-3D0A-4AE5-A109-7411554AB6BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Cachely", "FluentWindsor.Cachely\Cachely\FluentWindsor.Cachely.csproj", "{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Cachely.Windsor", "FluentWindsor.Cachely\Cachely.Windsor\FluentWindsor.Cachely.Windsor.csproj", "{C467290D-4337-48B3-9CCE-1F4357761F21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Cachely.Tests", "FluentWindsor.Cachely\Cachely.Tests\FluentWindsor.Cachely.Tests.csproj", "{1135785F-89BF-4DA6-85CA-575B506BC45E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Cachely.Windsor.Tests", "FluentWindsor.Cachely\Cachely.Windsor.Tests\FluentWindsor.Cachely.Windsor.Tests.csproj", "{D53896BA-A99E-425D-A10B-8F2A2F4647BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{E4CD0F62-5F6B-41C1-AB8F-ED91F2F000A8}"
+	ProjectSection(SolutionItems) = preProject
+		FluentWindsor.Cachely\README.md = FluentWindsor.Cachely\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,6 +190,22 @@ Global
 		{B7B8607F-545F-4541-A108-1C628CBA1A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B8607F-545F-4541-A108-1C628CBA1A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B8607F-545F-4541-A108-1C628CBA1A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C467290D-4337-48B3-9CCE-1F4357761F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C467290D-4337-48B3-9CCE-1F4357761F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C467290D-4337-48B3-9CCE-1F4357761F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C467290D-4337-48B3-9CCE-1F4357761F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1135785F-89BF-4DA6-85CA-575B506BC45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1135785F-89BF-4DA6-85CA-575B506BC45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1135785F-89BF-4DA6-85CA-575B506BC45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1135785F-89BF-4DA6-85CA-575B506BC45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D53896BA-A99E-425D-A10B-8F2A2F4647BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D53896BA-A99E-425D-A10B-8F2A2F4647BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D53896BA-A99E-425D-A10B-8F2A2F4647BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D53896BA-A99E-425D-A10B-8F2A2F4647BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,5 +237,10 @@ Global
 		{FE7A501C-AF36-40EE-BC9B-54D837CFE303} = {627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}
 		{E95AB3FF-C4A8-4A5B-9A10-34873570B83A} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{B7B8607F-545F-4541-A108-1C628CBA1A7C} = {E95AB3FF-C4A8-4A5B-9A10-34873570B83A}
+		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
+		{C467290D-4337-48B3-9CCE-1F4357761F21} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
+		{1135785F-89BF-4DA6-85CA-575B506BC45E} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
+		{D53896BA-A99E-425D-A10B-8F2A2F4647BC} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
+		{E4CD0F62-5F6B-41C1-AB8F-ED91F2F000A8} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
 	EndGlobalSection
 EndGlobal

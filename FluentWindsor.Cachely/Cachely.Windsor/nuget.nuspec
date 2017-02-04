@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>Cachely.Windsor</id>
+    <version>2.0.6</version>
+    <authors>fir3pho3nixx@gmail.com</authors>
+    <description>A library for making caching super easy with windsor</description>
+    <tags>FluentWindsor Castle Windsor Cache Cachely</tags>
+    <language>en-GB</language>
+    <projectUrl>https://github.com/cryosharp/cachely</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/cryosharp/cachely/master/LICENSE.txt</licenseUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="Cachely.Windsor.dll" />
+    </references>
+    <dependencies>
+      <dependency id="FluentWindsor" version="2.0.9" />
+      <dependency id="Cachely" version="2.0.6" />
+      <dependency id="Castle.Core" version="3.3.3" />
+      <dependency id="Castle.Windsor" version="3.3.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\**\Cachely.Windsor.dll" target="lib\4.6.1" />
+  </files>
+</package>
