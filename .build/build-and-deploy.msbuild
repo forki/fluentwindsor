@@ -35,7 +35,7 @@
 	</Target>
 
   <Target Name="Test">
-    <Message Text="%(NuSpecFiles.Identity)" />
+    <Message Text="@(NuSpecFiles.Identity)" />
   </Target>
   
 	<Target Name="Deploy">
