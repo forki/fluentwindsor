@@ -21,13 +21,13 @@
 	</Target>
 
 	<Target Name="tasks\Pack">
-		<BumpVersion FilePath="../FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
-		<BumpVersion FilePath="../FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
-    <BumpVersion FilePath="../FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<BumpVersion FilePath="../FluentWindsor/FluentWindsor/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+		<BumpVersion FilePath="../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
+    <BumpVersion FilePath="../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" XPathToVersionNumber="/package/metadata/version" />
     <SetExplicitVersionsForDependencies RelativePath="..\" />
-    <Exec Command="nuget pack ../FluentWindsor/nuget.nuspec" />
-		<Exec Command="nuget pack ../FluentWindsor.Mvc/nuget.nuspec" />
-		<Exec Command="nuget pack ../FluentWindsor.WebApi/nuget.nuspec" />
+    <Exec Command="nuget pack ../FluentWindsor/FluentWindsor/nuget.nuspec" />
+		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.Mvc/nuget.nuspec" />
+		<Exec Command="nuget pack ../FluentWindsor/FluentWindsor.WebApi/nuget.nuspec" />
 	</Target>
 
 	<Target Name="tasks\Push">
