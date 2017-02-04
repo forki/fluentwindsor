@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Cachely</id>
-    <version>2.0.6</version>
+    <version>3.0.14</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making caching super easy</description>
     <tags>FluentWindsor Cache Cachely</tags>
@@ -14,10 +14,10 @@
       <frameworkAssembly assemblyName="System" targetFramework="net46" />
     </frameworkAssemblies>
     <references>
-      <reference file="Cachely.dll" />
+      <reference file="FluentWindsor.Cachely.dll" />
     </references>
   </metadata>
   <files>
-    <file src="bin\**\Cachely.dll" target="lib\4.6.1" />
+    <file src="bin\**\FluentWindsor.Cachely.dll" target="lib\4.6.1" />
   </files>
 </package>
