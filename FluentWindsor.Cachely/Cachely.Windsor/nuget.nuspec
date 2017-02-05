@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Cachely.Windsor</id>
-    <version>3.0.20</version>
+    <version>3.0.21</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making caching super easy with windsor</description>
     <tags>FluentWindsor Castle Windsor Cache Cachely</tags>
@@ -17,7 +17,7 @@
       <reference file="FluentWindsor.Cachely.Windsor.dll" />
     </references>
     <dependencies>
-      <dependency id="FluentWindsor" version="3.0.20" />
+      <dependency id="FluentWindsor" version="3.0.21" />
       <dependency id="FluentWindsor.Cachely.Windsor" version="2.0.6" />
       <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.4.0" />

@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FluentWindsor</id>
-    <version>3.0.20</version>
+    <version>3.0.21</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent</tags>
@@ -14,6 +14,8 @@
       <frameworkAssembly assemblyName="System" targetFramework="net46" />
     </frameworkAssemblies>
     <references>
+      <reference file="Castle.Core.dll" />
+      <reference file="Castle.Windsor.dll" />
       <reference file="FluentWindsor.dll" />
     </references>
     <dependencies>
