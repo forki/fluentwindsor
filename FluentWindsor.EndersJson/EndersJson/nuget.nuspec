@@ -17,7 +17,6 @@
       <reference file="FluentWindsor.EndersJson.dll" />
     </references>
     <dependencies>
-      <dependency id="Nito.AsyncEx" version="4.0.1" />
       <dependency id="Newtonsoft.Json" version="9.0.1" />
     </dependencies>
   </metadata>
