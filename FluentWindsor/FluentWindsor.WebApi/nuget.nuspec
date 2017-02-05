@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>FluentWindsor.WebApi</id>
-    <version>3.0.22</version>
+    <version>3.0.23</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent WebApi</tags>
@@ -21,7 +21,7 @@
     <dependencies>
       <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.4.0" />
-      <dependency id="FluentWindsor" version="3.0.22" />
+      <dependency id="FluentWindsor" version="3.0.23" />
       <dependency id="Microsoft.AspNet.WebApi" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Client" version="5.2.3" />
       <dependency id="Microsoft.AspNet.WebApi.Core" version="5.2.3" />
