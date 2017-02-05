@@ -4,107 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Nito.AsyncEx;
-using Nito.AsyncEx.Synchronous;
 
 namespace FluentlyWindsor.EndersJson.AsyncEx
 {
-    public sealed class BoundActionField<T>
-    {
-        private BoundAction field;
-
-        public BoundActionField(Action<T> action, T context)
-        {
-            field = new BoundAction(action, context);
-        }
-
-        public bool IsEmpty => Interlocked.CompareExchange(ref field, null, null) == null;
-
-        public IBoundAction TryGetAndUnset()
-        {
-            return Interlocked.Exchange(ref field, null);
-        }
-
-        public bool TryUpdateContext(Func<T, T> contextUpdater)
-        {
-            while (true)
-            {
-                var original = Interlocked.CompareExchange(ref field, field, field);
-                if (original == null)
-                    return false;
-                var updatedContext = new BoundAction(original, contextUpdater);
-                var result = Interlocked.CompareExchange(ref field, updatedContext, original);
-                if (ReferenceEquals(original, result))
-                    return true;
-            }
-        }
-
-        public interface IBoundAction
-        {
-            void Invoke();
-        }
-
-        private sealed class BoundAction : IBoundAction
-        {
-            private readonly Action<T> _action;
-            private readonly T _context;
-
-            public BoundAction(Action<T> action, T context)
-            {
-                _action = action;
-                _context = context;
-            }
-
-            public BoundAction(BoundAction originalBoundAction, Func<T, T> contextUpdater)
-            {
-                _action = originalBoundAction._action;
-                _context = contextUpdater(originalBoundAction._context);
-            }
-
-            public void Invoke() => _action?.Invoke(_context);
-        }
-    }
-
-    public abstract class SingleDisposable<T> : IDisposable
-    {
-        private readonly BoundActionField<T> _context;
-
-        private readonly ManualResetEventSlim _mre = new ManualResetEventSlim();
-
-        protected SingleDisposable(T context)
-        {
-            _context = new BoundActionField<T>(Dispose, context);
-        }
-
-        public bool IsDisposeStarted => _context.IsEmpty;
-
-        public bool IsDispoed => _mre.IsSet;
-
-        public bool IsDisposing => IsDisposeStarted && !IsDispoed;
-
-        protected abstract void Dispose(T context);
-
-        public void Dispose()
-        {
-            var context = _context.TryGetAndUnset();
-            if (context == null)
-            {
-                _mre.Wait();
-                return;
-            }
-            try
-            {
-                context.Invoke();
-            }
-            finally
-            {
-                _mre.Set();
-            }
-        }
-
-        protected bool TryUpdateContext(Func<T, T> contextUpdater) => _context.TryUpdateContext(contextUpdater);
-    }
-
     public sealed partial class AsyncContext
     {
         private sealed class AsyncContextTaskScheduler : TaskScheduler
@@ -315,7 +217,7 @@ namespace FluentlyWindsor.EndersJson.AsyncEx
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public void Execute()
         {
-            using (new SynchronizationContextHelpers.SynchronizationContextSwitcher(_synchronizationContext))
+            using (new SynchronizationContextSwitcher(_synchronizationContext))
             {
                 var tasks = _queue.GetConsumingEnumerable();
                 foreach (var task in tasks)

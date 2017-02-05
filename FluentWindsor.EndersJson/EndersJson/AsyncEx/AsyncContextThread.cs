@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Nito.AsyncEx.Synchronous;
 
 namespace FluentlyWindsor.EndersJson.AsyncEx
 {

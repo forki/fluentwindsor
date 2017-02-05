@@ -42,6 +42,12 @@
     </Compile>
     <Compile Include="AsyncEx\AsyncContext.cs" />
     <Compile Include="AsyncEx\AsyncContextThread.cs" />
+    <Compile Include="AsyncEx\BoundActionField.cs" />
+    <Compile Include="AsyncEx\ExceptionHelpers.cs" />
+    <Compile Include="AsyncEx\SingleDisposable.cs" />
+    <Compile Include="AsyncEx\SynchronizationContextSwitcher.cs" />
+    <Compile Include="AsyncEx\TaskExtensions.cs" />
+    <Compile Include="AsyncEx\TaskFactoryExtensions.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />

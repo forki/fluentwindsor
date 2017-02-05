@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
+using FluentlyWindsor.EndersJson.AsyncEx;
 using FluentlyWindsor.EndersJson.Interfaces;
-using Nito.AsyncEx;
 
 namespace FluentlyWindsor.EndersJson
 {
