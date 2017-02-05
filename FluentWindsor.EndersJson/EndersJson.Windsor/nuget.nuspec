@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>EndersJson.Windsor</id>
-    <version>3.0.21</version>
+    <version>3.0.22</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making client json requests</description>
     <tags>FluentWindsor Json Client EndersJson</tags>
@@ -18,9 +18,9 @@
     </references>
     <dependencies>
       <dependency id="Nito.AsyncEx" version="4.0.1" />
-      <dependency id="FluentWindsor" version="3.0.21" />
+      <dependency id="FluentWindsor" version="3.0.22" />
       <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="EndersJson" version="3.0.21" />
+      <dependency id="EndersJson" version="3.0.22" />
       <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.4.0" />
     </dependencies>

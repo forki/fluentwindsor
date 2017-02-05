@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Cachely</id>
-    <version>3.0.21</version>
+    <version>3.0.22</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making caching super easy</description>
     <tags>FluentWindsor Cache Cachely</tags>
