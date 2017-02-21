@@ -1,0 +1,49 @@
+version: 1.0.{build}
+
+branches:
+  except:
+    - gh-pages
+
+skip_tags: true
+
+install:
+  - .paket\paket.bootstrapper.exe
+  - .paket\paket.exe restore
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "1.0.{build}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+configuration: Release
+
+cache:
+  - packages -> paket.lock
+
+build:
+  parallel: true
+  project: fluentwindsor.sln
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+  
+artifacts:
+  - path: FluentWindsor\FluentWindsor\bin\$(configuration)\FluentWindsor.dll
+  - path: FluentWindsor\FluentWindsor\bin\$(configuration)\FluentWindsor.pdb
+  - path: FluentWindsor\FluentWindsor.Mvc\bin\$(configuration)\FluentWindsor.Mvc.dll
+  - path: FluentWindsor\FluentWindsor.Mvc\bin\$(configuration)\FluentWindsor.Mvc.dll
+  - path: FluentWindsor\FluentWindsor.WebApi\bin\$(configuration)\FluentWindsor.WebApi.dll
+  - path: FluentWindsor\FluentWindsor.WebApi\bin\$(configuration)\FluentWindsor.WebApi.dll
+  - path: FluentWindsor.Hawkeye\Hawkeye\bin\$(configuration)\FluentWindsor.Hawkeye.dll
+  - path: FluentWindsor.Hawkeye\Hawkeye\bin\$(configuration)\FluentWindsor.Hawkeye.pdb
+  - path: FluentWindsor.EndersJson\EndersJson\bin\$(configuration)\FluentWindsor.EndersJson.dll
+  - path: FluentWindsor.EndersJson\EndersJson\bin\$(configuration)\FluentWindsor.EndersJson.pdb
+  - path: FluentWindsor.EndersJson\EndersJson.Windsor\bin\$(configuration)\FluentWindsor.EndersJson.Windsor.dll
+  - path: FluentWindsor.EndersJson\EndersJson.Windsor\bin\$(configuration)\FluentWindsor.EndersJson.Windsor.pdb
+  - path: FluentWindsor.Cachely\Cachely\bin\$(configuration)\FluentWindsor.Cachely.dll
+  - path: FluentWindsor.Cachely\Cachely\bin\$(configuration)\FluentWindsor.Cachely.pdb
+  - path: FluentWindsor.Cachely\Cachely.Windsor\bin\$(configuration)\FluentWindsor.Cachely.Windsor.dll
+  - path: FluentWindsor.Cachely\Cachely.Windsor\bin\$(configuration)\FluentWindsor.Cachely.Windsor.pdb
+
