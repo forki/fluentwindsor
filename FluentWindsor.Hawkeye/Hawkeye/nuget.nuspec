@@ -14,7 +14,6 @@
       <frameworkAssembly assemblyName="System" targetFramework="net45" />
     </frameworkAssemblies>
     <references>
-      <reference file="log4net.dll" />
       <reference file="FluentWindsor.Hawkeye.dll" />
     </references>
     <dependencies>
@@ -25,7 +24,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\log4net.dll" target="lib\net45" />
     <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\net45" />
   </files>
 </package>

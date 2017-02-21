@@ -14,8 +14,6 @@
       <frameworkAssembly assemblyName="System" targetFramework="net45" />
     </frameworkAssemblies>
     <references>
-      <reference file="Castle.Core.dll" />
-      <reference file="Castle.Windsor.dll" />
       <reference file="FluentWindsor.dll" />
     </references>
     <dependencies>
@@ -25,7 +23,5 @@
   </metadata>
   <files>
     <file src="bin\**\FluentWindsor.dll" target="lib\net45" />
-    <file src="bin\**\Castle.Core.dll" target="lib\net45" />
-    <file src="bin\**\Castle.Windsor.dll" target="lib\net45" />
   </files>
 </package>
