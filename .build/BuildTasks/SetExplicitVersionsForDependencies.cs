@@ -7,13 +7,7 @@ using Microsoft.Build.Framework;
 
 namespace BuildTasks
 {
-    public class NuspecPackage
-    {
-        public string Id { get; set; }
-        public string Version { get; set; }
-    }
-
-    public class SetExplicitVersionsForDependencies : ITask
+	public class SetExplicitVersionsForDependencies : ITask
     {
         [Required]
         public string RelativePath { get; set; }
@@ -34,13 +28,11 @@ namespace BuildTasks
 
                 var idNode = nuspecDocument.SelectNodes("/package/metadata/id").Cast<XmlNode>().First();
 
-                var versionNode = nuspecDocument.SelectNodes("/package/metadata/version").Cast<XmlNode>().First();
-
                 packages.Add(new NuspecPackage()
                 {
                     Id = idNode.InnerText,
-                    Version = versionNode.InnerText
-                });
+                    Version = Environment.GetEnvironmentVariable("APPVEYOR_BUILD_VERSION")
+				});
             }
 
             foreach (var nuspecFile in files)
