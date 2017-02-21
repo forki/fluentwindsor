@@ -25,7 +25,6 @@
     <ItemGroup>
       <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" Exclude="$(ThisDirectory)..\packages\**\*.nuspec" />
     </ItemGroup>
-    <!--<BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />-->
 		<NuspecSetVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
 		<SetExplicitVersionsForDependencies RelativePath="..\" />
     <Exec Command="$(ThisDirectory)..\$(NugetCommand) pack %(NuSpecFiles.Identity)" />

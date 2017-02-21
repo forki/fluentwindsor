@@ -37,7 +37,7 @@ after_test:
   - cmd: pack.bat
   
 artifacts:
-  - path: /.*\.(dll|pdb|nupkg)/
+  - path: .build\/.*\.nupkg/
 
 deploy:
   
