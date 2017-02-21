@@ -15,7 +15,8 @@
       <frameworkAssembly assemblyName="System.Web" targetFramework="net45" />
     </frameworkAssemblies>
     <references>
-      <reference file="FluentWindsor.Mvc.dll" />
+			<reference file="FluentWindsor.Mvc.dll" />
+			<reference file="Microsoft.Web.Infrastructure.dll" />
     </references>
     <dependencies>
       <dependency id="Castle.Core" version="3.3.3" />
@@ -24,10 +25,10 @@
       <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
       <dependency id="Microsoft.AspNet.Razor" version="3.2.3" />
       <dependency id="Microsoft.AspNet.WebPages" version="3.2.3" />
-      <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.Mvc.dll" target="lib\net45" />
+		<file src="bin\**\FluentWindsor.Mvc.dll" target="lib\net45" />
+		<file src="bin\**\Microsoft.Web.Infrastructure.dll" target="lib\net45" />
   </files>
 </package>
