@@ -1,5 +1,5 @@
 redirects: on
-framework: >= net45
+framework >= net45
 source https://www.nuget.org/api/v2/
 
 nuget NuGet.CommandLine 3.5.0
