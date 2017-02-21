@@ -49,13 +49,13 @@ artifacts:
 
 deploy:
   release: fluentwindsor-v$(appveyor_build_version)
-  description: 'Release description'
+  description: 'For making Windsor super easy!'
   provider: GitHub
   auth_token:
-    secure: dad857f8f42cddf2d69ca91a08f9aad333ee2d76 
+    secure: sZD4+HypTqlQYLcBv+EkKIc0EWYGkeT4LUXmY0ALqyDQH6n++fBAQZTHaltI4SsM 
   artifact: /.*\.dll/            
   draft: false
   prerelease: false
   on:
     branch: master                 
-    appveyor_repo_tag: true        
+    appveyor_repo_tag: true
