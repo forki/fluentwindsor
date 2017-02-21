@@ -24,8 +24,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.dll" target="lib\4.6.1" />
-    <file src="bin\**\Castle.Core.dll" target="lib\4.6.1" />
-    <file src="bin\**\Castle.Windsor.dll" target="lib\4.6.1" />
+    <file src="bin\**\FluentWindsor.dll" target="lib\net461" />
+    <file src="bin\**\Castle.Core.dll" target="lib\net461" />
+    <file src="bin\**\Castle.Windsor.dll" target="lib\net461" />
   </files>
 </package>

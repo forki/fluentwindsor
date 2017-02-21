@@ -24,6 +24,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.Cachely.Windsor.dll" target="lib\4.6.1" />
+    <file src="bin\**\FluentWindsor.Cachely.Windsor.dll" target="lib\net461" />
   </files>
 </package>

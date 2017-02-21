@@ -21,6 +21,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.EndersJson.dll" target="lib\4.6.1" />
+    <file src="bin\**\FluentWindsor.EndersJson.dll" target="lib\net461" />
   </files>
 </package>

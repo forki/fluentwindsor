@@ -25,7 +25,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\log4net.dll" target="lib\4.6.1" />
-    <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\4.6.1" />
+    <file src="bin\**\log4net.dll" target="lib\net461" />
+    <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\net461" />
   </files>
 </package>
