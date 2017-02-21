@@ -3,48 +3,48 @@
 &nbsp;FluentWindsor<br /><br />
 =============
 
-| Version |
-|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |
+| Version | Build |
+|---------|---------|
+| ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |  ![AppVeyor Build](https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true) |
 
 
-This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all 
-implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations 
+This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all
+implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations
 in the wild as result of this :)
 
 ##Castle Windsor
 
 A bit about Castle Windsor.
 
- - https://github.com/castleproject/Windsor/blob/master/docs/README.md
+- https://github.com/castleproject/Windsor/blob/master/docs/README.md
 
 ##How it works
 
-An assembly scanner will trawl through your project trying to find every implementation of 'IWindsorInstaller' that it can. These will be 
-registered automatically for you. It is recommended that you have at least one instance of IWindsorInstaller per assembly. For more please visit 
+An assembly scanner will trawl through your project trying to find every implementation of 'IWindsorInstaller' that it can. These will be
+registered automatically for you. It is recommended that you have at least one instance of IWindsorInstaller per assembly. For more please visit
 the link below:
 
- - https://github.com/castleproject/Windsor/blob/master/docs/installers.md
+- https://github.com/castleproject/Windsor/blob/master/docs/installers.md
 
 You can also use the MVC and WebApi controller extensions. Examples to follow.
 
 ##Sample Service (Some other assembly)
 
 Imagine you have sample service that would like to expose to console, mvc, webapi and nunit applications. Let's say we have ServiceA
-for example: 
-	
+for example:
+
 ``` csharp
 public class ServiceA {
-	public void Execute(){ /* ... does something ... */ }
+public void Execute(){ /* ... does something ... */ }
 }
-``` 
+```
 
 And for the same assembly we had the accompanying windsor installation:
 
 ``` csharp
 public class Installer : IWindsorInstaller {
-	public void Install(IWindsorContainer container, IConfigurationStore store) {
-        container.Register(Component.For<ServiceA>().LifeStyle.Transient);
+public void Install(IWindsorContainer container, IConfigurationStore store) {
+container.Register(Component.For<ServiceA>().LifeStyle.Transient);
     }
 }
 ```
