@@ -5,7 +5,7 @@ using Microsoft.Build.Framework;
 
 namespace BuildTasks
 {
-    public class BumpVersion : ITask
+    public class NuspecBumpVersion : ITask
     {
         [Required]
         public string FilePath { get; set; }
