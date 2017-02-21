@@ -3,13 +3,13 @@
 &nbsp;EndersJson<br /><br />
 =============
 
-| Version |
-|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/EndersJson.svg) |
+| Version | Build |
+|---------|---------|
+| ![NuGet Version](https://img.shields.io/nuget/v/EndersJson.svg) |  ![AppVeyor Build](https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true) |
 
-A easy to use JSON client. If you have ever tried to add headers to an HttpClient then you would know how painful it can be to do 
-the most basic of interactions with an endpoint. This client comes DI ready and is asynchronous. There is an additional bolt on if 
-you are using FluentWindsor which will handle all the registration for you. 
+A easy to use JSON client. If you have ever tried to add headers to an HttpClient then you would know how painful it can be to do
+the most basic of interactions with an endpoint. This client comes DI ready and is asynchronous. There is an additional bolt on if
+you are using FluentWindsor which will handle all the registration for you.
 
 ##How it works
 
@@ -22,28 +22,28 @@ var client = new JsonService();
 ###Person Example
 
 Let's say we would like to interact with an end point that manages contacts named Person. The example POCO we will use is something
-like this: 
+like this:
 
 ``` csharp
 public class Person
 {
-    public int Age { get; set; }
-    public string Name { get; set; }
+public int Age { get; set; }
+public string Name { get; set; }
 }
 ```
 
 Not really something you would find out in the wild but at least sets the tone for how we use the client with strongly typed objects
-and is referenced in all the examples throughout this doc. 
+and is referenced in all the examples throughout this doc.
 
 Lastly let's also assume your base url for the resources you are interacting with are hosted on the following base url:
 
-    http://localhost:9999/
+http://localhost:9999/
 
 ###GET Requests
 
 If we were to make a GET request to find all the persons from the API we would target the following end point.
 
-    http://localhost:9999/api/persons
+http://localhost:9999/api/persons
 
 This returns an `IEnumerable` of `Person`. If we had to issue the request the code would look something like this:
 
