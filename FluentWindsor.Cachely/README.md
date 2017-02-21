@@ -3,12 +3,12 @@
 &nbsp;Cachely<br /><br />
 =============
 
-| Version |
-|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/Cachely.svg) |
+| Version | Build |
+|---------|---------|
+| ![NuGet Version](https://img.shields.io/nuget/v/Cachely.svg) |  ![AppVeyor Build](https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true) |
 
-This is a naive sliding expiration cache. If you need something quick and dirty that is easy to learn and 
-battle tested then hopefully this will solve your problem. 
+This is a naive sliding expiration cache. If you need something quick and dirty that is easy to learn and
+battle tested then hopefully this will solve your problem.
 
 ##How it works
 
