@@ -1,27 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
-  <metadata>
-    <id>FluentWindsor</id>
-    <version>3.0.0-preview</version>
-    <authors>fir3pho3nixx@gmail.com</authors>
-    <description>A library for making windsor super easy</description>
-    <tags>Castle Windsor Fluent</tags>
-    <language>en-GB</language>
-    <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
-    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
-    <licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net45" />
-    </frameworkAssemblies>
-    <references>
-      <reference file="FluentWindsor.dll" />
-    </references>
-    <dependencies>
-      <dependency id="Castle.Core" version="3.3.3" />
-      <dependency id="Castle.Windsor" version="3.4.0" />
-    </dependencies>
-  </metadata>
-  <files>
-    <file src="bin\**\FluentWindsor.dll" target="lib\net45" />
-  </files>
+	<metadata>
+		<id>FluentWindsor</id>
+		<version>3.0.0-preview</version>
+		<authors>fir3pho3nixx@gmail.com</authors>
+		<description>A library for making windsor super easy</description>
+		<tags>Castle Windsor Fluent</tags>
+		<language>en-GB</language>
+		<projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
+		<iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+		<licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
+		<frameworkAssemblies>
+			<frameworkAssembly assemblyName="System" targetFramework="net45" />
+		</frameworkAssemblies>
+		<references>
+			<reference file="Castle.Core.dll" />
+			<reference file="Castle.Windsor.dll" />
+			<reference file="FluentWindsor.dll" />
+		</references>
+		<dependencies>
+			<dependency id="Castle.Core" version="3.3.3" />
+			<dependency id="Castle.Windsor" version="3.4.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="bin\**\FluentWindsor.dll" target="lib\net45" />
+		<file src="bin\**\Castle.Core.dll" target="lib\net45" />
+		<file src="bin\**\Castle.Windsor.dll" target="lib\net45" />
+	</files>
 </package>
