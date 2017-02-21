@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="Given_We_Are_Fluently_Registering.cs" />
     <Compile Include="Extensions\When_We_Register_Types_Using_The_Windsor_RegisterIfNotAlready.cs" />
     <Compile Include="Extensions\Given_We_Are_Extending_Windsor.cs" />

@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\SolutionInfo.cs">
+      <Link>SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="Dummies\TestLogAppender.cs" />
     <Compile Include="Dummies\TestLoggingTarget.cs" />
     <Compile Include="LogFactoryTests.cs" />
