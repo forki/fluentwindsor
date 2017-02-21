@@ -32,6 +32,9 @@ build:
   publish_nuget: true
   publish_nuget_symbols: true
   include_nuget_references: true
+
+after_test:
+  - cmd: pack.bat
   
 artifacts:
   - path: /.*\.(dll|pdb|nupkg)/

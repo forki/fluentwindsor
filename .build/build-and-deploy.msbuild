@@ -26,11 +26,11 @@
     </ItemGroup>
     <BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
     <SetExplicitVersionsForDependencies RelativePath="..\" />
-    <Exec Command="nuget pack %(NuSpecFiles.Identity)" />
+    <Exec Command="$(ThisDirectory)..\$(NugetCommand) pack %(NuSpecFiles.Identity)" />
 	</Target>
 
 	<Target Name="tasks\Push">
-		<Exec Command="nuget push $(ThisDirectory)*.nupkg -source $(NugetSource)" />
+		<Exec Command="$(ThisDirectory)..\$(NugetCommand) push $(ThisDirectory)*.nupkg -source $(NugetSource)" />
 	</Target>
 
 	<Target Name="Deploy">
