@@ -1,6 +1,7 @@
 redirects: on
 source https://www.nuget.org/api/v2/
 
+nuget NuGet.CommandLine 3.5.0 framework: >= net45
 nuget Microsoft.AspNet.WebApi.Owin 5.2.3 framework: >= net45
 nuget Microsoft.AspNet.WebApi.OwinSelfHost 5.2.3 framework: >= net45
 nuget Microsoft.Owin.Host.HttpListener 3.0.1 framework: >= net45
