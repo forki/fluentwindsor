@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>EndersJson</id>
-    <version>3.0.25</version>
+    <version>3.0.0-preview</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making client json requests</description>
     <tags>FluentWindsor Json Client EndersJson</tags>
@@ -11,7 +11,7 @@
     <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
     <licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+      <frameworkAssembly assemblyName="System" targetFramework="net45" />
     </frameworkAssemblies>
     <references>
       <reference file="FluentWindsor.EndersJson.dll" />
@@ -21,6 +21,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\FluentWindsor.EndersJson.dll" target="lib\net461" />
+    <file src="bin\**\FluentWindsor.EndersJson.dll" target="lib\net45" />
   </files>
 </package>

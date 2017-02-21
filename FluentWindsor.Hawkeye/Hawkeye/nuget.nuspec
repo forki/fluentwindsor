@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Hawkeye</id>
-    <version>3.0.25</version>
+    <version>3.0.0-preview</version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making logging super easy</description>
     <tags>FluentWindsor Log Logging log4net</tags>
@@ -11,7 +11,7 @@
     <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
     <licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+      <frameworkAssembly assemblyName="System" targetFramework="net45" />
     </frameworkAssemblies>
     <references>
       <reference file="log4net.dll" />
@@ -25,7 +25,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\**\log4net.dll" target="lib\net461" />
-    <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\net461" />
+    <file src="bin\**\log4net.dll" target="lib\net45" />
+    <file src="bin\**\FluentWindsor.Hawkeye.dll" target="lib\net45" />
   </files>
 </package>
