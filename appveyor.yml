@@ -54,7 +54,7 @@ deploy:
     description: 'For making Windsor super easy'
     auth_token:
       secure: sZD4+HypTqlQYLcBv+EkKIc0EWYGkeT4LUXmY0ALqyDQH6n++fBAQZTHaltI4SsM 
-    artifact: /.*\.nupkg/            
+    artifact: /.*\.(dll|pdb|nupkg)/       
     draft: false
     prerelease: false
     on:
