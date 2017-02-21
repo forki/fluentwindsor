@@ -8,7 +8,8 @@
 
 	<Import Project="$(Properties)" />
 
-  <UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
+	<UsingTask TaskName="SetVersion" AssemblyFile="BuildTasks.dll" />
+	<UsingTask TaskName="BumpVersion" AssemblyFile="BuildTasks.dll" />
   <UsingTask TaskName="SetExplicitVersionsForDependencies" AssemblyFile="BuildTasks.dll" />
   <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
@@ -24,8 +25,9 @@
     <ItemGroup>
       <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" Exclude="$(ThisDirectory)..\packages\**\*.nuspec" />
     </ItemGroup>
-    <BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
-    <SetExplicitVersionsForDependencies RelativePath="..\" />
+    <!--<BumpVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />-->
+		<SetVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
+		<SetExplicitVersionsForDependencies RelativePath="..\" />
     <Exec Command="$(ThisDirectory)..\$(NugetCommand) pack %(NuSpecFiles.Identity)" />
 	</Target>
 
