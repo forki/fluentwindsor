@@ -5,7 +5,7 @@
 
 | Version | Build |
 |---------|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/Cachely.svg) |  ![AppVeyor Build](https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true) |
+| ![NuGet Version](https://img.shields.io/nuget/v/Cachely.svg) |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
 
 This is a naive sliding expiration cache. If you need something quick and dirty that is easy to learn and
 battle tested then hopefully this will solve your problem.
