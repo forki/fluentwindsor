@@ -5,7 +5,7 @@
 
 | Version | Build |
 |---------|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/EndersJson.svg) |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
+| <a href= "https://www.nuget.org/packages/EndersJson.Windsor/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
 
 A easy to use JSON client. If you have ever tried to add headers to an HttpClient then you would know how painful it can be to do
 the most basic of interactions with an endpoint. This client comes DI ready and is asynchronous. There is an additional bolt on if
