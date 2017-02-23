@@ -5,7 +5,7 @@
 
 | Version | Build |
 |---------|---------|
-|  <a href= "https://www.nuget.org/packages/Hawkeye.Windsor/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
+|  <a href= "https://www.nuget.org/packages/Hawkeye/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
 
 Need a quick and dirty logging solution that services both development and production scenarios then you have come to the right place!
 This project uses deep Castle Windsor integration with log4net via FluentWindsor.
