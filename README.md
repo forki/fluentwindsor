@@ -5,9 +5,7 @@
 
 | Version | Build |
 |---------|---------|
-| ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |  
-<a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
-
+| ![NuGet Version](https://img.shields.io/nuget/v/FluentWindsor.svg) |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
 
 This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all
 implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations
