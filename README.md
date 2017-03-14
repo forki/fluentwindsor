@@ -15,13 +15,13 @@ We tried to convert this to dotnet core, and found that Castle.Windsor was not t
 
 Watch https://github.com/castleproject/Windsor/issues/145 to see how we go.  
 
-##Castle Windsor
+## Castle Windsor
 
 A bit about Castle Windsor.
 
 - https://github.com/castleproject/Windsor/blob/master/docs/README.md
 
-##How it works
+## How it works
 
 An assembly scanner will trawl through your project trying to find every implementation of 'IWindsorInstaller' that it can. These will be
 registered automatically for you. It is recommended that you have at least one instance of IWindsorInstaller per assembly. For more please visit
@@ -31,7 +31,7 @@ the link below:
 
 You can also use the MVC and WebApi controller extensions. Examples to follow.
 
-##Sample Service (Some other assembly)
+## Sample Service (Some other assembly)
 
 Imagine you have sample service that would like to expose to console, mvc, webapi and nunit applications. Let's say we have ServiceA
 for example:
@@ -57,7 +57,7 @@ auto wires stuff. You can read more about how you register objects using the lin
 
  - https://github.com/castleproject/Windsor/blob/master/docs/fluent-registration-api.md
 
-##Fluent General Purpose Registration(NUnit & Console App)
+## Fluent General Purpose Registration(NUnit & Console App)
 
 ``` csharp
 var container = FluentWindsor
@@ -71,7 +71,7 @@ var serviceA = container.Resolve<ServiceA>();
 serviceA.Execute();
 ```
 
-##Fluent Mvc & WebApi Registration Including Controllers 
+## Fluent Mvc & WebApi Registration Including Controllers 
 
 ``` csharp
 using System.Reflection;
@@ -106,7 +106,7 @@ namespace Example.MVC
 }
 ```
 
-##Need a service locator?
+## Need a service locator?
 
 No problem, simply do this (you would have to have bootstrapped your application somewhere previously using the examples above). 
 
@@ -114,36 +114,36 @@ No problem, simply do this (you would have to have bootstrapped your application
 var serviceA = FluentWindsor.ServiceLocator.Resolve<ServiceA>();
 ```
 
-##FluentWindsor.Cachely
+## FluentWindsor.Cachely
 
 A naive caching component
 
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Cachely/README.md)
 
-##FluentWindsor.EndersJson
+## FluentWindsor.EndersJson
 
 A easy to use Json client
 
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.EndersJson/README.md)
 
-##FluentWindsor.Hawkeye
+## FluentWindsor.Hawkeye
 
 A logging component based on log4net
 
 [Click here](https://github.com/cryosharp/fluentwindsor/blob/master/FluentWindsor.Hawkeye/README.md)
 
-##Want ScriptCs!
+## Want ScriptCs!
 
 A bit of fun, but might be something useful if you are thinking of using `Azure Functions`. 
 
 [Click here](https://github.com/cryosharp/fluentwindsor/wiki/Works-with-scriptcs!)
 
-##Credit to castle windsor authors  
+## Credit to castle windsor authors  
 
 Credit to the guys behind Castle Windsor.
 
 [Castle Windsor Contributors](https://github.com/castleproject/Windsor/graphs/contributors)
 
-##Problems?
+## Problems?
 
 For any problems please sign into github and raise issues. 
