@@ -11,7 +11,7 @@ A easy to use JSON client. If you have ever tried to add headers to an HttpClien
 the most basic of interactions with an endpoint. This client comes DI ready and is asynchronous. There is an additional bolt on if
 you are using FluentWindsor which will handle all the registration for you.
 
-##How it works
+## How it works
 
 First start by pulling the latest package from NuGet. After doing so you can create your JSON client by simply doing the following:
 
@@ -19,7 +19,7 @@ First start by pulling the latest package from NuGet. After doing so you can cre
 var client = new JsonService();
 ```
 
-###Person Example
+### Person Example
 
 Let's say we would like to interact with an end point that manages contacts named Person. The example POCO we will use is something
 like this:
@@ -39,7 +39,7 @@ Lastly let's also assume your base url for the resources you are interacting wit
 
 http://localhost:9999/
 
-###GET Requests
+### GET Requests
 
 If we were to make a GET request to find all the persons from the API we would target the following end point.
 
@@ -63,7 +63,7 @@ client.Dispose();
 
 This will produce the following get url `http://localhost:9999/api/persons?skip=10&take=20`.
 
-###POST Requests
+### POST Requests
 
 Next let's take a look at how we post(create new objects). Given the following end point which responds to POST requests.
 
@@ -78,7 +78,7 @@ await client.Post<Person>("http://localhost:9999/api/person", person);
 client.Dispose();
 ```
 
-###PUT Requests
+### PUT Requests
 
 To update objects we would opt for a put, let's look at some more code so we can figure out how that works. Again we assume the 
 same end point but it has to respond to the correct verb like so.
@@ -97,7 +97,7 @@ client.Dispose();
 In this case the code is assuming the same object of type `Person` would be returned by way of the generic type parameter. Arguably a
 little superflous if you are not interested in the result. 
 
-###DELETE Requests
+### DELETE Requests
 
 You can also make DELETE requests and as always we assume the same endpoint however slightly changed. 
 
@@ -111,7 +111,7 @@ await client.Delete<Person>(FormatUri("api/person/1"));
 client.Dispose();
 ```
 
-##But I dont care about POCO's
+## But I dont care about POCO's
 
 So let's say you cannot be asked to roll strongly typed objects like `Person` for your interactions, that is perfectly ok. In that
 case I would recommend the use of `dynamic` which works just as well. Let's see how we do this with the GET example. 
@@ -124,7 +124,7 @@ client.Dispose();
 
 The only caveat is that you will lose compile time safety with whatever you do with the result. 
 
-##What about headers?
+## What about headers?
 
 You can do this via the `SetHeader` member on the client service like so.
 
@@ -145,17 +145,17 @@ Or
 client.ClearHeaders(); // Which resets everything
 ```
 
-##Dont synchronise using Task.Result
+## Dont synchronise using Task.Result
 
 If you try to synchronise this library by using `Task.Result` it will deadlock (thanks to Tony Das for pointing this out). You cannot synchronise using this method if you are using this library
 in a multi-threaded context. You are also killing off scalability and your code and it wont be stable. The really painful part about this is that all of your calling code has to be changed to
 use async/await. 
 
-##A Castle Windsor version
+## A Castle Windsor version
 
 There is also a castle windsor version of this cache which can be auto loaded using FluentWindsor. For more about how you can use this please see https://github.com/cryosharp/fluentwindsor.
 
-##Problems?
+## Problems?
 
 For any problems please sign into github and raise issues.
 

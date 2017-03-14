@@ -10,11 +10,11 @@
 Need a quick and dirty logging solution that services both development and production scenarios then you have come to the right place!
 This project uses deep Castle Windsor integration with log4net via FluentWindsor.
 
-##How it works
+## How it works
 
 A whirlwind tour of how you get this going.
 
-###Log2Console
+### Log2Console
 
 First go and grab yourself the latest copy of log2console.
 
@@ -23,7 +23,7 @@ https://log2console.codeplex.com/
 This is quite a mature log viewing application which you can use to see log messages. Once you have this installed, you are ready to
 begin tweaking your applications configuration.
 
-###Tweaking your configuration
+### Tweaking your configuration
 
 First start by embedding the following section header in your config file:
 
@@ -68,7 +68,7 @@ log messages will simply be dropped off the network stack.
 The second appender is the windows event log appender which is here to support production deployment scenarios. It is also less verbose
 and will only log items that are deemed to be errors(exceptions) or fatal errors that cause the application to crash.
 
-###Implementing logging in your code
+### Implementing logging in your code
 
 Let's walkthrough a quick example of how you would go about implementing logging in your code. First you need to make sure that you 
 have registered hawkeye with your castle windsor container. There is a WindsorInstaller in the root of this library. If you are 
@@ -113,7 +113,7 @@ public class MyService {
 Now each time the method is hit, it will emit a log via log4net with the category of INFO. If the method throws an uncaught exception, 
 it will escalate the log level to error and also be logged into the windows event log. 
 
-###Viewing log events in Log2Console
+### Viewing log events in Log2Console
 
 Once you fire up log2console for the first time it will ask you to setup an appender. Simply choose a UDP appender and be sure that 
 you have the IPv6 flag set to true and you should be good to go! Please screen shot below for how to configure the appender. 
@@ -125,12 +125,12 @@ screenshot of the log2console output is included below.
 
 ![Log2Console](https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/Images/log2console.png "Log2Console")
 
-##A Castle Windsor version
+## A Castle Windsor version
 
 There is also a castle windsor version of this cache which can be auto loaded using FluentWindsor. For more about how you can use
 this please see https://github.com/cryosharp/fluentwindsor.
 
-##Problems
+## Problems
 
 For any problems please sign into github and raise issues.
 

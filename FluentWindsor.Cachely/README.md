@@ -10,7 +10,7 @@
 This is a naive sliding expiration cache. If you need something quick and dirty that is easy to learn and
 battle tested then hopefully this will solve your problem.
 
-##How it works
+## How it works
 
 First start by pulling the latest package from NuGet. After doing so you can create your cache by using the following code
 
@@ -35,7 +35,7 @@ Then you would simply create the cache by using the following code:
 var userCache = new Cache<User>();
 ```
 
-##Sliding expiration of items
+## Sliding expiration of items
 
 There is an additional constructor which allows you to pass a TimeSpan as a parameter so you can set the expiry or alternatively
 once the cache is created you could also use the `SetExpiry` member to vary the sliding expiration like so:
@@ -46,7 +46,7 @@ var userCache = new Cache<User>(TimeSpan.FromMinutes(1));
 
 This will expire items that have not been read or written for longer than a minute. 
 
-##Reading, writing and expiry
+## Reading, writing and expiry
 
 Given you have constructed your cache, you can use the following method to write objects into the cache. 
 
@@ -68,7 +68,7 @@ userCache.ExpireItem("1");
 
 Subsequent requests for the same key will yield a default(T) value. 
 
-##More about the expiry
+## More about the expiry
 
 To give you a bit more detail about the expiry mechanism of the cache, let's say we have the following example: 
 
@@ -94,7 +94,7 @@ userCache.SetItem("1", new User(){ Username = "Gav", Password = "t0ps3cr3t" });
 var user = userCache.GetItem("1"); 
 ```
 
-##Why do I care?
+## Why do I care?
 
 Well if you care about performance then you might want to switch out. Cachely vs Microsoft.Runtime.Caching.MemoryCache and ~~System.Web.Caching.Cache~~
 
@@ -104,11 +104,11 @@ Well if you care about performance then you might want to switch out. Cachely vs
 
 Please see performance tests.
 
-##A Castle Windsor version
+## A Castle Windsor version
 
 There is also a castle windsor version of this cache which can be auto loaded using FluentWindsor. For more about how you can use
 this please see https://github.com/cryosharp/fluentwindsor.
 
-##Problems?
+## Problems?
 
 For any problems please sign into github and raise issues.
