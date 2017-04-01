@@ -15,9 +15,7 @@ This is a Castle Windsor IoC kick starter for new projects. It scans all the ass
 implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations
 in the wild as result of this :)
 
-We tried to convert this to dotnet core, and found that Castle.Windsor was not there! 
-
-Watch https://github.com/castleproject/Windsor/issues/145 to see how we go.  
+Castle.Windsor is now migrated to dotnet core in the [Fortress](https://github.com/cryosharp/fortress) Fork. Work will be starting soon to migrate this.
 
 ## Castle Windsor
 
