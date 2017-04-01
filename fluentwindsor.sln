@@ -18,18 +18,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		build.bat = build.bat
-		clean.bat = clean.bat
-		deploy.bat = deploy.bat
-		pack.bat = pack.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{D4745EE0-64B6-44DC-AC13-A6E843FB3643}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTasks", ".build\BuildTasks\BuildTasks.csproj", "{6C9072FE-B0ED-4A93-8083-C692FA250CEE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor", "FluentWindsor", "{4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}"
 EndProject
@@ -81,12 +75,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{1DC00D00
 		FluentWindsor.EndersJson\README.md = FluentWindsor.EndersJson\README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "msbuild", "msbuild", "{FE7A501C-AF36-40EE-BC9B-54D837CFE303}"
-	ProjectSection(SolutionItems) = preProject
-		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
-		.build\build-and-deploy.properties.msbuild = .build\build-and-deploy.properties.msbuild
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.EndersJson", "FluentWindsor.EndersJson", "{E95AB3FF-C4A8-4A5B-9A10-34873570B83A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Console", ".examples\FluentWindsor.EndersJson\Example.Console\Example.Console.csproj", "{B7B8607F-545F-4541-A108-1C628CBA1A7C}"
@@ -121,10 +109,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7DF8728-86E4-400D-A1AA-1449B1B5F807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C7DF8728-86E4-400D-A1AA-1449B1B5F807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7DF8728-86E4-400D-A1AA-1449B1B5F807}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -209,17 +193,12 @@ Global
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3EE87C0-9B2E-4DCB-B3EA-7D414A6F813A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3EE87C0-9B2E-4DCB-B3EA-7D414A6F813A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3EE87C0-9B2E-4DCB-B3EA-7D414A6F813A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3EE87C0-9B2E-4DCB-B3EA-7D414A6F813A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4725C57-6079-41BB-87E8-E46C1A0750F2} = {BBC186AD-3AE3-44F8-AC8A-7CF249A804FF}
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE} = {627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}
 		{4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{C7DF8728-86E4-400D-A1AA-1449B1B5F807} = {BBC186AD-3AE3-44F8-AC8A-7CF249A804FF}
 		{963F8D02-7CD8-4BCF-A2E1-1A41952345BF} = {BBC186AD-3AE3-44F8-AC8A-7CF249A804FF}
@@ -239,7 +218,6 @@ Global
 		{9A5D37C9-EB0A-41D9-9CD9-AF871EF16BDC} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 		{A24DA96F-0EEF-4AFB-9F73-3F99586520DE} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 		{1DC00D00-81AA-4DFC-B9A6-01A69F1213C9} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
-		{FE7A501C-AF36-40EE-BC9B-54D837CFE303} = {627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}
 		{E95AB3FF-C4A8-4A5B-9A10-34873570B83A} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{B7B8607F-545F-4541-A108-1C628CBA1A7C} = {E95AB3FF-C4A8-4A5B-9A10-34873570B83A}
 		{91C3B5F1-BF0C-4729-9B35-1CA22B9D9298} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
@@ -249,6 +227,5 @@ Global
 		{E4CD0F62-5F6B-41C1-AB8F-ED91F2F000A8} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
 		{91F9F468-49A3-4CD8-AC51-D332ECEF1873} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500} = {91F9F468-49A3-4CD8-AC51-D332ECEF1873}
-		{A3EE87C0-9B2E-4DCB-B3EA-7D414A6F813A} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
 	EndGlobalSection
 EndGlobal

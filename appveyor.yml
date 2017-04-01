@@ -1,82 +1,97 @@
 
-# credit to https://github.com/Mark-Broadhurst/AzureRmRest/blob/master/appveyor.yml
-
 version: 3.0.{build}
 
 branches:
 
-  except:
+    except:
   
-    - gh-pages
+        - gh-pages
 
 skip_tags: true
 
 install:
 
-  - .paket\paket.bootstrapper.exe
+    - .paket\paket.bootstrapper.exe
   
-  - .paket\paket.exe restore
+    - .paket\paket.exe restore
 
 assembly_info:
   
-  patch: true
+    patch: true
   
-  file: SolutionInfo.*
+    file: SolutionInfo.*
   
-  assembly_version: "3.0.{build}"
+    assembly_version: "3.0.{build}"
   
-  assembly_file_version: "{version}"
+    assembly_file_version: "{version}"
   
-  assembly_informational_version: "{version}"
-
-configuration: Release
+    assembly_informational_version: "{version}"
+    
+    configuration: Release
 
 cache:
-  - packages -> paket.lock
+    - packages -> paket.lock
 
 nuget:
   
-  account_feed: true
+    account_feed: true
   
-  project_feed: true
+    project_feed: true
 
 build:
   
-  parallel: true
+    parallel: true
   
-  project: fluentwindsor.sln
+    project: fluentwindsor.sln
   
-  publish_nuget: true
+    publish_nuget: true
   
-  publish_nuget_symbols: true
+    publish_nuget_symbols: true
   
-  include_nuget_references: true
+    include_nuget_references: true
 
 after_test:
   
-  - cmd: pack.bat
+    - cmd: pack.bat
   
 artifacts:
 
-  - path: .build\*.nupkg
+    - path: .build\*.nupkg
 
 deploy:
   
-  - provider: GitHub
-    release: fluentwindsor-v$(appveyor_build_version)
-    description: 'For making Windsor super easy'
-    auth_token:
-      secure: sZD4+HypTqlQYLcBv+EkKIc0EWYGkeT4LUXmY0ALqyDQH6n++fBAQZTHaltI4SsM 
-    artifact: /.*\.(dll|pdb|nupkg)/       
-    draft: false
-    prerelease: false
-    on:
-      branch: master                 
-    appveyor_repo_tag: true
+    - provider: GitHub
 
-  - provider: NuGet
-    api_key:
-      secure: GYMQ4rHqUYL5BcjMn2L9cs72K4YwEPfGRK9VWj1w6PswqbEWKrGUKICa064OUKRD
-    skip_symbols: false
-    artifact: /.*\.nupkg/  
+        release: fluentwindsor-v$(appveyor_build_version)
+    
+        description: 'For making Windsor super easy'
+    
+        auth_token:
   
+            secure: sZD4+HypTqlQYLcBv+EkKIc0EWYGkeT4LUXmY0ALqyDQH6n++fBAQZTHaltI4SsM 
+    
+        artifact: /.*\.(dll|pdb|nupkg)/       
+    
+        draft: false
+    
+        prerelease: false
+    
+        appveyor_repo_tag: true
+
+        on:
+    
+            branch: master                 
+    
+    - provider: NuGet
+    
+        api_key:
+    
+            secure: GYMQ4rHqUYL5BcjMn2L9cs72K4YwEPfGRK9VWj1w6PswqbEWKrGUKICa064OUKRD
+    
+        skip_symbols: false
+    
+        artifact: /.*\.nupkg/  
+    
+        on:
+    
+            branch: master
