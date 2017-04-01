@@ -1,19 +1,21 @@
-<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
+<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3&s=95" />
 
 &nbsp;FluentWindsor<br /><br />
 =============
+
+<br/>
 
 | Version | Build |
 |---------|---------|
 | <a href= "https://www.nuget.org/packages/FluentWindsor/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> | <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
 
+<br/>
+
 This is a Castle Windsor IoC kick starter for new projects. It scans all the assemblies in your application domain and installs all
 implementations of IWindsorInstaller. This is by far the most mature IoC container out there. Period. Let's hope we see more implementations
 in the wild as result of this :)
 
-We tried to convert this to dotnet core, and found that Castle.Windsor was not there! 
-
-Watch https://github.com/castleproject/Windsor/issues/145 to see how we go.  
+Castle.Windsor is now migrated to dotnet core in the [Fortress](https://github.com/cryosharp/fortress) Fork. Work will be starting soon to migrate this.
 
 ## Castle Windsor
 
