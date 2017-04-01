@@ -1,11 +1,15 @@
-<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
+<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3&s=95" />
 
 &nbsp;Cachely<br /><br />
 =============
 
+<br />
+
 | Version | Build |
 |---------|---------|
 | <a href= "https://www.nuget.org/packages/Cachely.Windsor/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> | <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
+
+<br />
 
 This is a naive sliding expiration cache. If you need something quick and dirty that is easy to learn and
 battle tested then hopefully this will solve your problem.
