@@ -1,11 +1,15 @@
-<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3" />
+<img align="left" src="https://avatars0.githubusercontent.com/u/7360948?v=3&s=95" />
 
 &nbsp;Hawkeye<br /><br />
 =============
 
+<br />
+
 | Version | Build |
 |---------|---------|
 |  <a href= "https://www.nuget.org/packages/Hawkeye/"><img src="https://img.shields.io/nuget/v/FluentWindsor.svg" /></a> |  <a href= "https://ci.appveyor.com/project/fir3pho3nixx/fluentwindsor"><img src="https://ci.appveyor.com/api/projects/status/8nj9cgfnw9spqbpr/branch/master?svg=true" /></a> |
+
+<br />
 
 Need a quick and dirty logging solution that services both development and production scenarios then you have come to the right place!
 This project uses deep Castle Windsor integration with log4net via FluentWindsor.
