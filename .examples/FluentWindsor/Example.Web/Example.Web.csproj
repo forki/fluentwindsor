@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -23,8 +21,6 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,25 +41,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -82,73 +60,15 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AI.Web">
-      <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
-    </Reference>
+    <Resource Include="fonts\glyphicons-halflings-regular.ttf">
+      <Paket>True</Paket>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -163,42 +83,102 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-theme.css">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap-theme.min.css">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap.css">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap.min.css">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap.min.css.map">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap.css.map">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap-theme.min.css.map">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css.map">
+      <Paket>True</Paket>
+    </Content>
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.1-vsdoc.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery.validate-vsdoc.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\bootstrap.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\bootstrap.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.slim.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js">
+      <Paket>True</Paket>
+    </Content>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\jquery.validate.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery.validate.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery.validate.unobtrusive.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\modernizr-2.8.3.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\respond.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\respond.matchmedia.addListener.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js">
+      <Paket>True</Paket>
+    </Content>
+    <Content Include="Scripts\respond.min.js">
+      <Paket>True</Paket>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -219,13 +199,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map">
+      <Paket>True</Paket>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map">
+      <Paket>True</Paket>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\FluentWindsor\FluentWindsor.Mvc\FluentWindsor.Mvc.csproj">
@@ -258,6 +242,22 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <PropertyGroup>
+        <__paket__Microsoft_Net_Compilers_props>Microsoft.Net.Compilers</__paket__Microsoft_Net_Compilers_props>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <Import Project="..\..\..\packages\Microsoft.Net.Compilers\build\$(__paket__Microsoft_Net_Compilers_props).props" Condition="Exists('..\..\..\packages\Microsoft.Net.Compilers\build\$(__paket__Microsoft_Net_Compilers_props).props')" Label="Paket" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <PropertyGroup>
+        <__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props>Microsoft.CodeDom.Providers.DotNetCompilerPlatform</__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props>
+      </PropertyGroup>
+    </When>
+  </Choose>
+  <Import Project="..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\build\$(__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props).props" Condition="Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\build\$(__paket__Microsoft_CodeDom_Providers_DotNetCompilerPlatform_props).props')" Label="Paket" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
@@ -281,17 +281,268 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
   </Target> -->
+  <Import Project="..\..\..\.paket\paket.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Antlr3.Runtime">
+          <HintPath>..\..\..\packages\Antlr\lib\Antlr3.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Antlr3.Runtime">
+          <HintPath>..\..\..\packages\Antlr3.Runtime\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Castle.Core">
+          <HintPath>..\..\..\packages\Castle.Core\lib\net45\Castle.Core.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Castle.Windsor">
+          <HintPath>..\..\..\packages\Castle.Windsor\lib\net45\Castle.Windsor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.ApplicationInsights">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.Agent.Intercept">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Agent.Intercept\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.DependencyCollector">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.DependencyCollector\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.PerfCounterCollector">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.PerfCounterCollector\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.Web">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.Web\lib\net45\Microsoft.AI.Web.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.WindowsServer">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+          <HintPath>..\..\..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Mvc">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc\lib\net45\System.Web.Mvc.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Razor">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.Razor\lib\net45\System.Web.Razor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Optimization">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.Web.Optimization\lib\net40\System.Web.Optimization.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Net.Http.Formatting">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Http">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Http.WebHost">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="System.Web.Helpers">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Deployment">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Web.WebPages.Razor">
+          <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+          <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Microsoft.Web.Infrastructure">
+          <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="Newtonsoft.Json">
+          <HintPath>..\..\..\packages\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
+      <ItemGroup>
+        <Reference Include="WebGrease">
+          <HintPath>..\..\..\packages\WebGrease\lib\WebGrease.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

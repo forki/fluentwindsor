@@ -52,7 +52,6 @@
     <Compile Include="ThreadSafeDictionaryTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +68,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\..\.paket\paket.targets" />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
       <ItemGroup>
