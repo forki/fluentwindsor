@@ -2,7 +2,8 @@
 <package>
   <metadata>
     <id>FluentWindsor</id>
-    <version>3.0.25</version>
+    <version>
+    </version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent</tags>

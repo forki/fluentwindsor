@@ -2,7 +2,8 @@
 <package>
   <metadata>
     <id>FluentWindsor.Mvc</id>
-    <version>3.0.25</version>
+    <version>
+    </version>
     <authors>fir3pho3nixx@gmail.com</authors>
     <description>A library for making windsor super easy</description>
     <tags>Castle Windsor Fluent Mvc</tags>
@@ -20,7 +21,7 @@
     <dependencies>
       <dependency id="Castle.Core" version="3.3.3" />
       <dependency id="Castle.Windsor" version="3.4.0" />
-      <dependency id="FluentWindsor" version="3.0.25" />
+      <dependency id="FluentWindsor" version="" />
       <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
       <dependency id="Microsoft.AspNet.Razor" version="3.2.3" />
       <dependency id="Microsoft.AspNet.WebPages" version="3.2.3" />
