@@ -18,8 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
-		.build\build-and-deploy.msbuild = .build\build-and-deploy.msbuild
-		.build\build-and-deploy.properties.msbuild = .build\build-and-deploy.properties.msbuild
+		build.bat = build.bat
+		clean.bat = clean.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".git", ".git", "{D4745EE0-64B6-44DC-AC13-A6E843FB3643}"
@@ -106,8 +106,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".version", ".version", "{9E
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Web", ".examples\FluentWindsor\Example.Web\Example.Web.csproj", "{EA05D983-A564-4AC7-8CC4-FB5395729C15}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTasks", ".build\BuildTasks\BuildTasks.csproj", "{6C9072FE-B0ED-4A93-8083-C692FA250CEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -203,10 +201,6 @@ Global
 		{EA05D983-A564-4AC7-8CC4-FB5395729C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA05D983-A564-4AC7-8CC4-FB5395729C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA05D983-A564-4AC7-8CC4-FB5395729C15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -242,6 +236,5 @@ Global
 		{91F9F468-49A3-4CD8-AC51-D332ECEF1873} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500} = {91F9F468-49A3-4CD8-AC51-D332ECEF1873}
 		{EA05D983-A564-4AC7-8CC4-FB5395729C15} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
-		{6C9072FE-B0ED-4A93-8083-C692FA250CEE} = {627AA02E-C6C0-4E0A-BF5A-DE0A2EF8D465}
 	EndGlobalSection
 EndGlobal
