@@ -22,5 +22,10 @@ namespace Example.Test.AssemblyB
         {
             Debug.WriteLine("ServiceB: Dispose called ... ");
         }
+
+        ~ServiceB()
+        {
+            Debug.WriteLine("ServiceB: Finalized ... ");
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Web.Http;
 using Example.Test.AssemblyC;
 
@@ -25,6 +26,18 @@ namespace Example.Web.Controllers.Api
                     "Item 2",
                     "Item 3"
                 });
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            Debug.WriteLine("DefaultController: Dispose called ... ");
+        }
+
+        ~DefaultController()
+        {
+            Debug.WriteLine("DefaultController: Finalized ... ");
         }
     }
 }

@@ -49,11 +49,4 @@ namespace FluentlyWindsor.Mvc
                 controllerName));
         }
     }
-
-    internal class MissingControllerException : Exception
-    {
-        public MissingControllerException(string message) : base(message)
-        {
-        }
-    }
 }

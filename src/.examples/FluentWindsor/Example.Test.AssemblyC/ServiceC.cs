@@ -26,5 +26,10 @@ namespace Example.Test.AssemblyC
         {
             Debug.WriteLine("ServiceC: Dispose called ... ");
         }
+
+        ~ServiceC()
+        {
+            Debug.WriteLine("ServiceC: Finalized ... ");
+        }
     }
 }

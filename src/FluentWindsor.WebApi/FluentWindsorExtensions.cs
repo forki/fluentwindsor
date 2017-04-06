@@ -12,7 +12,7 @@ namespace FluentlyWindsor.WebApi
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new FluentWindsorControllerActivator());
             //This method breaks webapi
             //GlobalConfiguration.Configuration.DependencyResolver = new FluentWindsorDependencyResolver();
-            return fluentWindsor.WithTypesInheriting<ApiController>((x, y) => x.RegisterIfNotAlready(Component.For(y).Named(y.Name.Replace("Controller", "_API")).LifeStyle.PerWebRequest));
+            return fluentWindsor.WithTypesInheriting<ApiController>((x, y) => x.RegisterIfNotAlready(Component.For(y).Named(y.Name.Replace("Controller", "_API")).LifestyleCustom<PerWebRequestLifestyleManager>()));
         }
     }
 }

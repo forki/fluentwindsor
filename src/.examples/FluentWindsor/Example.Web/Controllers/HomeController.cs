@@ -41,5 +41,10 @@ namespace Example.Web.Controllers
 
             Debug.WriteLine("HomeController: Dispose called ... ");
         }
+
+        ~HomeController()
+        {
+            Debug.WriteLine("HomeController: Finalized ... ");
+        }
     }
 }
