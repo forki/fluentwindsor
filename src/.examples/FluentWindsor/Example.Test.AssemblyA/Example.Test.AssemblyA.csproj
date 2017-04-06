@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="..\..\..\..\common.props"></Import>
+
+  <PropertyGroup>
+    <PackageId>Example.Test.TestAssemblyA</PackageId>
+    <TargetFrameworks>net452</TargetFrameworks>
+    <RootNamespace>FluentlyWindsor</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fortress.Windsor" Version="0.5.265" />
+  </ItemGroup>
+
+</Project>

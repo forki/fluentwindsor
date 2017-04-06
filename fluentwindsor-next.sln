@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor", "src\FluentWindsor\FluentWindsor.csproj", "{3CE81A6C-34EB-4ECC-AAC0-6491509F4025}"
 EndProject
@@ -9,6 +9,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{8535E9
 	ProjectSection(SolutionItems) = preProject
 		common.props = common.props
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.Mvc", "src\FluentWindsor.Mvc\FluentWindsor.Mvc.csproj", "{B856F406-30B2-4C70-A744-FC0549FF05A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.Tests", "src\FluentWindsor.Tests\FluentWindsor.Tests.csproj", "{B1371A8D-FAF7-4B73-81E7-D61FE139AF64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.WebApi", "src\FluentWindsor.WebApi\FluentWindsor.WebApi.csproj", "{26152CC2-0655-4B9E-A438-2E3933A56D43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".examples", ".examples", "{650F2DFA-4C68-4EE3-A4D1-CE112DFF8169}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor", "FluentWindsor", "{BBFF410B-4208-46BB-B1FC-97A574DE7E98}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyA", "src\.examples\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj", "{130D4CAB-633F-4730-9681-70673AB495E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyB", "src\.examples\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj", "{4C16BE09-0947-4175-BED3-BA4E25C131AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyC", "src\.examples\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj", "{2D225EE4-969F-42D5-95B6-D7A0E272AC4E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Console", "src\.examples\FluentWindsor\Example.Console\Example.Console.csproj", "{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +38,43 @@ Global
 		{3CE81A6C-34EB-4ECC-AAC0-6491509F4025}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CE81A6C-34EB-4ECC-AAC0-6491509F4025}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CE81A6C-34EB-4ECC-AAC0-6491509F4025}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B856F406-30B2-4C70-A744-FC0549FF05A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B856F406-30B2-4C70-A744-FC0549FF05A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B856F406-30B2-4C70-A744-FC0549FF05A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B856F406-30B2-4C70-A744-FC0549FF05A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1371A8D-FAF7-4B73-81E7-D61FE139AF64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1371A8D-FAF7-4B73-81E7-D61FE139AF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1371A8D-FAF7-4B73-81E7-D61FE139AF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1371A8D-FAF7-4B73-81E7-D61FE139AF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26152CC2-0655-4B9E-A438-2E3933A56D43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26152CC2-0655-4B9E-A438-2E3933A56D43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26152CC2-0655-4B9E-A438-2E3933A56D43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26152CC2-0655-4B9E-A438-2E3933A56D43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{130D4CAB-633F-4730-9681-70673AB495E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{130D4CAB-633F-4730-9681-70673AB495E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{130D4CAB-633F-4730-9681-70673AB495E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{130D4CAB-633F-4730-9681-70673AB495E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C16BE09-0947-4175-BED3-BA4E25C131AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C16BE09-0947-4175-BED3-BA4E25C131AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C16BE09-0947-4175-BED3-BA4E25C131AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C16BE09-0947-4175-BED3-BA4E25C131AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D225EE4-969F-42D5-95B6-D7A0E272AC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D225EE4-969F-42D5-95B6-D7A0E272AC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D225EE4-969F-42D5-95B6-D7A0E272AC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D225EE4-969F-42D5-95B6-D7A0E272AC4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BBFF410B-4208-46BB-B1FC-97A574DE7E98} = {650F2DFA-4C68-4EE3-A4D1-CE112DFF8169}
+		{130D4CAB-633F-4730-9681-70673AB495E8} = {BBFF410B-4208-46BB-B1FC-97A574DE7E98}
+		{4C16BE09-0947-4175-BED3-BA4E25C131AA} = {BBFF410B-4208-46BB-B1FC-97A574DE7E98}
+		{2D225EE4-969F-42D5-95B6-D7A0E272AC4E} = {BBFF410B-4208-46BB-B1FC-97A574DE7E98}
+		{8363F934-1EEA-4C75-BC8D-85E9C8F60BA1} = {BBFF410B-4208-46BB-B1FC-97A574DE7E98}
 	EndGlobalSection
 EndGlobal

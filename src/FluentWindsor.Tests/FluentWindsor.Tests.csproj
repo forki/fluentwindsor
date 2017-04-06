@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="..\..\common.props"></Import>
+
+  <PropertyGroup>
+    <PackageId>FluentWindsor.Tests</PackageId>
+    <TargetFrameworks>net452</TargetFrameworks>
+    <RootNamespace>FluentlyWindsor.Tests</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fortress.Windsor" Version="0.5.265" />
+    <PackageReference Include="NUnit" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FluentWindsor\FluentWindsor.csproj" />
+  </ItemGroup>
+
+</Project>

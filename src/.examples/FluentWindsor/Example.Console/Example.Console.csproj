@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="..\..\..\..\common.props"></Import>
+  
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
+    <OutputType>exe</OutputType>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Example.Console</PackageId>
+    <TargetFrameworks>net452</TargetFrameworks>
+    <RootNamespace>Example.Console</RootNamespace>
+    <ApplicationIcon />
+    <OutputTypeEx>exe</OutputTypeEx>
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fortress.Windsor" Version="0.5.265" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FluentWindsor\FluentWindsor.csproj" />
+    <ProjectReference Include="..\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj" />
+    <ProjectReference Include="..\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj" />
+    <ProjectReference Include="..\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj" />
+  </ItemGroup>
+
+</Project>
