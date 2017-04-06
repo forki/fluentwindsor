@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\.examples\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj" />
+    <ProjectReference Include="..\.examples\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj" />
+    <ProjectReference Include="..\.examples\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj" />
     <ProjectReference Include="..\FluentWindsor\FluentWindsor.csproj" />
   </ItemGroup>
 

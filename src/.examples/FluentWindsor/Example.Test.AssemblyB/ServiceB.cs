@@ -1,8 +1,10 @@
-﻿using Example.Test.AssemblyA;
+﻿using System;
+using System.Diagnostics;
+using Example.Test.AssemblyA;
 
 namespace Example.Test.AssemblyB
 {
-    public class ServiceB
+    public class ServiceB : IDisposable
     {
         private readonly ServiceA serviceA;
 
@@ -14,6 +16,11 @@ namespace Example.Test.AssemblyB
         public void Execute()
         {
             serviceA.Execute();
+        }
+
+        public void Dispose()
+        {
+            Debug.WriteLine("ServiceB: Dispose called ... ");
         }
     }
 }
