@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System.Diagnostics;
+using System.Net.Http;
 using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -21,17 +22,14 @@ namespace Example.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //this.BeginRequest += (s, e) =>
-            //{
-            //    var lifeTimeScope = new DefaultLifetimeScope(new ScopeCache());
-            //    System.Web.HttpContext.Current.Session["fluentwindsor-lifetime-scope"] = lifeTimeScope;
-            //};
+            this.BeginRequest += (s, e) =>
+            {
+                Debug.WriteLine($"");
+            };
 
-            //this.EndRequest += (s, e) =>
-            //{
-            //    var lifeTimeScope = (DefaultLifetimeScope) System.Web.HttpContext.Current.Session["fluentwindsor-lifetime-scope"];
-            //    lifeTimeScope.Dispose();
-            //};
+            this.EndRequest += (s, e) =>
+            {
+            };
 
             FluentWindsor
                 .NewContainer(Assembly.GetExecutingAssembly())

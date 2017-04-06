@@ -10,11 +10,7 @@ namespace FluentlyWindsor.Mvc
         {
             FluentWindsorExtensionsConstants.ControllerNamespaces = controllerNamespaces;
             ControllerBuilder.Current.SetControllerFactory(new FluentWindsorMvcControllerFactory(FluentWindsor.ServiceLocator));
-
-            // Conundrum, externally tracked burdens only release root instance and not entire dependency graph, internally tracked budrens release children but hold on to root where finalisers are not called using this method
-            //return fluentWindsor.WithTypesInheriting<Controller>((x, y) => x.RegisterIfNotAlready(Component.For(y).Named(y.Name.Replace("Controller", "_MVC")).LifestyleCustom<PerWebRequestLifestyleManager>()));
-
-            return fluentWindsor.WithTypesInheriting<Controller>((x, y) => x.RegisterIfNotAlready(Component.For(y).Named(y.Name.Replace("Controller", "_MVC")).LifestyleTransient()));
+            return fluentWindsor.WithTypesInheriting<Controller>((x, y) => x.RegisterIfNotAlready(Component.For(y).Named(y.Name.Replace("Controller", "_MVC")).LifestyleCustom<FluentLifestyleManager>()));
         }
     }
 }

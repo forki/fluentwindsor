@@ -17,4 +17,8 @@
     <PackageReference Include="Fortress.Windsor" Version="0.5.265" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\FluentWindsor\FluentWindsor.csproj" />
+  </ItemGroup>
+
 </Project>
