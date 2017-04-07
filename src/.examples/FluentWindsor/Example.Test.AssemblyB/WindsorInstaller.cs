@@ -10,7 +10,7 @@ namespace Example.Test.AssemblyB
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<ServiceB>().LifestyleCustom<FluentLifestyleManager>());
+            container.Register(Component.For<ServiceB>().LifestyleCustom<FluentLifetimeManager>());
         }
     }
 }

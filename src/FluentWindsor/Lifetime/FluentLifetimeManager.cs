@@ -8,15 +8,15 @@ using Castle.MicroKernel.Lifestyle.Scoped;
 
 namespace FluentlyWindsor.Lifestyle
 {
-    public class FluentLifestyleManager : AbstractLifestyleManager
+    public class FluentLifetimeManager : AbstractLifestyleManager
     {
         private IScopeAccessor accessor;
 
-        public FluentLifestyleManager() : this(new FluentLifestyleScopeAccessor())
+        public FluentLifetimeManager() : this(new FluentLifetimeAccessor())
         {
         }
 
-        public FluentLifestyleManager(IScopeAccessor accessor)
+        public FluentLifetimeManager(IScopeAccessor accessor)
         {
             this.accessor = accessor;
         }

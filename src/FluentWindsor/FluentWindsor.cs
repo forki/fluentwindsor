@@ -19,20 +19,11 @@ namespace FluentlyWindsor
 
         private static ManualResetEvent waitUntilComplete;
 
-        public static Assembly ExecutingAssembly
-        {
-            get { return executingAssembly; }
-        }
+        public static Assembly ExecutingAssembly => executingAssembly;
 
-        public static IWindsorContainer ServiceLocator
-        {
-            get { return container; }
-        }
+        public static IWindsorContainer ServiceLocator => container;
 
-        public static ManualResetEvent WaitUntilComplete
-        {
-            get { return waitUntilComplete; }
-        }
+        public static ManualResetEvent WaitUntilComplete => waitUntilComplete;
 
         public FluentWindsor(Assembly executingAssembly)
         {
@@ -51,6 +42,7 @@ namespace FluentlyWindsor
         public FluentWindsor WithArrayResolver()
         {
             container.Kernel.Resolver.AddSubResolver(new ArrayResolver(container.Kernel));
+
             return this;
         }
 
@@ -70,6 +62,7 @@ namespace FluentlyWindsor
                     if (typeof (IWindsorInstaller).IsAssignableFrom(type))
                     {
                         var typeInstance = (IWindsorInstaller) Activator.CreateInstance(type);
+
                         container.Install(typeInstance);
                     }
                 }
@@ -86,6 +79,7 @@ namespace FluentlyWindsor
                 .Concat(executingAssembly.GetAnyTypeThatIsSubClassOf<T>(AssemblyScanningPolicies.All));
 
             foreach(var type in types)
+
                 registrationAction?.Invoke(container, type);
 
             return this;
@@ -94,6 +88,7 @@ namespace FluentlyWindsor
         public IWindsorContainer Create()
         {
             waitUntilComplete.Set();
+
             return container;
         }
     }

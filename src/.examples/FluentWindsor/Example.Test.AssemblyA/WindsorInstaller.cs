@@ -2,6 +2,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using FluentlyWindsor;
+using FluentlyWindsor.Extensions;
 using FluentlyWindsor.Lifestyle;
 
 namespace Example.Test.AssemblyA
@@ -10,7 +11,7 @@ namespace Example.Test.AssemblyA
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<ServiceA>().LifestyleCustom<FluentLifestyleManager>());
+            container.Register(Component.For<ServiceA>().LifestyleCustom<FluentLifetimeManager>());
         }
     }
 }

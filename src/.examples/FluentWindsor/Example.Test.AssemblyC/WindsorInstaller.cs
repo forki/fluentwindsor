@@ -10,7 +10,7 @@ namespace Example.Test.AssemblyC
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<ServiceC>().LifestyleCustom<FluentLifestyleManager>());
+            container.Register(Component.For<ServiceC>().LifestyleCustom<FluentLifetimeManager>());
         }
     }
 }

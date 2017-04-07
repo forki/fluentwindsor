@@ -7,9 +7,9 @@ using Castle.MicroKernel.Lifestyle.Scoped;
 
 namespace FluentlyWindsor.Lifestyle
 {
-    public class FluentLifestyleLifetimeScope : ILifetimeScope
+    public class FluentLifetimeScope : ILifetimeScope
     {
-        private static readonly ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope> localScopeCache = new ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope>();
+        private static readonly ConcurrentDictionary<Guid, FluentLifetimeScope> localScopeCache = new ConcurrentDictionary<Guid, FluentLifetimeScope>();
 
         private readonly Guid contextId;
 
@@ -23,11 +23,11 @@ namespace FluentlyWindsor.Lifestyle
 
         public Guid ContextId => contextId;
 
-        public FluentLifestyleLifetimeScope()
+        public FluentLifetimeScope()
         {
             contextId = Guid.NewGuid();
 
-            var added = localScopeCache.TryAdd(contextId, this);
+            localScopeCache.TryAdd(contextId, this);
         }
 
         public Burden GetCachedInstance(ComponentModel model, ScopedInstanceActivationCallback createInstance)
@@ -65,9 +65,9 @@ namespace FluentlyWindsor.Lifestyle
                 cachedInstances = null;
             }
 
-            FluentLifestyleLifetimeScope @this;
+            FluentLifetimeScope @this;
 
-            var removed = localScopeCache.TryRemove(contextId, out @this);
+            localScopeCache.TryRemove(contextId, out @this);
         }
     }
 }
