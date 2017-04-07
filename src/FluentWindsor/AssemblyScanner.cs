@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using FluentlyWindsor.Interfaces;
@@ -21,9 +19,11 @@ namespace FluentlyWindsor
         public virtual List<Assembly> FindAssemblies(Predicate<Assembly> isTrueOf)
         {
             var results = new List<Assembly>();
+
             var applicationDomain = new ApplicationDomain(AppDomain.CurrentDomain);
 
             foreach (var fileInfo in applicationDomain.GetAssemblyFiles())
+
                 applicationDomain.Load(fileInfo.Name.Replace(fileInfo.Extension, ""));
 
             foreach (var assembly in applicationDomain.GetAssemblies().Where(x => policies.All(y => y.IsAssemblyAllowed(x))))

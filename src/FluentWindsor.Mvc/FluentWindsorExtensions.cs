@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using Castle.MicroKernel.Registration;
 using FluentlyWindsor.Extensions;
+using FluentlyWindsor.Lifestyle;
 
 namespace FluentlyWindsor.Mvc
 {

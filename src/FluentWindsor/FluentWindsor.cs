@@ -14,7 +14,9 @@ namespace FluentlyWindsor
     public class FluentWindsor
     {
         private static Assembly executingAssembly;
+
         private static WindsorContainer container;
+
         private static ManualResetEvent waitUntilComplete;
 
         public static Assembly ExecutingAssembly
@@ -35,7 +37,9 @@ namespace FluentlyWindsor
         public FluentWindsor(Assembly executingAssembly)
         {
             container = new WindsorContainer();
+
             waitUntilComplete = new ManualResetEvent(false);
+
             FluentWindsor.executingAssembly = executingAssembly;
         }
 
@@ -53,6 +57,7 @@ namespace FluentlyWindsor
         public FluentWindsor WithInstallers()
         {
             container.Install(new WindsorInstaller());
+
             var assemblies = container.Resolve<IAssemblyScanner>()
                 .FindAssemblies(x => x.HasAnyTypeThatImplementsInterface<IWindsorInstaller>(AssemblyScanningPolicies.All))
                 .Concat(new[]{executingAssembly})

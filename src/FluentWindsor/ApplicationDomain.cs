@@ -23,6 +23,7 @@ namespace FluentlyWindsor
                 directoryInfo = new DirectoryInfo(appDomain.BaseDirectory + "\\bin");
 
             var files = directoryInfo.GetFiles().Where(x => x.FullName.ToLower().EndsWith(".dll") || x.FullName.ToLower().EndsWith(".exe")).ToArray();
+
             return files;
         }
 

@@ -1,7 +1,7 @@
 using Castle.MicroKernel.Context;
 using Castle.MicroKernel.Lifestyle.Scoped;
 
-namespace FluentlyWindsor
+namespace FluentlyWindsor.Lifestyle
 {
     public class FluentLifestyleScopeAccessor : IScopeAccessor
     {

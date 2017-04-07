@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using FluentlyWindsor;
+using FluentlyWindsor.Lifestyle;
 using FluentlyWindsor.Mvc;
 using FluentlyWindsor.WebApi;
 
@@ -16,9 +17,13 @@ namespace Example.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             FluentLifestyleLifetimeScope.GetCurrentLifetimeScope += () =>
@@ -43,15 +48,17 @@ namespace Example.Web
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             var scope = new FluentLifestyleLifetimeScope();
+
             HttpContext.Current.Items.Add("fluentwindsor-lifetime-scope", scope);
         }
 
         protected void Application_EndRequest(object sender, EventArgs e)
         {
             var scope = (FluentLifestyleLifetimeScope) HttpContext.Current.Items["fluentwindsor-lifetime-scope"];
+
             HttpContext.Current.Items.Remove("fluentwindsor-lifetime-scope");
+
             scope.Dispose();
-            scope = null;
         }
     }
 }

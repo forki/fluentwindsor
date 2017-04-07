@@ -1,59 +1,40 @@
 using System;
 using System.Collections.Concurrent;
-using System.Diagnostics;
-using System.Threading;
 using Castle.Core;
 using Castle.Core.Internal;
 using Castle.MicroKernel;
-using Castle.MicroKernel.Context;
 using Castle.MicroKernel.Lifestyle.Scoped;
 
-namespace FluentlyWindsor
+namespace FluentlyWindsor.Lifestyle
 {
     public class FluentLifestyleLifetimeScope : ILifetimeScope
     {
-        public FluentLifestyleLifetimeScope CurrentScope = null;
-
-
-        static AsyncLocal<FluentLifestyleLifetimeScope> _asyncLocalString = new AsyncLocal<FluentLifestyleLifetimeScope>();
-
         private static readonly ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope> localScopeCache = new ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope>();
 
         private readonly Guid contextId;
 
         private readonly Lock @lock = Lock.Create();
 
-        private ScopeCache cache = new ScopeCache();
+        private ScopeCache cachedInstances = new ScopeCache();
 
         public static Func<ILifetimeScope> DisposeLifetimeScope;
 
         public static Func<ILifetimeScope> GetCurrentLifetimeScope;
 
-        private readonly FluentLifestyleLifetimeScope parentScope;
+        public Guid ContextId => contextId;
 
         public FluentLifestyleLifetimeScope()
         {
-            var parent = GetCurrentLifetimeScope();
-
-            if (parent != null)
-            {
-                parentScope = (FluentLifestyleLifetimeScope) parent;
-            }
-
             contextId = Guid.NewGuid();
 
             var added = localScopeCache.TryAdd(contextId, this);
-
-            Debug.Assert(added);
-
-            CurrentScope = this;
         }
 
         public Burden GetCachedInstance(ComponentModel model, ScopedInstanceActivationCallback createInstance)
         {
             using (var token = @lock.ForReadingUpgradeable())
             {
-                var burden = cache[model];
+                var burden = cachedInstances[model];
 
                 if (burden == null)
                 {
@@ -61,7 +42,7 @@ namespace FluentlyWindsor
 
                     burden = createInstance(delegate { });
 
-                    cache[model] = burden;
+                    cachedInstances[model] = burden;
                 }
 
                 return burden;
@@ -72,30 +53,21 @@ namespace FluentlyWindsor
         {
             using (var token = @lock.ForReadingUpgradeable())
             {
-                if (cache == null)
+                if (cachedInstances == null)
                 {
                     return;
                 }
 
                 token.Upgrade();
 
-                cache.Dispose();
+                cachedInstances.Dispose();
 
-                cache = null;
-
-                if (parentScope != null)
-                {
-                    CurrentScope = parentScope;
-                }
-                else
-                {
-                    CurrentScope.Dispose();
-                }
+                cachedInstances = null;
             }
 
             FluentLifestyleLifetimeScope @this;
 
-            localScopeCache.TryRemove(contextId, out @this);
+            var removed = localScopeCache.TryRemove(contextId, out @this);
         }
     }
 }

@@ -1,6 +1,4 @@
 using System;
-using System.Diagnostics;
-using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using Castle.Core.Internal;
 using Castle.MicroKernel;
@@ -8,14 +6,13 @@ using Castle.MicroKernel.Context;
 using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Lifestyle.Scoped;
 
-namespace FluentlyWindsor
+namespace FluentlyWindsor.Lifestyle
 {
     public class FluentLifestyleManager : AbstractLifestyleManager
     {
         private IScopeAccessor accessor;
 
-        public FluentLifestyleManager()
-            : this(new FluentLifestyleScopeAccessor())
+        public FluentLifestyleManager() : this(new FluentLifestyleScopeAccessor())
         {
         }
 
@@ -39,24 +36,7 @@ namespace FluentlyWindsor
             {
                 var localBurden = base.CreateInstance(context, trackedExternally: true);
 
-                afterCreated(localBurden);
-
                 Track(localBurden, releasePolicy);
-
-                localBurden.GraphReleased += burden1 =>
-                {
-                    Debug.WriteLine("Burden: Graph Released");
-                };
-
-                localBurden.Released += burden1 =>
-                {
-                    Debug.WriteLine("Burden: Released");
-                };
-
-                localBurden.Releasing += burden1 =>
-                {
-                    Debug.WriteLine("Burden: Releasing");
-                };
 
                 return localBurden;
             });
