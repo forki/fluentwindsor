@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
-using System.Globalization;
+using System.Threading;
 using Castle.Core;
 using Castle.Core.Internal;
 using Castle.MicroKernel;
@@ -14,7 +14,10 @@ namespace FluentlyWindsor
     {
         public FluentLifestyleLifetimeScope CurrentScope = null;
 
-        private static readonly ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope> appDomainLocalInstanceCache = new ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope>();
+
+        static AsyncLocal<FluentLifestyleLifetimeScope> _asyncLocalString = new AsyncLocal<FluentLifestyleLifetimeScope>();
+
+        private static readonly ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope> localScopeCache = new ConcurrentDictionary<Guid, FluentLifestyleLifetimeScope>();
 
         private readonly Guid contextId;
 
@@ -24,21 +27,22 @@ namespace FluentlyWindsor
 
         public static Func<ILifetimeScope> DisposeLifetimeScope;
 
-        public static Func<CreationContext, ILifetimeScope> GetCurrentLifetimeScope;
+        public static Func<ILifetimeScope> GetCurrentLifetimeScope;
 
         private readonly FluentLifestyleLifetimeScope parentScope;
 
         public FluentLifestyleLifetimeScope()
         {
-            var parent = GetCurrentLifetimeScope(null);
+            var parent = GetCurrentLifetimeScope();
 
             if (parent != null)
             {
                 parentScope = (FluentLifestyleLifetimeScope) parent;
             }
+
             contextId = Guid.NewGuid();
 
-            var added = appDomainLocalInstanceCache.TryAdd(contextId, this);
+            var added = localScopeCache.TryAdd(contextId, this);
 
             Debug.Assert(added);
 
@@ -88,8 +92,10 @@ namespace FluentlyWindsor
                     CurrentScope.Dispose();
                 }
             }
+
             FluentLifestyleLifetimeScope @this;
-            appDomainLocalInstanceCache.TryRemove(contextId, out @this);
+
+            localScopeCache.TryRemove(contextId, out @this);
         }
     }
 }

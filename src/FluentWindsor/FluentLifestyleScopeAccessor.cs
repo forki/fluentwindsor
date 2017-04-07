@@ -7,7 +7,7 @@ namespace FluentlyWindsor
     {
         public ILifetimeScope GetScope(CreationContext context)
         {
-            return FluentLifestyleLifetimeScope.GetCurrentLifetimeScope(context);
+            return FluentLifestyleLifetimeScope.GetCurrentLifetimeScope();
         }
 
         public void Dispose()

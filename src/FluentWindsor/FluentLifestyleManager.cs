@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using Castle.Core.Internal;
@@ -41,6 +42,21 @@ namespace FluentlyWindsor
                 afterCreated(localBurden);
 
                 Track(localBurden, releasePolicy);
+
+                localBurden.GraphReleased += burden1 =>
+                {
+                    Debug.WriteLine("Burden: Graph Released");
+                };
+
+                localBurden.Released += burden1 =>
+                {
+                    Debug.WriteLine("Burden: Released");
+                };
+
+                localBurden.Releasing += burden1 =>
+                {
+                    Debug.WriteLine("Burden: Releasing");
+                };
 
                 return localBurden;
             });
