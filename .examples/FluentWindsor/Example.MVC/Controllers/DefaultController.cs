@@ -5,7 +5,7 @@ using Example.Test.AssemblyC;
 
 namespace Example.MVC.Controllers
 {
-    public class DefaultController : Controller
+	public class DefaultController : Controller
     {
         private readonly ServiceA serviceA;
         private readonly ServiceB serviceB;
