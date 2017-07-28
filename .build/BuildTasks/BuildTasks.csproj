@@ -50,6 +50,11 @@
     <Compile Include="SetExplicitVersionsForDependencies.cs" />
     <Compile Include="NuspecSetVersion.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Castle.Core">
+      <Version>4.1.1</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
