@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{627AA0
 		appveyor.yml = appveyor.yml
 		build.bat = build.bat
 		clean.bat = clean.bat
+		.build\common.props = .build\common.props
 		deploy.bat = deploy.bat
 		pack.bat = pack.bat
 	EndProjectSection
@@ -36,23 +37,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor", "FluentWind
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor", "FluentWindsor", "{BBC186AD-3AE3-44F8-AC8A-7CF249A804FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor", "FluentWindsor\FluentWindsor\FluentWindsor.csproj", "{C7DF8728-86E4-400D-A1AA-1449B1B5F807}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor", "FluentWindsor\FluentWindsor\FluentWindsor.csproj", "{C7DF8728-86E4-400D-A1AA-1449B1B5F807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Mvc", "FluentWindsor\FluentWindsor.Mvc\FluentWindsor.Mvc.csproj", "{963F8D02-7CD8-4BCF-A2E1-1A41952345BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.Mvc", "FluentWindsor\FluentWindsor.Mvc\FluentWindsor.Mvc.csproj", "{963F8D02-7CD8-4BCF-A2E1-1A41952345BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Tests", "FluentWindsor\FluentWindsor.Tests\FluentWindsor.Tests.csproj", "{CE537FBB-6476-4E34-A867-1C793F112A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.Tests", "FluentWindsor\FluentWindsor.Tests\FluentWindsor.Tests.csproj", "{CE537FBB-6476-4E34-A867-1C793F112A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.WebApi", "FluentWindsor\FluentWindsor.WebApi\FluentWindsor.WebApi.csproj", "{D0AEEC65-4431-4ACA-B3EB-CE13A2885503}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.WebApi", "FluentWindsor\FluentWindsor.WebApi\FluentWindsor.WebApi.csproj", "{D0AEEC65-4431-4ACA-B3EB-CE13A2885503}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Console", ".examples\FluentWindsor\Example.Console\Example.Console.csproj", "{CE2FF12D-E373-4375-9C11-67F83773B6D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyA", ".examples\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj", "{3661926F-18D6-454A-8240-BCF07DD5BF4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyA", ".examples\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj", "{3661926F-18D6-454A-8240-BCF07DD5BF4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyB", ".examples\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj", "{FC239C37-E7A4-43B5-A610-3C4B93E935ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyB", ".examples\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj", "{FC239C37-E7A4-43B5-A610-3C4B93E935ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Test.AssemblyC", ".examples\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj", "{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.MVC", ".examples\FluentWindsor\Example.MVC\Example.MVC.csproj", "{CC1677B6-3166-485C-8C19-56EC70F2A873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Test.AssemblyC", ".examples\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj", "{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluentWindsor.Hawkeye", "FluentWindsor.Hawkeye", "{C63780A2-AA3C-46E2-BCE0-2FEA8AAB4234}"
 EndProject
@@ -63,8 +62,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentWindsor.Hawkeye.Tests", "FluentWindsor.Hawkeye\Hawkeye.Tests\FluentWindsor.Hawkeye.Tests.csproj", "{C9A993FB-87A5-4CBE-94F1-8D1C00FA5F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Console", ".examples\FluentWindsor.Hawkeye\Example.Console\Example.Console.csproj", "{9ABCE904-ABB4-4959-8DCD-70778D288404}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.MVC", ".examples\FluentWindsor.Hawkeye\Example.MVC\Example.MVC.csproj", "{3768375B-02D2-415C-B4B1-42DA20899F4E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{C1BA4CCF-04E0-4D7E-B217-2EA984A110C2}"
 	ProjectSection(SolutionItems) = preProject
@@ -120,6 +117,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".version", ".version", "{9E
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Web.Classic", ".examples\FluentWindsor\Example.Web.Classic\Example.Web.Classic.csproj", "{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentWindsor.AspNetCore", "FluentWindsor\FluentWindsor.AspNetCore\FluentWindsor.AspNetCore.csproj", "{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Web.AspNetCore", ".examples\FluentWindsor\Example.Web.AspNetCore\Example.Web.AspNetCore.csproj", "{A0B7E74A-F103-4B51-B210-0F52713AE081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -162,10 +165,6 @@ Global
 		{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC1677B6-3166-485C-8C19-56EC70F2A873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC1677B6-3166-485C-8C19-56EC70F2A873}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC1677B6-3166-485C-8C19-56EC70F2A873}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC1677B6-3166-485C-8C19-56EC70F2A873}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8D0D2ACF-DB8C-4EEC-9E55-1C9DDE10E850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8D0D2ACF-DB8C-4EEC-9E55-1C9DDE10E850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D0D2ACF-DB8C-4EEC-9E55-1C9DDE10E850}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -178,10 +177,6 @@ Global
 		{9ABCE904-ABB4-4959-8DCD-70778D288404}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9ABCE904-ABB4-4959-8DCD-70778D288404}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9ABCE904-ABB4-4959-8DCD-70778D288404}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3768375B-02D2-415C-B4B1-42DA20899F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36C995AE-6649-43EF-A7AA-8B2ACA91D667}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -222,6 +217,18 @@ Global
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B7E74A-F103-4B51-B210-0F52713AE081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B7E74A-F103-4B51-B210-0F52713AE081}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B7E74A-F103-4B51-B210-0F52713AE081}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B7E74A-F103-4B51-B210-0F52713AE081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -238,12 +245,10 @@ Global
 		{3661926F-18D6-454A-8240-BCF07DD5BF4E} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
 		{FC239C37-E7A4-43B5-A610-3C4B93E935ED} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
 		{D39AA55C-DC18-4B75-B00C-B5C3F73A29C0} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
-		{CC1677B6-3166-485C-8C19-56EC70F2A873} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
 		{630E20F0-4420-4234-903F-3BBF26072226} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{8D0D2ACF-DB8C-4EEC-9E55-1C9DDE10E850} = {C63780A2-AA3C-46E2-BCE0-2FEA8AAB4234}
 		{C9A993FB-87A5-4CBE-94F1-8D1C00FA5F0B} = {C63780A2-AA3C-46E2-BCE0-2FEA8AAB4234}
 		{9ABCE904-ABB4-4959-8DCD-70778D288404} = {630E20F0-4420-4234-903F-3BBF26072226}
-		{3768375B-02D2-415C-B4B1-42DA20899F4E} = {630E20F0-4420-4234-903F-3BBF26072226}
 		{C1BA4CCF-04E0-4D7E-B217-2EA984A110C2} = {C63780A2-AA3C-46E2-BCE0-2FEA8AAB4234}
 		{36C995AE-6649-43EF-A7AA-8B2ACA91D667} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
 		{805E8FF2-80D9-429B-A6B5-A846A2DA8BE9} = {A58BA0F6-787B-4A30-88C3-01454BDEE1BC}
@@ -260,6 +265,9 @@ Global
 		{E4CD0F62-5F6B-41C1-AB8F-ED91F2F000A8} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
 		{91F9F468-49A3-4CD8-AC51-D332ECEF1873} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500} = {91F9F468-49A3-4CD8-AC51-D332ECEF1873}
+		{54CF67B1-9FFA-4F4C-82F0-1E0B01B21AA9} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
+		{C8FF5A20-8A1D-4037-A717-9AB4C4858ED5} = {BBC186AD-3AE3-44F8-AC8A-7CF249A804FF}
+		{A0B7E74A-F103-4B51-B210-0F52713AE081} = {4EEEF1F0-96F2-4AAB-81F2-632B2CB4744D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E706D7FB-786F-45DA-877E-F9DF95DE2F21}

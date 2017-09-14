@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using System.Web;
+using System.Net;
 
 namespace FluentlyWindsor.EndersJson.Extensions
 {
@@ -12,7 +12,7 @@ namespace FluentlyWindsor.EndersJson.Extensions
             var properties = instance.GetType().GetProperties()
                 .OrderBy(x => x.Name)
                 .Where(p => p.GetValue(instance, null) != null)
-                .Select(p => p.Name + "=" + HttpUtility.UrlEncode(p.GetValue(instance, null).ToString()));
+                .Select(p => p.Name + "=" + WebUtility.UrlEncode(p.GetValue(instance, null).ToString()));
             return "?" + string.Join("&", properties.ToArray());
         }
     }

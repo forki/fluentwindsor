@@ -11,7 +11,7 @@ namespace FluentlyWindsor.WebApi
         public IHttpController Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
         {
             FluentWindsor.WaitUntilComplete.WaitOne();
-            var faultTolerantResolve = (IHttpController)FluentWindsor.ServiceLocator.FaultTolerantResolve(controllerType);
+            var faultTolerantResolve = (IHttpController)FluentWindsor.ServiceLocator.Resolve(controllerType.Name + "_API", controllerType);
             request.RegisterForDispose(new FluentWindsorControllerDeactivator(() => FluentWindsor.ServiceLocator.Release(faultTolerantResolve)));
             return faultTolerantResolve;
         }

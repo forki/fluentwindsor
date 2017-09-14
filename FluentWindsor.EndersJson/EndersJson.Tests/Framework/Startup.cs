@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Owin;
+using Nancy;
 
 namespace FluentlyWindsor.EndersJson.Tests.Framework
 {
@@ -10,7 +11,7 @@ namespace FluentlyWindsor.EndersJson.Tests.Framework
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
             config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new {id = RouteParameter.Optional});
-            appBuilder.UseWebApi(config).UseNancy();
+            appBuilder.UseWebApi(config).Nancy();
         }
     }
 }

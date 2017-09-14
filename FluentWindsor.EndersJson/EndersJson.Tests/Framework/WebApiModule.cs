@@ -6,7 +6,7 @@ namespace FluentlyWindsor.EndersJson.Tests.Framework
     {
         public WebApiModule()
         {
-            Get["/"] = _ => "hello nancy";
+            Get("/", _ => "hello nancy");
         }
     }
 }

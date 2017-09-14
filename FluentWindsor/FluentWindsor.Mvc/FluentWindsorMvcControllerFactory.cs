@@ -21,7 +21,8 @@ namespace FluentlyWindsor.Mvc
         public IController CreateController(RequestContext requestContext, string controllerName)
         {
             FluentWindsor.WaitUntilComplete.WaitOne();
-            return (IController) container.Resolve(controllerName + "_MVC", FindControllerType(controllerName));
+	        var controllerType = FindControllerType(controllerName);
+	        return (IController) container.Resolve(controllerType.Name + "_MVC", controllerType);
         }
 
         public SessionStateBehavior GetControllerSessionBehavior(RequestContext requestContext, string controllerName)
@@ -36,17 +37,11 @@ namespace FluentlyWindsor.Mvc
 
         private static Type FindControllerType(string controllerName)
         {
+            var results = FluentWindsor.ExecutingAssembly.GetAnyTypeThatIsSubClassOf<System.Web.Mvc.Controller>(AssemblyScanningPolicies.All);
+            if (results.Any(x => x.Name.Contains(controllerName)))
+				return results.First(x => x.Name.Contains(controllerName));
 
-            foreach (var ns in FluentWindsorExtensionsConstants.ControllerNamespaces)
-            {
-                var controllerFullName = ns + "." + controllerName + "Controller";
-                var results = FluentWindsor.ExecutingAssembly.GetAnyTypeWithFullName(AssemblyScanningPolicies.All, controllerFullName);
-                if (results.Any()) return results.First();
-            }
-
-            throw new MissingControllerException(
-                string.Format("The controller '{0}' is nowhere to be found. Have you referenced the assembly? Are you missing a registration or installer somehwere?", 
-                controllerName));
+            throw new MissingControllerException($"The controller '{controllerName}' is nowhere to be found. Have you referenced the assembly? Are you missing a registration or installer somehwere?");
         }
     }
 

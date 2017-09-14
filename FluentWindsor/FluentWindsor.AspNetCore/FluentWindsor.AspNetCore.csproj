@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<Import Project="..\..\.build\common.props"></Import>
+
+	<PropertyGroup>
+		<Title>FluentWindsor.AspNetCore</Title>
+		<Description></Description>
+		<PackageTags></PackageTags>
+		<PackageId>FluentWindsor.AspNetCore</PackageId>
+		<AssemblyName>FluentWindsor.AspNetCore</AssemblyName>
+		<RootNamespace>FluentlyWindsor.AspNetCore</RootNamespace>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+		<DocumentationFile />
+		<NoWarn>1701;1702;1705;1591</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+	  <NoWarn>1701;1702;1705;1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Castle.Core" Version="4.1.1" />
+		<PackageReference Include="Castle.Windsor" Version="4.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0-preview2-final" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\FluentWindsor\FluentWindsor.csproj" />
+	</ItemGroup>
+
+</Project>

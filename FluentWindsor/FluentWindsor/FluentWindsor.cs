@@ -80,7 +80,7 @@ namespace FluentlyWindsor
                 .SelectMany(x => x.GetAnyTypeThatIsSubClassOf<T>(AssemblyScanningPolicies.All))
                 .Concat(executingAssembly.GetAnyTypeThatIsSubClassOf<T>(AssemblyScanningPolicies.All));
 
-            foreach(var type in types)
+            foreach(var type in types.Distinct().ToList())
                 registrationAction?.Invoke(container, type);
 
             return this;

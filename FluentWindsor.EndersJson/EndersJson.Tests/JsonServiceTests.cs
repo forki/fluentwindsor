@@ -6,13 +6,60 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using FluentlyWindsor.EndersJson.Tests.Framework;
 using NUnit.Framework;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Builder;
 
 namespace FluentlyWindsor.EndersJson.Tests
 {
-    [TestFixture]
+	public class Startup
+	{
+		public Startup(IHostingEnvironment env)
+		{
+			var builder = new ConfigurationBuilder()
+				.SetBasePath(env.ContentRootPath)
+				.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+				.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+				.AddEnvironmentVariables();
+			Configuration = builder.Build();
+		}
+
+		public IConfigurationRoot Configuration { get; }
+
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			// Add framework services.
+			services.AddMvc();
+		}
+
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+		{
+			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+			loggerFactory.AddDebug();
+
+			app.UseMvc();
+		}
+	}
+
+	[TestFixture]
     public class JsonServiceTests : WebApiTestBase
     {
-        [SetUp]
+	    private IWebHostBuilder CreateWebHostBuilder()
+	    {
+		    var config = new ConfigurationBuilder().Build();
+
+		    var host = new WebHostBuilder()
+			    .UseConfiguration(config)
+			    .UseStartup<Startup>();
+
+		    return host;
+	    }
+
+		[SetUp]
         public void SetUp()
         {
             json = new JsonService();

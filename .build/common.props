@@ -1,0 +1,41 @@
+<Project>
+
+	<PropertyGroup>
+		<NoWarn>1701;1702;1705;1591</NoWarn>
+		<SignAssembly>false</SignAssembly>
+		<BuildVersion>0.0.0</BuildVersion>
+		<RepositoryType>git</RepositoryType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<BuildVersion Condition="'$(APPVEYOR_BUILD_VERSION)'!=''">$(APPVEYOR_BUILD_VERSION)</BuildVersion>
+		<BuildVersionMajor>$(BuildVersion.Split('.')[0])</BuildVersionMajor>
+		<AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<RepositoryUrl>https://github.com/cryosharp/fluentwindsor</RepositoryUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<IncludeSource>false</IncludeSource>
+		<Authors>Gavin van der Merwe</Authors>
+		<Product>Cryosharp FluentWindsor</Product>
+		<FileVersion>$(BuildVersion)</FileVersion>
+		<VersionPrefix>$(BuildVersion)</VersionPrefix>
+		<PackageVersion>$(BuildVersion)</PackageVersion>
+		<PackageOutputPath>..\..\build\</PackageOutputPath>
+		<AssemblyVersion>$(BuildVersionMajor).0.0</AssemblyVersion>
+		<AssemblyTitle>For making windsor super easy</AssemblyTitle>
+		<CurrentYear>$([System.DateTime]::Now.ToString("yyyy"))</CurrentYear>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/cryosharp/fluentwindsor/</PackageProjectUrl>
+		<PackageIconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</PackageIconUrl>
+		<Copyright>Copyright 2004-$(CurrentYear) Cryosharp - http://cryosharp.com/</Copyright>
+		<PackageLicenseUrl>https://github.com/cryosharp/fluentwindsor/blob/master/LICENSE.txt</PackageLicenseUrl>
+		<ContentTargetFolders>.</ContentTargetFolders>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Content Include="..\..\LICENSE.txt">
+		</Content>
+	</ItemGroup>
+
+</Project>

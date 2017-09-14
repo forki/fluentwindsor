@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>FluentWindsor.Mvc</id>
+    <version>3.0.25</version>
+    <authors>fir3pho3nixx@gmail.com</authors>
+    <description>A library for making windsor super easy</description>
+    <tags>Castle Windsor Fluent Mvc</tags>
+    <language>en-GB</language>
+    <projectUrl>https://github.com/cryosharp/fluentwindsor</projectUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/7360948?v=3</iconUrl>
+    <licenseUrl>https://raw.githubusercontent.com/cryosharp/fluentwindsor/master/LICENSE.txt</licenseUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="net46" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net46" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="FluentWindsor.Mvc.dll" />
+    </references>
+    <dependencies>
+      <dependency id="Castle.Core" version="3.3.3" />
+      <dependency id="Castle.Windsor" version="3.4.0" />
+      <dependency id="FluentWindsor" version="3.0.25" />
+      <dependency id="Microsoft.AspNet.Mvc" version="5.2.3" />
+      <dependency id="Microsoft.AspNet.Razor" version="3.2.3" />
+      <dependency id="Microsoft.AspNet.WebPages" version="3.2.3" />
+      <dependency id="Microsoft.Web.Infrastructure" version="1.0.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\**\FluentWindsor.Mvc.dll" target="lib\net461" />
+  </files>
+</package>

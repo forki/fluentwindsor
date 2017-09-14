@@ -8,7 +8,7 @@ namespace FluentlyWindsor.Extensions
 {
     public static class AssemblyExtensions
     {
-        static readonly string genericTypeLoadMessage = "FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions or try installing the missing assmeblies below, otherwise delete your bin/obj folders outside visual studio and then recompile and fix the missing assembly reference errors in your project) -> \r\n\r\n";
+        static readonly string genericTypeLoadMessage = "FluentWindsor::Assembly Load Errors(If you use nuget please consolidate your versions or try installing the missing assemblies below, otherwise delete your bin/obj folders outside visual studio and then recompile and fix the missing assembly reference errors in your project) -> \r\n\r\n";
 
         public static bool HasAnyTypeThatImplementsInterface<T>(this Assembly assembly, IAssemblyScanningPolicy[] policies)
         {
