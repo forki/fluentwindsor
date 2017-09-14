@@ -1,3 +1,4 @@
+using System.Reflection;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
@@ -19,7 +20,7 @@ namespace FluentlyWindsor.Hawkeye
                     .LifeStyle.Transient.IsFallback());
 
             container.Register(
-                Classes.FromThisAssembly()
+                Classes.FromAssembly(Assembly.GetExecutingAssembly())
                     .BasedOn<IFormatter>()
                     .WithService.DefaultInterfaces()
                     .LifestyleTransient());
