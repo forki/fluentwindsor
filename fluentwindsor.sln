@@ -1,11 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{534A9E3C-C326-4D08-AFC5-9D9957CC9AD4}"
 	ProjectSection(SolutionItems) = preProject
 		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".examples", ".examples", "{150157B8-E1A8-4641-A240-5872EDAAFED2}"
@@ -259,5 +260,8 @@ Global
 		{E4CD0F62-5F6B-41C1-AB8F-ED91F2F000A8} = {467C5565-3D0A-4AE5-A109-7411554AB6BD}
 		{91F9F468-49A3-4CD8-AC51-D332ECEF1873} = {150157B8-E1A8-4641-A240-5872EDAAFED2}
 		{7D8C63C6-DCBD-411B-8B1D-52BA32612500} = {91F9F468-49A3-4CD8-AC51-D332ECEF1873}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E706D7FB-786F-45DA-877E-F9DF95DE2F21}
 	EndGlobalSection
 EndGlobal
