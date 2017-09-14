@@ -1,45 +1,45 @@
 ﻿using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.Http.Description;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FluentlyWindsor.EndersJson.Tests.Framework
 {
-    public class Person
+	public class Person
     {
         public static readonly Person Any = new Person {Name = "Any", Age = 1};
         public int Age { get; set; }
         public string Name { get; set; }
     }
 
-    [RoutePrefix("api/person")]
-    public class PersonController : ApiController
+	[Route("api/[controller]")]
+	public class PersonController : Controller
     {
         [HttpPost]
-        public IHttpActionResult Post(Person person)
+        public IActionResult Post(Person person)
         {
             return Created("api/person/123", person);
         }
 
         [HttpPut]
-        public IHttpActionResult Put(Person person)
+        public IActionResult Put(Person person)
         {
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id:int}")]
-        public IHttpActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return Ok();
         }
     }
 
-    [RoutePrefix("api/Persons")]
-    public class PersonsController : ApiController
-    {
+	[Route("api/[controller]")]
+	public class PersonsController : Controller
+	{
         [HttpGet]
-        [ResponseType(typeof (IEnumerable<Person>))]
-        public IHttpActionResult Get()
+        public IActionResult Get()
         {
             return Ok(new[]
             {

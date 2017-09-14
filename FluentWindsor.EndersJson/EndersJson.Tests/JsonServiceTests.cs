@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.TestHost;
+using Newtonsoft.Json;
 
 namespace FluentlyWindsor.EndersJson.Tests
 {
@@ -38,15 +41,15 @@ namespace FluentlyWindsor.EndersJson.Tests
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
 		{
-			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-			loggerFactory.AddDebug();
+			//loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+			//loggerFactory.AddDebug();
 
 			app.UseMvc();
 		}
 	}
 
 	[TestFixture]
-    public class JsonServiceTests : WebApiTestBase
+    public class JsonServiceTests 
     {
 	    private IWebHostBuilder CreateWebHostBuilder()
 	    {
@@ -62,21 +65,30 @@ namespace FluentlyWindsor.EndersJson.Tests
 		[SetUp]
         public void SetUp()
         {
-            json = new JsonService();
+	        var webHostBuilder = CreateWebHostBuilder();
+	        var server = new TestServer(webHostBuilder);
+	        var httpClient = server.CreateClient();
+			json = new JsonService(httpClient);
         }
+
+	    [TearDown]
+	    public void TearDown()
+	    {
+		    json.Dispose();
+	    }
 
         private JsonService json;
 
         [Test]
         public async Task Should_be_able_to_DELETE_resource_from_web_api()
         {
-            await json.DeleteAsync<Person>(FormatUri("api/person/1"));
+            await json.DeleteAsync<Person>("api/person/1");
         }
 
         [Test]
         public async Task Should_be_able_to_DELETE_resource_from_web_api_return_OK()
         {
-            var response = await json.DeleteAsync(FormatUri("api/person/1"));
+            var response = await json.DeleteAsync("api/person/1");
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
 
@@ -86,29 +98,30 @@ namespace FluentlyWindsor.EndersJson.Tests
             Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 json.EnableOnlySuccessOnlyMode();
-                await json.DeleteAsync<Person>(FormatUri("api/person_404/1"));
+                await json.DeleteAsync<Person>("api/person_404/1");
             });
         }
 
         [Test]
         public async Task Should_be_able_to_DELETE_resource_from_web_api_if_not_found_return_NotFound()
         {
-            var response = await json.DeleteAsync(FormatUri("api/person_404/1"));
+            var response = await json.DeleteAsync("api/person_404/1");
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
 
         [Test]
         public async Task Should_be_able_to_GET_resource_from_web_api()
         {
-            var result = await json.GetAsync<IEnumerable<Person>>(FormatUri("api/persons"));
+            var result = await json.GetAsync<IEnumerable<Person>>("api/persons");
             Assert.That(result.Count(), Is.EqualTo(3));
         }
 
         [Test]
         public async Task Should_be_able_to_GET_resource_from_web_api_return_OK()
         {
-            var response = await json.GetAsync(FormatUri("api/persons"));
-            var result = await response.Content.ReadAsAsync<IEnumerable<Person>>();
+            var response = await json.GetAsync("api/persons");
+	        var resultString = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<IEnumerable<Person>>(resultString);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(result.Count(), Is.EqualTo(3));
         }
@@ -119,14 +132,14 @@ namespace FluentlyWindsor.EndersJson.Tests
             Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 json.EnableOnlySuccessOnlyMode();
-                await json.GetAsync<IEnumerable<Person>>(FormatUri("api/persons_404"));
+                await json.GetAsync<IEnumerable<Person>>("api/persons_404");
             });
         }
 
         [Test]
         public async Task Should_be_able_to_GET_resource_from_web_api_if_not_found_and_return_NotFound()
         {
-            var response = await json.GetAsync(FormatUri("api/persons_404"));
+            var response = await json.GetAsync("api/persons_404");
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
 
@@ -134,7 +147,7 @@ namespace FluentlyWindsor.EndersJson.Tests
         public async Task Should_be_able_to_GET_resource_from_web_api_using_authorisation_header()
         {
             json.SetHeader("Authorization", Guid.NewGuid().ToString("N"));
-            var result = await json.GetAsync<IEnumerable<Person>>(FormatUri("api/persons"));
+            var result = await json.GetAsync<IEnumerable<Person>>("api/persons");
             Assert.That(result.Count(), Is.EqualTo(3));
         }
 
@@ -142,8 +155,9 @@ namespace FluentlyWindsor.EndersJson.Tests
         public async Task Should_be_able_to_GET_resource_from_web_api_using_authorisation_header_return_OK()
         {
             json.SetHeader("Authorization", Guid.NewGuid().ToString("N"));
-            var response = await json.GetAsync(FormatUri("api/persons"));
-            var result = await response.Content.ReadAsAsync<IEnumerable<Person>>();
+            var response = await json.GetAsync("api/persons");
+	        var resultString = await response.Content.ReadAsStringAsync();
+			var result = JsonConvert.DeserializeObject<IEnumerable<Person>>(resultString);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
             Assert.That(result.Count(), Is.EqualTo(3));
         }
@@ -151,14 +165,15 @@ namespace FluentlyWindsor.EndersJson.Tests
         [Test]
         public async Task Should_be_able_to_POST_resource_from_web_api()
         {
-            var result = await json.PostAsync<Person>(FormatUri("api/person"), Person.Any);
+            var result = await json.PostAsync<Person>("api/person", Person.Any);
             Assert.That(result, Is.Not.Null);
         }
         [Test]
         public async Task Should_be_able_to_POST_resource_from_web_api_return_Created()
         {
-            var response = await json.PostAsync(FormatUri("api/person"), Person.Any);
-            var result = await response.Content.ReadAsAsync<Person>();
+            var response = await json.PostAsync("api/person", Person.Any);
+	        var resultString = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<Person>(resultString);
             Assert.That(result, Is.Not.Null);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.Created));
         }
@@ -169,27 +184,27 @@ namespace FluentlyWindsor.EndersJson.Tests
             Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 json.EnableOnlySuccessOnlyMode();
-                await json.PostAsync<Person>(FormatUri("api/person_404"), Person.Any);
+                await json.PostAsync<Person>("api/person_404", Person.Any);
             });
         }
 
         [Test]
         public async Task Should_be_able_to_POST_resource_from_web_api_if_not_found_return_NotFound()
         {
-            var response = await json.PostAsync(FormatUri("api/person_404"), Person.Any);
+            var response = await json.PostAsync("api/person_404", Person.Any);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
 
         [Test]
         public async Task Should_be_able_to_PUT_resource_from_web_api()
         {
-            await json.PutAsync<Person>(FormatUri("api/person"), Person.Any);
+            await json.PutAsync<Person>("api/person", Person.Any);
         }
 
         [Test]
         public async Task Should_be_able_to_PUT_resource_from_web_api_return_OK()
         {
-            var response = await json.PutAsync(FormatUri("api/person"), Person.Any);
+            var response = await json.PutAsync("api/person", Person.Any);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
         }
 
@@ -199,21 +214,21 @@ namespace FluentlyWindsor.EndersJson.Tests
             Assert.ThrowsAsync<HttpRequestException>(async () =>
             {
                 json.EnableOnlySuccessOnlyMode();
-                await json.PutAsync<Person>(FormatUri("api/person_404"), Person.Any);
+                await json.PutAsync<Person>("api/person_404", Person.Any);
             });
         }
 
         [Test]
         public async Task Should_be_able_to_PUT_resource_from_web_api_if_not_found_return_NotFound()
         {
-            var response = await json.PutAsync(FormatUri("api/person_404"), Person.Any);
+            var response = await json.PutAsync("api/person_404", Person.Any);
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NotFound));
         }
 
         [Test]
         public async Task Should_be_able_to_GET_AS_STRING_from_web_api()
         {
-            var result = await json.GetStringAsync(FormatUri("api/person"), Person.Any);
+            var result = await json.GetStringAsync("api/person", Person.Any);
             Assert.That(result, Is.TypeOf<string>());
             Assert.That(result, Is.Not.Null.Or.Empty);
         }

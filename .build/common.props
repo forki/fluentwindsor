@@ -1,14 +1,16 @@
 <Project>
 
 	<PropertyGroup>
-		<NoWarn>1701;1702;1705;1591</NoWarn>
+		<NoWarn>1701,1702,1705,1591,1572,1571,1573,1587,1570</NoWarn>
 		<SignAssembly>false</SignAssembly>
 		<BuildVersion>0.0.0</BuildVersion>
 		<RepositoryType>git</RepositoryType>
+		<RuntimeIdentifiers>win10-x64</RuntimeIdentifiers>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<BuildVersion Condition="'$(APPVEYOR_BUILD_VERSION)'!=''">$(APPVEYOR_BUILD_VERSION)</BuildVersion>
 		<BuildVersionMajor>$(BuildVersion.Split('.')[0])</BuildVersionMajor>
 		<AssemblyOriginatorKeyFile></AssemblyOriginatorKeyFile>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<RepositoryUrl>https://github.com/cryosharp/fluentwindsor</RepositoryUrl>
 	</PropertyGroup>

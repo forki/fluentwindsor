@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net47;netcoreapp2.0</TargetFrameworks>
+		<TargetFrameworks>net461;netcoreapp2.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<Import Project="..\..\.build\common.props"></Import>
@@ -13,21 +13,13 @@
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
-		<DocumentationFile />
-		<NoWarn>1701;1702;1705;1591</NoWarn>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net47|AnyCPU'">
-		<NoWarn>1701,1702,1705,1591,1572,1571,1573,1587,1570</NoWarn>
-	</PropertyGroup>
-
 	<ItemGroup>
 		<Compile Remove="Properties\AssemblyInfo.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="NUnit" Version="3.8.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.0.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
 		<PackageReference Include="Moq" Version="4.7.99" />
