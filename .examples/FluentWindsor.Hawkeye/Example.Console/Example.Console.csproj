@@ -8,9 +8,9 @@
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\FluentWindsor.Hawkeye\Hawkeye\FluentWindsor.Hawkeye.csproj" />
 		<ProjectReference Include="..\..\..\FluentWindsor\FluentWindsor\FluentWindsor.csproj" />
-		<ProjectReference Include="..\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj" />
-		<ProjectReference Include="..\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj" />
-		<ProjectReference Include="..\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj" />
+		<ProjectReference Include="..\..\FluentWindsor\Example.Test.AssemblyA\Example.Test.AssemblyA.csproj" />
+		<ProjectReference Include="..\..\FluentWindsor\Example.Test.AssemblyB\Example.Test.AssemblyB.csproj" />
+		<ProjectReference Include="..\..\FluentWindsor\Example.Test.AssemblyC\Example.Test.AssemblyC.csproj" />
 	</ItemGroup>
 
 </Project>
