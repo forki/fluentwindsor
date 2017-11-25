@@ -3,7 +3,8 @@ using System.Reflection;
 using Example.Console.Controllers;
 using FluentlyWindsor;
 using FluentlyWindsor.EndersJson.Interfaces;
-using Microsoft.Owin.Hosting;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Example.Console
 {
@@ -19,9 +20,11 @@ namespace Example.Console
                 .WithInstallers()
                 .Create();
 
-            var server = WebApp.Start<Startup>(BaseUri);
+	        var server = BuildWebHost(args);
 
-            var json = container.Resolve<ISyncJsonService>();
+			server.Run();
+
+			var json = container.Resolve<ISyncJsonService>();
 
             var result = json.Get<IEnumerable<Person>>(FormatUri("api/persons"));
 
@@ -35,7 +38,12 @@ namespace Example.Console
             server.Dispose();
         }
 
-        public static string FormatUri(string relativeUri)
+	    public static IWebHost BuildWebHost(string[] args) =>
+		    WebHost.CreateDefaultBuilder(args)
+			    .UseStartup<Startup>()
+			    .Build();
+
+		public static string FormatUri(string relativeUri)
         {
             return $"{BaseUri}/{relativeUri}";
         }

@@ -1,25 +1,25 @@
-﻿using System.Web.Http;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Example.Console.Controllers
 {
-    [RoutePrefix("api/person")]
-    public class PersonController : ApiController
+	[Route("api/[controller]")]
+    public class PersonController : Controller
     {
         [HttpPost]
-        public IHttpActionResult Post(Person person)
+        public IActionResult Post(Person person)
         {
             return Created("api/person/123", person);
         }
 
         [HttpPut]
-        public IHttpActionResult Put(Person person)
+        public IActionResult Put(Person person)
         {
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id:int}")]
-        public IHttpActionResult Delete(int id)
+        public IActionResult Delete(int id)
         {
             return Ok();
         }

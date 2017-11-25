@@ -1,11 +1,12 @@
 ﻿using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
+using FluentlyWindsor.Hawkeye;
 using FluentlyWindsor.Hawkeye.Interfaces;
 using FluentlyWindsor.Hawkeye.Tests.Dummies;
 using log4net.Core;
 using NUnit.Framework;
 
-namespace FluentlyWindsor.Hawkeye.Tests
+namespace FluentWindsor.Hawkeye.Tests
 {
     [TestFixture]
     public class LogFactoryTests
@@ -38,7 +39,8 @@ namespace FluentlyWindsor.Hawkeye.Tests
         [Test]
         public void When_Using_Log_It_Should_Log_To_Appender()
         {
-            log4net.Config.XmlConfigurator.Configure();
+			// Might need to deal with this later
+            //log4net.Config.XmlConfigurator.Configure();
 
             var factory = testContainer.Resolve<ILogFactory>();
             var log = factory.CreateLogger<LogFactoryTests>();

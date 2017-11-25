@@ -1,16 +1,34 @@
-﻿using System.Web.Http;
-using Owin;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using IConfiguration = Microsoft.Extensions.Configuration.IConfiguration;
 
 namespace Example.Console
 {
-    public class Startup
-    {
-        public void Configuration(IAppBuilder appBuilder)
-        {
-            var config = new HttpConfiguration();
-            config.MapHttpAttributeRoutes();
-            config.Routes.MapHttpRoute("DefaultApi", "api/{controller}/{id}", new {id = RouteParameter.Optional});
-            appBuilder.UseWebApi(config).UseNancy();
-        }
-    }
+	public class Startup
+	{
+		public Startup(IConfiguration configuration)
+		{
+			Configuration = configuration;
+		}
+
+		public IConfiguration Configuration { get; }
+
+		// This method gets called by the runtime. Use this method to add services to the container.
+		public void ConfigureServices(IServiceCollection services)
+		{
+			services.AddMvc();
+		}
+
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		{
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
+
+			app.UseMvc();
+		}
+	}
 }

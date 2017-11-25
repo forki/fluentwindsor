@@ -10,8 +10,8 @@
 
 	<UsingTask TaskName="NuspecSetVersion" AssemblyFile="BuildTasks.dll" />
 	<UsingTask TaskName="NuspecBumpVersion" AssemblyFile="BuildTasks.dll" />
-  <UsingTask TaskName="SetExplicitVersionsForDependencies" AssemblyFile="BuildTasks.dll" />
-  <UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
+	<UsingTask TaskName="SetExplicitVersionsForDependencies" AssemblyFile="BuildTasks.dll" />
+	<UsingTask TaskName="MigratePackageDependenciesToNuSpec" AssemblyFile="BuildTasks.dll" />
 
 	<Target Name="tasks\Clean">
 		<Exec Command="$(ThisDirectory)..\clean.bat" />
@@ -22,12 +22,12 @@
 	</Target>
 
 	<Target Name="tasks\Pack">
-    <ItemGroup>
-      <NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" Exclude="$(ThisDirectory)..\packages\**\*.nuspec" />
-    </ItemGroup>
+		<ItemGroup>
+			<NuSpecFiles Include="$(ThisDirectory)..\**\*.nuspec" Exclude="$(ThisDirectory)..\packages\**\*.nuspec" />
+		</ItemGroup>
 		<NuspecSetVersion FilePath="%(NuSpecFiles.Identity)" XPathToVersionNumber="/package/metadata/version" />
 		<SetExplicitVersionsForDependencies RelativePath="..\" />
-    <Exec Command="$(ThisDirectory)..\$(NugetCommand) pack %(NuSpecFiles.Identity)" />
+		<Exec Command="$(ThisDirectory)..\$(NugetCommand) pack %(NuSpecFiles.Identity)" />
 	</Target>
 
 	<Target Name="tasks\Push">
@@ -35,11 +35,11 @@
 	</Target>
 
 	<Target Name="Deploy">
-    <MigratePackageDependenciesToNuSpec RelativePath="..\" />
+		<MigratePackageDependenciesToNuSpec RelativePath="..\" />
 		<CallTarget Targets="tasks\Build" />
 		<CallTarget Targets="tasks\Pack" />
 		<CallTarget Targets="tasks\Push" />
 		<CallTarget Targets="tasks\Clean" />
 	</Target>
-  
+
 </Project>

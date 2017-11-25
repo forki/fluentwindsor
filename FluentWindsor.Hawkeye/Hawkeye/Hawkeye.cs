@@ -123,8 +123,25 @@ namespace FluentlyWindsor.Hawkeye
 
         private static void ConfigureLog4Net()
         {
-            var configurationFile = new FileInfo(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile);
-            XmlConfigurator.ConfigureAndWatch(configurationFile);
+	        var currentDirectory = new DirectoryInfo(Environment.CurrentDirectory);
+	        var configFiles = currentDirectory.GetFiles("*.config", SearchOption.TopDirectoryOnly);
+
+			foreach (var file in configFiles)
+	        {
+		        try
+		        {
+			        var repositories = LogManager.GetAllRepositories();
+			        foreach (var repository in repositories)
+			        {
+				        XmlConfigurator.ConfigureAndWatch(repository, file);
+			        }
+		        }
+		        catch
+		        {
+			        
+		        }
+			}
+
             isConfigured = true;
         }
     }

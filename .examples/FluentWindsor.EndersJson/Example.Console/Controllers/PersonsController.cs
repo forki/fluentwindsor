@@ -1,15 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.Http.Description;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace Example.Console.Controllers
 {
-    [RoutePrefix("api/Persons")]
-    public class PersonsController : ApiController
+    [Route("api/[controller]")]
+    public class PersonsController : Controller
     {
         [HttpGet]
-        [ResponseType(typeof(IEnumerable<Person>))]
-        public IHttpActionResult Get()
+        public IActionResult Get()
         {
             return Ok(new[]
             {

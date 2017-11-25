@@ -5,7 +5,7 @@
 		<Platform>Any CPU</Platform>
 		<TargetFramework>v4.6.1</TargetFramework>
 		<Configuration>Release</Configuration>
-    <NugetSource>https://api.nuget.org/v3/index.json</NugetSource>
+		<NugetSource>https://api.nuget.org/v3/index.json</NugetSource>
 		<NugetCommand>packages\NuGet.CommandLine\tools\NuGet.exe</NugetCommand>
 	</PropertyGroup>
 
